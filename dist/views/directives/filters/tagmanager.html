@@ -1,9 +1,0 @@
-<div class=row-full>
-    <label>{{filter.label|uppercase}}</label>                               
-    <div class=autoCompleteSearch tags-input="" data-ng-model=filter.selected placeholder={{filter.placeholder}} temp-placeholder={{filter.placeholder}} replace-spaces-with-dashes=false add-from-autocomplete-only=true allowed-tags-pattern=[a-zA-Z0-9\.]* max-tags=6 min-length=2 on-tag-added=update($tag.label) on-tag-removed=update($tag.label)>
-        <div auto-complete="" source=loadData($query) min-length=2 debounce-delay=0 max-results-to-show=5></div>
-    </div>
-    <div class="row-full requireText">
-        <strong>Note:</strong> You can add upto 6 {{filter.label}}
-    </div> 
- </div>

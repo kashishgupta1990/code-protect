@@ -1,5 +1,0 @@
-# this is for subdomains of proptiger.com
-
-User-agent: *
-
-Disallow: /

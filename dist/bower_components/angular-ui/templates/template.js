@@ -1,1 +1,0 @@
-angular.module("ui.directives").directive("uiTemplate",["ui.config",function(i){var e=i.uiTemplate||{};return{restrict:"EAC",link:function(i,u,n,r){var t;t=angular.extend({},e,n.uiTemplate)}}}]),angular.module("ui.filters").filter("filterTmpl",["ui.config",function(i){return function(i){return i}}]);

@@ -5,6 +5,7 @@ var confusion = require('confusion');
 var path = require('path');
 var async = require('async');
 
+
 var fs = require('fs');
 var walk = function (dir, done) {
     var results = [];
@@ -32,47 +33,60 @@ var walk = function (dir, done) {
 
 var onlyJsFile = function (dirPath, callback) {
     var filesArr = [];
-    walk('.', function (err, data) {
-        console.log(data.length);
-        data.forEach(function (filePath) {
-            if (path.extname(filePath) === '.js') {
-                filesArr.push(filePath);
-            }
-        });
-        callback(null, filesArr);
+    walk(dirPath, function (err, data) {
+        if (err) {
+            callback({FilePath: dirPath, err: err});
+        } else {
+            data.forEach(function (filePath) {
+                if (path.extname(filePath) === '.js') {
+                    filesArr.push(filePath);
+                }
+            });
+            callback(null, filesArr);
+        }
+
     });
 };
 
-onlyJsFile('./dist/script2', function (err, data) {
+onlyJsFile('./dist/bower_components', function (err, dataList) {
     var tasks = [];
 
-    data.forEach(function (filePath) {
+    if (err) {
+        throw err;
+    } else {
+        dataList.forEach(function (filePath) {
+            tasks.push(function (done) {
+                    fs.readFile(filePath, function (err, data) {
+                        if (err) {
+                            done(err);
+                        } else {
+                            var ast = esprima.parse(data);
+                            var obfuscated = confusion.transformAst(ast, confusion.createVariableName);
 
-        tasks.push(function (err, done) {
-            fs.readFile(filePath, function (err, data) {
-                if (err) throw err;
-                var ast = esprima.parse(data);
-                var obfuscated = confusion.transformAst(ast, confusion.createVariableName);
-                fs.writeFile(filePath, toString(obfuscated), function (err) {
-                    if (err) {
-                        done(err);
-                    } else {
-                        done(null, 'done');
-                    }
-                });
-            });
+                            fs.writeFile(filePath, toString(obfuscated), function (err) {
+                                if (err) {
+                                    done(err);
+                                } else {
+                                    console.log('File: ', filePath, ' DONE');
+                                    done(null, 'done');
+                                }
+                            });
+                        }
+                    });
+                }
+            );
+
 
         });
 
-        async.parallel(tasks, function (err, result) {
+        async.series(tasks, function (err, result) {
             if (err) {
                 throw err;
             } else {
                 console.log('job done');
             }
         });
-    });
-
+    }
 });
 
 

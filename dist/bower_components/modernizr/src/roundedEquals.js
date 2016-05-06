@@ -1,1 +1,0 @@
-define([],function(){function n(n,e){return n-1===e||n===e||n+1===e}return n});

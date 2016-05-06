@@ -1,1 +1,0 @@
-module.exports=function(e){e.set({basePath:"",frameworks:["jasmine"],files:["bower_components/angular/angular.js","bower_components/angular-mocks/angular-mocks.js","lib/angular-facebook.js","lib/angular-facebook-phonegap.js","test/unit/*.spec.js"],exclude:[],port:8080,logLevel:e.LOG_INFO,autoWatch:!0,reporters:["progress","dots"],browsers:["Chrome"],singleRun:!1})};

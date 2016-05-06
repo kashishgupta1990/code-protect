@@ -1,1 +1,0 @@
-function ngGridLayoutPlugin(){var i=this;this.grid=null,this.scope=null,this.init=function(t,e,o){i.domUtilityService=o.DomUtilityService,i.grid=e,i.scope=t},this.updateGridLayout=function(){i.scope.$$phase?i.domUtilityService.RebuildGrid(i.scope,i.grid):i.scope.$apply(function(){i.domUtilityService.RebuildGrid(i.scope,i.grid)})}}

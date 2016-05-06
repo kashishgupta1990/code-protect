@@ -1,7 +1,0 @@
-/**
- * @license Angulartics
- * (c) 2013 Luis Farzati http://luisfarzati.github.io/angulartics
- * License: MIT
- */
-
-!function(n){"use strict";n.module("angulartics.google.analytics.cordova",["angulartics"]).provider("googleAnalyticsCordova",function(){var i=["$q","$log","ready","debug","trackingId","period",function(n,i,o,t,e,r){function a(){t&&i.info(arguments)}function c(n){t&&i.error(n)}var u=n.defer(),d=!1;window.addEventListener("deviceReady",function(){d=!0,u.resolve()}),setTimeout(function(){d||u.resolve()},3e3),this.init=function(){return u.promise.then(function(){var n=window.plugins&&window.plugins.gaPlugin;n?n.init(function(){o(n,a,c)},c,e,r||10):t&&i.error("Google Analytics for Cordova is not available")})}}];return{$get:["$injector",function(o){return o.instantiate(i,{ready:this._ready||n.noop,debug:this.debug,trackingId:this.trackingId,period:this.period})}],ready:function(n){this._ready=n}}}).config(["$analyticsProvider","googleAnalyticsCordovaProvider",function(n,i){i.ready(function(i,o,t){n.registerPageTrack(function(n){i.trackPage(o,t,n)}),n.registerEventTrack(function(n,e){i.trackEvent(o,t,e.category,n,e.label,e.value)})})}]).run(["googleAnalyticsCordova",function(n){n.init()}])}(angular);

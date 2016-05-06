@@ -1,1 +1,0 @@
-describe("'off()' test",function(){var e,t,n,o=function(){t=!0};beforeEach(function(){t=!1,n=document.createEvent("MouseEvents")}),it("should properly unbind an event listener",function(){e=$("#testSlider1").slider(),e.on("slideStart",o),e.off("slideStart",o),e.data("slider")._mousedown(n),expect(t).not.toBeTruthy()})});

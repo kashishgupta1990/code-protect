@@ -1,1 +1,0 @@
-define(["app","services/b2b-constants","services/citiesService"],function(a){a.controller("myaccountCtrl",["$rootScope","$scope","$window","B2BConstants","CityService",function(a,b,c,d,e){}])});

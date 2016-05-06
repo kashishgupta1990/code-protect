@@ -1,6 +1,0 @@
-# this is for propguide
-
-User-agent: *
-
-Allow: cdn.proptiger.com/guide
-Disallow: /

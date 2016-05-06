@@ -1,1 +1,0 @@
-define([],function(){var n={}.toString;return n});

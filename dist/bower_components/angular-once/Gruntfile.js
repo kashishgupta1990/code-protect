@@ -1,1 +1,0 @@
-module.exports=function(o){o.loadNpmTasks("grunt-bump"),o.initConfig({bump:{options:{files:["package.json","bower.json"],commit:!0,commitMessage:"chore(release): v%VERSION%",commitFiles:["package.json","bower.json"],createTag:!0,push:!0,pushTo:"origin"}}})};
