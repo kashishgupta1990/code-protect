@@ -1,0 +1,16 @@
+{
+  "name": "unread-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "confusion": "^0.1.1",
+    "escodegen": "^1.8.0",
+    "esprima": "^2.7.2"
+  }
+}
