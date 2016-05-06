@@ -1,0 +1,115 @@
+/* 
+Desc: Loading page View Scss Document 
+Author: Sanjeev Verma
+Date: 21 July 2014
+*/
+
+.loadingBarInfo{ width : $body-width;
+	position: fixed;
+	top:0;
+	left:0;
+	z-index: 20;
+	height:2px;
+}
+.progressBarInfo{ width : $body-width - 10;
+	height:2px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+	background: $loader-color;
+	animation: line_Color 9s ease-out;
+	-webkit-animation: line_Color 9s ease-out;
+	-moz-animation: line_Color 9s ease-out;
+	-ms-animation: line_Color 9s ease-out;
+	-o-animation: line_Color 9s ease-out;
+}
+.progressBarPlacInfo{ width : $body-width - 50;
+	height:2px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	background: $loader-color;
+	animation: line_plac_Color 1s ease-out;
+	-webkit-animation: line_plac_Color 1s ease-out;
+	-moz-animation: line_plac_Color 1s ease-out;
+	-ms-animation: line_plac_Color 1s ease-out;
+	-o-animation: line_plac_Color 1s ease-out;
+}
+.progressBarLine{ width : $body-width - 10;
+	height:2px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 2;
+	background: $loader-color;
+	animation: line_Color 2s ease-out;
+	-webkit-animation: line_Color 2s ease-out;
+	-moz-animation: line_Color 2s ease-out;
+	-ms-animation: line_Color 2s ease-out;
+	-o-animation: line_Color 2s ease-out;
+}
+
+@keyframes line_Color{
+	0%{ background-color:$loader-color;
+		width: 0;}
+	100%{ background-color:$loader-color;
+		width: $body-width - 10;}
+}
+@-webkit-keyframes line_Color{
+	0%{ background-color:$loader-color;
+		width: 0;}
+	100%{ background-color:$loader-color;
+		width: $body-width - 10;}
+}
+@-moz-keyframes line_Color{
+	0%{ background-color:$loader-color;
+		width: 0;}
+	100%{ background-color:$loader-color;
+		width: $body-width - 10;}
+}
+@-ms-keyframes line_Color{
+	0%{ background-color:$loader-color;
+		width: 0;}
+	100%{ background-color:$loader-color;
+		width: $body-width - 10;}
+}
+@-o-keyframes line_Color{
+	0%{ background-color:$loader-color;
+		width: 0;}
+	100%{ background-color:$loader-color;
+		width: $body-width - 10;}
+}
+
+@keyframes line_plac_Color{
+	0%{ background-color:$loader-color;
+		width: 0;}
+	100%{ background-color:$loader-color;
+		width: $body-width - 50;}
+}
+@-webkit-keyframes line_plac_Color{
+	0%{ background-color:$loader-color;
+		width: 0;}
+	100%{ background-color:$loader-color;
+		width: $body-width - 50;}
+}
+@-moz-keyframes line_plac_Color{
+	0%{ background-color:$loader-color;
+		width: 0;}
+	100%{ background-color:$loader-color;
+		width: $body-width - 50;}
+}
+@-ms-keyframes line_plac_Color{
+	0%{ background-color:$loader-color;
+		width: 0;}
+	100%{ background-color:$loader-color;
+		width: $body-width - 50;}
+}
+@-o-keyframes line_plac_Color{
+	0%{ background-color:$loader-color;
+		width: 0;}
+	100%{ background-color:$loader-color;
+		width: $body-width - 50;}
+}
+

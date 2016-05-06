@@ -1,0 +1,1 @@
+module.exports=function(e){e.set({basePath:"",frameworks:["jasmine"],files:["bower_components/angular/angular.js","bower_components/angular-mocks/angular-mocks.js","src/*.js","test/**/*.spec.js"],exclude:[],reporters:["progress"],port:9876,colors:!0,logLevel:e.LOG_INFO,autoWatch:!0,browsers:["Opera","Chrome","Firefox","Safari","PhantomJS"],captureTimeout:6e4,singleRun:!1})};

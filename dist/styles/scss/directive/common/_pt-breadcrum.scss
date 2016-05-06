@@ -1,0 +1,117 @@
+/* 
+Desc: Breadcrum View Scss Document 
+Author: Sanjeev Verma
+Date: 07 Jan 2014
+*/ 
+
+.breadcrum{ width:$body-width;
+	padding:15px 15px 5px 15px;
+	@include box-sizing(border-box);
+	.breadcrum-area-info{
+		width:$body-width - 25;
+	}	
+	ul.bread-link-info{ padding:0;
+		li{ font-family:$proximaNovaFamily;
+			font-size:$body-font-size;
+			color:$dark-gray-color;
+			display:inline-block;
+			padding:0 10px 0 0;
+			text-transform:capitalize;
+			float: left;
+			a{ font-family:$proximaNovaFamily;
+				font-size:$body-font-size;
+				color:$dark-gray-color;
+				line-height:16px;
+				.homeIconLink{ font-size:$body-font-size + 2;
+					padding: 2px 3px 0 0;
+					float: left;
+				}
+				&:hover{ color:$anchor-link-color;
+					text-decoration:underline;
+				} 
+			}
+			span + i{ display:none !important;}		
+			.breadArrow{content: "";
+				display: inline-block;
+				width: 0;
+				height: 0;
+				vertical-align: top;
+				border-left: 4px solid $darkligh-gray-color;
+				border-top: 4px solid transparent;
+				border-bottom: 4px solid transparent;
+				margin:7px 0 0 3px;
+			}
+			
+			&:nth-child(3) a, &:nth-child(4) a {
+				display: inline-block;
+				max-width: 90px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				vertical-align: middle;
+				white-space: nowrap;
+			}
+			
+		}
+	}
+}
+.bread-head-info{ font-family:$proximaNovaFamily;
+	font-size:$body-font-size;
+	color:$gray-color;
+	font-weight:bold;
+	text-transform:uppercase;
+}
+.bread-update-info{font-family:$proximaNovaFamily;
+	font-size:$body-font-size;
+	color:$dark-gray-color;
+	padding:0 0 0 5px;
+	font-weight:bold;
+}
+.bread-last-update{ height:20px;}
+.sharePageInfo{ padding: 7px 0 0 0;
+	.shareContInfo{ border-left:1px solid $gray-color;
+		padding: 0 0 0 10px;
+	}
+	.shareBtnInfo{ display: none;}
+	.shareLinkInfo{ display: block;
+	}
+}
+.shareLinkInfo{ display: none;
+	cursor: pointer;
+	line-height: $body-font-size - 1;
+	i{ font-size:$body-font-size + 1;}
+	&:hover{ color:$anchor-link-color; }
+}
+.share-dropdown-menu{ min-width: 142px;
+	right: 0;
+	left: auto;
+	padding: 10px;
+	span{ font-family:$proximaNovaFamily;
+		color:$lighter-grey-textColor;
+		font-size:$body-font-size + 2;
+		padding: 0;
+		margin: 0 0 0 5px;
+		display: inline-block;
+		cursor: pointer;
+		i{ font-size:$body-font-size*2 + 6;
+			color: $lighter-grey-textColor;
+			&.pt-icon-facebook-square {
+				&:hover { color: $facebook-hov-color; }
+			}
+			&.pt-icon-google-plus-square {
+				&:hover { color: $google-hov-color; }
+			}
+			&.pt-icon-twitter-square {
+				&:hover { color: $twitter-color; }
+			}
+		}
+	}
+}
+@media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1){ 
+	.breadcrum-area-info{
+		width:$body-width - 33 !important;
+	}
+	ul.bread-link-info{ clear: both;
+		li{ padding:0 5px 0 0 !important; }
+	}
+	
+}

@@ -1,0 +1,121 @@
+/* Image Gallery Scss Document */
+
+/* Overwritten carousel for project detail page */
+
+.portfolio-carousel { 
+	.carousel {
+		width: 100%;
+	border: none;
+		border-radius: 0px;
+		height:336px;
+		margin:0;
+		@include box-sizing(border-box);
+		
+		.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+		
+			min-height:250px;
+		max-height:335px;
+		}
+		.carousel-caption {
+			padding:5px;
+			font-size:12px;
+			
+			h4 {
+				font:bold 14px Arial; 
+				line-height:normal; 
+				padding:0px; 
+				margin:0px;
+			}
+			
+			p {
+				line-height:normal;
+			}
+		}
+	.carousel-inner{ background:#cccccc;}
+		.carousel-indicators-wrap {
+		width:100%; 
+		height:60px; 
+			position:absolute; 
+			bottom:0px; 
+		left:0px; 
+			overflow:hidden; 
+			border:none;
+		padding:0;
+		background:rgba(51, 51, 51, 0.5);
+			@include box-sizing(border-box);
+		z-index:2;
+		.line{ width:100%; 
+			height:1px; 
+			position:absolute;
+			top:20px;
+			z-index:2;
+			padding:0 10px;
+			@include box-sizing(border-box);
+			i{ background:#333333; height:1px; display:block;}
+		}
+			.carousel-indicators {
+				position:absolute; 
+			top:21px; 
+				right:auto; 
+			left:0px; 
+			padding:4px 0 0 10px; 
+				width:9000px;
+			z-index:3;
+				
+				li {
+				height:31px; 
+				width:56px; 
+					text-indent:0px;
+					overflow:hidden; 
+				border:none; 
+				opacity:0.5; 
+					float:left; 
+					border-radius:0px;
+					
+					&:first-child {
+						margin-left: 0px;	
+					}
+					&.active {
+						opacity:1;
+					border:none;
+					border:1px solid #cccccc;
+					@include box-shadow(#ffffff 0px 0px 10px);
+					}
+				}
+			}
+				
+		}	
+			
+		.carousel-control {
+			bottom:10px;
+			cursor: pointer;
+			
+			&.left {
+				left:5px;
+			}
+			
+			&.right {
+				right:5px;
+			}
+		}
+	}
+}
+ul.sliderTab{position:absolute;
+	bottom:50px;
+	padding:0 0 0 10px;
+	z-index:3;
+	li{ display:inline-block;
+		padding:0 25px 0 0;
+		a{ color:#cccccc;
+		font-family:$proximaNovaFamily;
+		font-size:$body-font-size;
+		font-weight: bold;
+		text-transform:uppercase;
+		&:hover{color:#f39c13; cursor:pointer;}
+		&.selected{color:#f39c13;}		
+		}
+	}
+	
+		
+}
+

@@ -1,0 +1,1 @@
+define(["ModernizrProto"],function(e){var i=e._config.usePrefixes?" -webkit- -moz- -o- -ms- ".split(" "):[];return e._prefixes=i,i});

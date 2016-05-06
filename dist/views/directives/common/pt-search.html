@@ -1,0 +1,58 @@
+<div class=propSearchBox>
+    <div data-ng-click="handleZIndex(true, false,$event)" class="propSearchBoxInfo row-full">
+	   <div class="clickInfo searchCityListMenu">
+            <div data-ng-click="handleZIndex(true, false, $event,true)" class="dropdown-toggle topMenuLinkBtn">
+                <i class="pt pt-icon-map-marker-o"></i> 
+                <span>{{$root.cityToShow}}</span> 
+                <span class="pt pt-icon-angle-down iconArrow"></span>
+            </div>
+            <div class="cityContListInfo rightTopClick">
+                <div class=cityContDetailInfo>
+                    <div class=anchHoveUpAnimInfo ng-mouseleave=stop() ng-mouseenter=up() data-ng-class="{'disable': !upActive}"><i class="pt pt-icon-angle-up"></i></div>
+                    <div class=anchHoveDownAnimInfo ng-mouseleave=stop() ng-mouseenter=down() data-ng-class="{'disable': !dnActive}"><i class="pt pt-icon-angle-down"></i></div>
+                    
+                    <ul class=clickAnchListInfo id=city-list>
+                        <li>
+                            <a data-ng-click="$root.cityChanged('All Cities')">All Cities</a>
+                        </li>
+                        <li data-ng-if="city.displayPriority == 1 || city.displayPriority == 2" data-ng-repeat="city in $root.cityList" class={{city.class}}>
+                            <a data-ng-click="$root.cityChanged(city.label, city.id)" data-ng-class="{'city-bold' : city.displayPriority === 1}">{{city.label}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+                            
+        </div>
+
+	    <div class="searchTypoMenu pull-left">
+            <div class=searchTypoContInfo>
+                <input data-ng-class=$root.validateInputClass class=pull-left type=search data-ng-focus="showMsgForList=false;" data-ng-model=selValue data-ng-keydown=selectDropDown($event) data-ng-keypress=formFill($event) data-ng-paste=formFill($event) typeahead="result.displayText for result in searchSuggestions($viewValue, mode) | limitTo:8" typeahead-template-url=views/static/searchTypeAhead.html typeahead-on-select="searchOptionSelected($item, $model, $label, mode)" typeahead-min-length=2 typeahead-input-formatter="$model = ''" pt-placeholder={{placeholder}} data-ng-blur="gaStartFlag=true;no_suggestions=false">
+    	    	<div data-ng-show=loadingSearch class="pt pt-icon-cog pt-spin searchloading"></div>
+                <ul data-ng-if=!$root.hideSearchSuggestions class=dropdown-menu data-ng-class="{ 'dropsearch-menu' : cityRecentSearch }">
+                    <li data-ng-click="recentSearchSelected(match.model, mode, $event)" data-ng-repeat="match in cityRecentSearch track by $index" data-ng-class="{'active' : $index==0}" pt-search-type-ahead=""></li>
+                </ul>
+                <div class="paddingTB5 noSuggestions pull-left" data-ng-show=no_suggestions>
+                    <input value="No Result Found!" disabled>
+                    <input data-ng-model=search_msg disabled>
+                </div>
+            </div>
+	    </div>
+	    <div class="searchActionInfo pull-left" pt-blur=hideMsg() data-ng-click="textSearch($model, mode, $event)">
+        	<span class=searchIconInfo>
+        		<i class="pt pt-icon-search"></i>
+        	</span>
+        	<span class=searchBtnInfo>
+        		<i class="pt pt-icon-search"></i> Search
+        	</span>
+	    </div>
+    </div>
+    <div data-ng-show=showMsg class=paddingT10>
+        Sorry! Results for typed keyword cannot be displayed on map.<br>
+        <a data-ng-href="/filters?q={{selValue}}" data-ng-click=textSearchInListViewGA()>See results in List View</a> or Select an option from suggestions.
+    </div>
+    <div data-ng-show=showMsgForList class=paddingT10>
+        Sorry! Results for typed keyword cannot be displayed on map.<br>
+        <a data-ng-click="showMsgForList = false;" data-ng-href=/{{selectedItemUrl}}>See results in List View</a> or Select an option from suggestions.
+    </div>
+
+</div>

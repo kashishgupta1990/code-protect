@@ -1,0 +1,16 @@
+<div id=notification data-ng-show=showAlert>
+<div id=alert class="alert alert-{{alert.type}} alert-dismissable">
+	
+	<span class=pull-left>
+    <i data-ng-if="alert.type==='alert'" class="pt pt-icon-exclamation-triangle"></i>
+    <i data-ng-if="alert.type==='info'" class="pt pt-icon-info-circle"></i>
+    <i data-ng-if="alert.type==='error'" class="pt pt-icon-ban"></i>
+        <span data-ng-hide=alert.htmlMode>{{notimsg}}</span>
+    </span> 
+    <span data-ng-if=alert.htmlMode data-ng-bind-html=alert.HtmlMsg class=alertBulMesInfo></span>
+	<span class="paddingL15 pull-right">
+        <button data-ng-if=alert.showYes type=button class="btn btn-small search-bg notificationBtn" data-ng-click="actionTaken('onYes')">{{alert.confirmText}}</button>
+        <button data-ng-if=alert.showNo type=button class="btn btn-small search-bg notificationBtn" data-ng-click="actionTaken('onNo')">{{alert.cancelText}}</button>
+  	</span>
+</div>
+</div>

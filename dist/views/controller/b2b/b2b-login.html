@@ -1,0 +1,30 @@
+<div class=login-main-wrarpper>
+    <div class=ta-center>
+        <div class="marginT40 login">
+            <div class="text-error b2b-main-container transparent-wrap" data-ng-show=badCredentials>{{badCredentialsMessage}}
+            </div>
+            <div class="login_window paddingL15">
+                <form data-ng-submit="signInSubmit(username, password)" id=loginform name=loginform method=post>
+                        <div class=proplogo>
+                            <a href="/" target=_self>
+                                <i class=icons-inner-logo></i>
+                            </a>
+                        </div>
+                         
+                        <label class=paddingT15>User Name</label>
+                        <input data-ng-model=username type=text placeholder="User Name" id=username class=input-xlarge>
+                        <label class=paddingT15>Password</label>
+                        <input data-ng-model=password type=password class=input-xlarge id=password placeholder=Password>
+                        <div class=other_info>
+                            <div class="active inlineblock"></div>
+                            <div class=pull-right>
+                                <a href=javascript:void(0) analytics-on="" data-analytics-event=Click_ForgetPassword data-analytics-category="Forget Password" data-analytics-label=Submit ui-sref=anonymous.forgot-password>Forgot Password</a></div>
+                        </div>
+                        <div class=proplogo>
+                    <button type=submit data-ng-class="{'disabled':disableLogin}" class=btn-action data-ng-disabled=disableLogin>Login</button>
+                        </div>
+                </form>
+            </div>
+        </div> 
+    </div>
+</div>

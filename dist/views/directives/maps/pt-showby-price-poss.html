@@ -1,0 +1,67 @@
+<div class="showby-wrap btn-group" data-ng-show=showPricePossView>
+    <ul>
+        <li data-ng-if="markerSettings.displayType === 'type'"><span class=na-text>Property Type</span></li>
+        <li data-ng-if="markerSettings.displayType === 'rate'"><span class=na-text>Rate (<i class="pt pt-icon-inr"></i> /sq ft)</span></li>
+        <li data-ng-if="markerSettings.displayType === 'date'"><span class=na-text>Possession Date</span></li>
+        <li data-ng-if="markerSettings.displayType === 'livability'"><span class=na-text>Livability Score</span></li>
+    </ul>
+    <div class=abc>
+    	<div data-ng-show="markerSettings.displayType === 'type'" class="legends-dd first-dd">
+                <ul>
+                    <li>
+                    	<div class="sqm_project apartment">
+                            <div class=val>
+	                            <div class=val-type><i class="pt pt-icon-apartment"></i></div>
+                            </div>
+                    	</div>
+                        <span class=na-text>APTS</span>
+                    </li>
+                    <li>
+                    	<div class="sqm_project pt-type villa">
+                            <div class=val>
+	                            <div class=val-type><i class="pt pt-icon-villa"></i></div>
+                            </div>
+                    	</div>
+                        <span class=na-text>VILLA</span>
+                    </li>
+                    <li>
+                    	<div class="sqm_project pt-type plot">
+                            <div class=val>
+	                            <div class=val-type><i class="pt pt-icon-plot"></i></div>
+                            </div>
+                    	</div>
+                        <span class=na-text>PLOT</span>
+                    </li>
+                </ul>
+        </div>
+        <div data-ng-show="markerSettings.displayType === 'rate'" class=legends-dd>
+                <ul>
+                    <li class=second-dd>
+                        <div class="gradient price-gradient" pt-gradientgr="" range=ranges.rateRange type=rate></div>
+                    </li>
+                    
+                </ul>
+        </div>
+        <div data-ng-show="markerSettings.displayType === 'date'" class=legends-dd>
+                <ul>
+                	<li style="margin:0;padding:0 0 0 4px !important">
+                    	<div class=date-bar>
+                            <span class=date-color-bar></span>
+                            <span class=date-color-text>Till<br>2011</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gradient price-gradient" pt-gradientgr="" range=ranges.dateRange type=date></div>
+                    </li>
+                </ul>
+        </div>
+         <div data-ng-show="markerSettings.displayType === 'livability'" class=legends-dd>
+                <ul>
+                    <li class=second-dd>
+                        <div class="gradient price-gradient" pt-gradientgr="" range=ranges.livabilityRange type=score></div>
+                    </li>
+                </ul>
+        </div>
+       
+    </div>
+</div>

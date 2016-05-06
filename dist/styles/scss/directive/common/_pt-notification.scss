@@ -1,0 +1,107 @@
+/*
+Desc: Notification message Scss Document
+Author: Sanjeev Verma
+Date: 15 Nov 2013
+*/
+
+#notification {
+	position: fixed;
+	top: 0px;
+	left: 55%;
+	min-width:20%;
+	z-index:10!important;
+}
+.notification-info{
+	#notification{ left: 48% !important;}
+}
+.modal.fade.in {
+		top:16%;
+}
+.alertBulMesInfo{ width: 86%;
+	float:left;
+	a{ margin: 0 10px 0 0;}
+}
+.alert {
+	padding:5px 6px 5px 6px;
+	background-color: #fff;
+	border: none;
+	box-shadow:0px 3px 5px #aaaaaa;
+	z-index: 2;
+	font-family:$proximaNovaFamily;
+	font-size:$body-font-size + 1px;
+	text-align: left;
+	color: #333;
+	@include rounded($radius:0px);
+	@include text-shadow(none);
+	display:inline-block;
+	position:absolute;
+	line-height:24px;
+	left:0px;
+
+	&.alert-alert {
+		.pt-icon-exclamation-triangle {
+			color:#FACC14;
+			font-size:25px;
+			float:left;
+			padding-right:8px;
+		}
+	}
+	&.alert-info {
+		.pt-icon-info-circle {
+			color:#23BF08;
+			font-size:25px;
+			float:left;
+			padding-right:8px;
+		}
+	}
+	&.alert-error {
+		.pt-icon-ban {
+			color:#ff4200;
+			font-size:25px;
+			float:left;
+			padding-right:8px;
+		}
+	}
+	/*&.alert-success {
+		background-color: #e1fbe5;
+		border-color: #39b44a;
+		color: #39b44a;
+	}
+	&.alert-danger, .alert-error {
+		background-color: #f5d7da;
+		border-color: #cf6672;
+		color: #df1f34;
+	}
+	&.alert-info {
+		background-color: #d9edf7;
+		border-color: #bce8f1;
+		color: #3a87ad;
+	}*/
+	.pt-icon-exclamation-circle {
+		color:#ff4200;
+		font-size:25px;
+		float:left;
+		padding-right:8px;
+	}
+
+	.close {
+		right: -14px;
+		top: -14px;
+	}
+
+	.closeBtn {
+		position: relative;
+		top: 0px;
+		right: -21px;
+		line-height: 20px;
+		float: right;
+		color: #666666;
+		background: none;
+		border: none;
+		opacity: 0.5;
+		filter: alpha(opacity=50);
+	}
+}
+.notificationBtn:hover{
+    color:#333 !important;
+}

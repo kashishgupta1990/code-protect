@@ -1,0 +1,143 @@
+<div class="b2b-main-container marginT5 marginB15 preference transparent-wrap">
+    <div class=pt_row>
+        <div class=pt_col-1-4>
+            <div class=sidebarBox>
+            <div pt-projectnavigator=""></div>
+            </div>
+        </div>
+        <div class=pt_col-3-4>
+            <div pt-onscroll=""></div>
+            <div class="pt_row contentBoxContainer marginB15 paddingTB20LR25 tabContainer">
+            <div data-ng-controller=filterCtrl>
+                <div class=contentHeader id=preferences>
+                    <h4>Preferences</h4>
+                    <div class=pull-right>
+                        <a href=javascript:void(0) analytics-on="" data-analytics-event="Click_Reset to Default" data-analytics-category=Settings data-analytics-label="" data-ng-click=clearAll(defaultPreferenceObj);resetToDefault()>
+                        Reset to default preferences</a>
+                    </div>
+                </div>
+
+                <div class=paddingLR15>
+                    <div class="pt_row unlink-parent">
+                        <span class="flitClickInfo pull-left" show-dropdown=true data-ga-event="Select_Property Type" data-ga-category=Settings equal-type="" filter=filters.propertyType></span>
+                    </div>
+                    <hr>
+                    <div class=budget-range-wrap>
+                        <div class=city-budget-filter>
+                            <h5 class=marginR20>
+                                Budget Range
+                                <span class=v-middle>
+                                    <i class="pt pt-icon-question-circle" tooltip="Use this option to set the medium range for the Budget graphs in the analysis pages."> </i>
+                                </span>
+                            </h5>
+                            <div show-dropdown=true class="flitClickInfo pull-left" data-ga-category=Settings data-ga-event=Select_Budget budget="" filter=filters.budget></div>
+                        </div>
+                        <div class="clearfix pull-left"></div>
+                        <div data-ng-if=!bgtmsg class="pull-right budget-range-data">
+                            <div class="pt_row paddingB10">
+                                <strong>Low Range: </strong>
+                                <span ng-show="preference.budgetRange.globalCityMin!=0">
+                                    &lt; <i class="pt pt-icon-inr"></i>
+                                {{preference.budgetRange.globalCityMin | priceFormat : null:null:' L'}}
+                                </span>
+                                <span ng-show="preference.budgetRange.globalCityMin==0">
+                                    Not Applicable
+                                </span>
+                            </div>
+                            <div class="pt_row paddingB10 middle-range">
+                                <strong>Medium Range: </strong>
+                                <i class="pt pt-icon-inr"></i>
+                                {{preference.budgetRange.globalCityMin | priceFormat : null:null:' L'}} -
+                                <span ng-show="preference.budgetRange.globalCityMax!=''">
+                                    <i class="pt pt-icon-inr"></i>
+                                    {{preference.budgetRange.globalCityMax | priceFormat : null:null:' L'}}
+                                </span>
+                                <span ng-show="preference.budgetRange.globalCityMax==''">
+                                    Any
+                                </span>
+                            </div>
+                            <div class=pt_row>
+                               <strong>High Range: </strong>
+                                <span ng-show=preference.budgetRange.globalCityMax>
+                                    &gt; <i class="pt pt-icon-inr"></i>
+                                {{preference.budgetRange.globalCityMax | priceFormat : null:null:' L'}}
+                                </span>
+                                <span ng-show=!preference.budgetRange.globalCityMax>
+                                     Not Applicable
+                                </span>
+                            </div>
+                        </div>
+                        <div data-ng-if=bgtmsg class=pull-right>
+                            <span class=red>{{bgtmsg}}</span>
+                        </div>
+                    </div>
+                    <div class="clear paddingT15">
+                        <hr>
+                    </div>
+                    <div class="checkbox-item clear">
+                        Show top projects in Builder Analysis
+                        <input type=checkbox analytics-on="" data-analytics-event="Select_Top Project in Builder" data-analytics-category=Settings data-analytics-label="{{preference.expandOtherProjects?'Unselect':'Select'}}" data-ng-model=preference.expandOtherProjects data-ng-true-value=0 data-ng-false-value=1>
+                        <span class=v-middle>
+                            <i class="pt pt-icon-question-circle" tooltip="When this option is selected, the projects after the top 5 projects are grouped together as 'Others' and displayed as a single unit."> </i>
+                        </span>
+                    </div>
+
+                    <div class=checkbox-item>
+                        Show data in fiscal year
+                        <input type=checkbox analytics-on="" data-analytics-event="Select_Data in Fiscal Year" data-analytics-category=Settings data-analytics-label="{{preference.yearType === 'financial'?'Select':'Unselect'}}" data-ng-model=preference.yearType data-ng-true-value=financial data-ng-false-value=calendar>
+                        <span class=v-middle>
+                            <i class="pt pt-icon-question-circle" tooltip="Select this to show data in fiscal year. If unselected then data is shown in calendar year."> </i>
+                        </span>
+                    </div>
+
+                    <div class=checkbox-item>
+                        Show Dashboard Key Data in area format.
+                        <input type=checkbox analytics-on="" data-analytics-event="Select_Dashboard key data in area" data-analytics-category=Settings data-analytics-label="{{preference.dataUnitType === 'AREA'?'Select':'Unselect'}}" data-ng-model=preference.dataUnitType data-ng-true-value=AREA data-ng-false-value=UNITS>
+                        <span class=v-middle>
+                            <i class="pt pt-icon-question-circle" tooltip="Select this to show Dashboard Key Data in area format. If unselected, then data is displayed in units."> </i>
+                        </span>
+                    </div>
+                    
+                    <div class="paddingT30 pull-right">
+                        <div data-ng-show=successfulySaved class="pull-left greenish marginR20" style=line-height:35px></div>
+                        <button type=button analytics-on="" data-analytics-event=Save_Settings data-analytics-category=Settings data-analytics-label="" class="btn btn-action pull-right" data-ng-click=save()>Save</button>
+                        <div class=clearfix></div>
+                    </div>
+                    <div class=clearfix></div>
+                </div>
+                <div class=contentHeader id=changePassword>
+                    <h4>Change Password</h4>
+                </div>
+                <div class=paddingLR15>
+                        <div class="errorMsg paddingB15" data-ng-show=msg><span>*{{msg}}</span></div>
+                         <form class=form-horizontal>
+                            <div class=form-group>
+                                <label for=oldPassword class="control-label col-xs-4">Current password <span class=red>*</span></label>
+                                <div class=col-xs-8>
+                                    <input class="oldPassword form-control" name=oldPassword type=password data-ng-model=user.oldPassword placeholder="Current password">
+                                </div>
+                            </div>
+                            <div class=form-group>
+                                <label for=newPassword class="control-label col-xs-4">New password <span class=red>*</span></label>
+                                <div class=col-xs-8>
+                                    <input class="newPassword form-control" name=newPassword type=password data-ng-model=user.newPassword placeholder="New password">
+                                </div>
+                            </div>
+                            <div class=form-group>
+                                <label for=confirmNewPassword class="control-label col-xs-4">Confirm new password <span class=red>*</span></label>
+                                <div class=col-xs-8>
+                                    <input class="confirmNewPassword form-control" name=confirmNewPassword type=password data-ng-model=user.confirmNewPassword placeholder="Confirm new password">
+                                </div>
+                            </div>
+                            
+                            <button type=submit analytics-on="" data-analytics-event=Change_Password data-analytics-category=Settings data-analytics-label="" data-ng-click=changePassword(user) class="btn btn-action pull-right" data-ng-disabled=disable data-ng-class="{'disabled':disable}">Change</button>
+                        </form>
+                    
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+   
+</div>

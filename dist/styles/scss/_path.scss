@@ -1,0 +1,28 @@
+/*
+Desc: File path Scss Document
+Author: Sanjeev Verma
+Date: 11 Nov 2013
+*/
+
+
+@font-face {
+	font-family: 'proxima_nova';
+	src: url('#{$fontIconPath}/ProximaNova-Reg.eot');
+    src: url('#{$fontIconPath}/ProximaNova-Reg.eot?#iefix') format('embedded-opentype'),
+         url('#{$fontIconPath}/ProximaNova-Reg.woff2') format('woff2'),
+         url('#{$fontIconPath}/ProximaNova-Reg.woff') format('woff'),
+         url('#{$fontIconPath}/ProximaNova-Reg.ttf') format('truetype'),
+         url('#{$fontIconPath}/ProximaNova-Reg.svg#proxima_nova') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+	font-family: 'propicon';
+	src:url('#{$fontIconPath}/propicon.eot');
+	src:url('#{$fontIconPath}/propicon.eot?#iefix') format('embedded-opentype'),
+		url('#{$fontIconPath}/propicon.ttf') format('truetype'),
+		url('#{$fontIconPath}/propicon.woff') format('woff'),
+		url('#{$fontIconPath}/propicon.svg#propicon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}

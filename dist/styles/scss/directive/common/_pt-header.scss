@@ -1,0 +1,659 @@
+/*
+Desc: Header Scss Document
+Author: Sanjeev Verma
+Date: 24 Sept 2013
+*/
+
+.stickyTop{ top:0 !important; }
+.resStyckyTop{ top:52px !important;}
+.resStickyNav{ position:fixed;
+    top:90px;
+    left: 0;
+    width: $body-width;
+    z-index:9;
+    -moz-transition:all 1.5s ease-in-out;
+    -webkit-transition:all 1.5s ease-in-out;
+    -ms-transition:all 1.5s ease-in-out;
+    -o-transition:all 1.5s ease-in-out;
+    transition: all 1.5s ease-in-out;
+}
+
+/*** Start ***/
+.contentOverflow{ overflow: hidden;}
+
+ul.leftHeadNav{
+    li:first-child{ padding:0;}
+    li{ float: left;
+        padding:0 0 0 15px;
+    }
+}
+ul.rightHeadNav{ float: left;}
+.topMenuBtn{ font-size:$body-font-size - 1;
+    color: $white-color;
+    @include rounded($radius:3px);
+    background: none;
+    border:none;
+    padding: 5px 7px 4px 7px;
+    i{ font-size:$body-font-size - 1;
+        display: inline-block;
+        vertical-align: text-top;
+    }
+    &:hover, &.activeTopMenu{ color: $dark-mid-gray-color;
+        background: $White-gray-color;
+    }
+}
+.haderBtnIteam{ float: left;
+    font-size:$body-font-size - 1;
+    color: $dark-mid-gray-color;
+    margin: 5px 12px;
+}
+
+.seoMenuHov:hover{
+    .sideMenuContainer {
+        .side-menu-info{ margin: 0;
+            @include box-shadow($darkBlack-gray-color 4px 2px 6px);
+            -webkit-transition: ease-out 1s;
+            -moz-transition: ease-out 1s;
+            -ms-transition: ease-out 1s;
+            -o-transition: ease-out 1s;
+            transition: ease-out 1s;
+        }
+    }
+}
+.headerSearchInfo{ width: $body-width - 33; padding: 0 0 0 25px !important;}
+.headerSearch{ width: $body-width - 15;
+    .propSearchBoxInfo{ position: relative;
+        input{ width:$body-width - 10;
+            @include fontStyle($openSans:true);
+            font-size:$body-font-size + 1;
+            margin: 0;
+            padding: 4px 6px 4px 10px !important;
+            height:32px;
+            border:1px solid $darkligh-mid-gray-color;
+            border-right:none;
+            @include rounded($left:true, $radius:3px);
+            &:hover, &:focus {
+                border:solid 1px #f39c13;
+            }
+            &.redBorder {
+                border:solid 1px red;
+            }
+        }
+        ul.dropdown-menu[typeahead-popup]{ min-width: $body-width - 10; }
+    }
+    .searchloading{ position: absolute;
+        top: 10px;
+        right: 12%;
+        width: 14px;
+        height: 14px;
+        font-size: $body-font-size + 4;
+        line-height: $body-font-size + 2;
+    }
+    .searchHomeBtn{ width:$body-width - 90;
+        background: $light-darkgray-color;
+        color: $lighter-grey-textColor;
+        border: none;
+        padding: 5px 10px 4px 10px;
+        @include rounded($right:true, $radius:3px);
+        i{ font-size:$body-font-size*2 - 8;}
+        span{ display: none;}
+        &:hover{ background: $body-selected-color;
+            color: $white-color;
+        }
+    }
+}
+.sideBackDrop{ position: fixed;
+    top:45px;
+    right: 0;
+    left:0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+    -moz-transition:all 1s ease-in-out;
+    -webkit-transition:all 1s ease-in-out;
+    -ms-transition:all 1s ease-in-out;
+    -o-transition:all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+.sideMenuContainer{ position:relative;}
+.side-menu-info{ position: fixed;
+    width: 300px;
+    background: $white-color;
+    height: $body-width;
+    top:45px;
+    right: 0;
+    border-top:1px solid $light-mid-gray-color;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 99;
+    padding-bottom: 55px;
+    margin: 0 -300px 0 0;
+    -moz-transition:margin 0.5s ease-out;
+    -webkit-transition:margin 0.5s ease-out;
+    -ms-transition:margin 0.5s ease-out;
+    -o-transition:margin 0.5s ease-out;
+    transition: margin 0.5s ease-out;
+
+}
+.side-menu-show{ margin: 0 !important;
+    @include box-shadow($darkBlack-gray-color 4px 2px 6px);
+}
+ul.sideMenuNav{ margin:0;
+    padding: 0;
+    li{ border-top:1px solid $light-mid-gray-color;
+        width:$body-width;
+        float:left;
+        display: block;
+        padding: 0;
+        &.list-item{
+            a, .linkSeoSpan{ font-family:$proximaNovaFamily;
+                font-size:$body-font-size + 2;
+                color: $darkBlack-gray-color;
+                padding: 10px;
+                float: left;
+                width:100%;
+                cursor: pointer;
+                -moz-transition:all 0.15s ease-in-out;
+                -webkit-transition:all 0.15s ease-in-out;
+                -ms-transition:all 0.15s ease-in-out;
+                -o-transition:all 0.15s ease-in-out;
+                transition: all 0.15s ease-in-out;
+                text-decoration: none;
+                .menu-smtxt{ font-size:$body-font-size -1;
+                    color: $darkligh-gray-color;
+                }
+                &:hover{ background: $dark-gray-color;
+                    color: $white-color;
+                    .menu-smtxt{ font-size:$body-font-size -1;
+                        color: $darkligh-mid-gray-color;
+                    }
+                }
+            }
+        }
+        &.chang-list-item{ @include fontStyle($openSans:true);
+            font-size:$body-font-size + 2;
+            color: $darkBlack-gray-color;
+            padding: 10px;
+            .followLinkInfo{
+                float: right;
+                a{ font-size:$body-font-size + 6;
+                    color: $darkligh-mid-gray-color !important;
+                    margin: 0 0 0 10px;
+                    &:hover{ color: $dark-gray-color !important; }
+                }
+            }
+
+        }
+        &.link-item{
+
+            .linkSeoSpan{ font-family:$proximaNovaFamily;
+                font-size:$body-font-size + 2;
+                color: $darkBlack-gray-color;
+                padding: 10px;
+                float: left;
+                width:100%;
+                cursor: pointer;
+                -moz-transition:all 0.15s ease-in-out;
+                -webkit-transition:all 0.15s ease-in-out;
+                -ms-transition:all 0.15s ease-in-out;
+                -o-transition:all 0.15s ease-in-out;
+                transition: all 0.15s ease-in-out;
+                text-decoration: none;
+                i{ font-size:$body-font-size + 3;
+                    float: right;
+                    -moz-transition:all 0.50s ease-in-out;
+                    -webkit-transition:all 0.50s ease-in-out;
+                    -ms-transition:all 0.50s ease-in-out;
+                    -o-transition:all 0.50s ease-in-out;
+                    transition: all 0.50s ease-in-out;
+                }
+            }
+            &:hover{
+                .linkSeoSpan{ background: $dark-gray-color;
+                    color: $white-color;
+                }
+            }
+        }
+        &.activeLinkMenu{
+            a{ background: $dark-gray-color;
+                color: $white-color;
+                i{ -moz-transform: rotate(180deg);
+                    -webkit-transform: rotate(180deg);
+                    -ms-transform: rotate(180deg);
+                    -o-transform: rotate(180deg);
+                    transform: rotate(180deg);
+                }
+            }
+            .sideLinkMenu{ visibility: visible;
+                opacity: 1;
+                height: auto;
+                margin: 0 10px 10px 15px !important;
+                -moz-transform: scale(1);
+                -webkit-transform: scale(1);
+                -ms-transform: scale(1);
+                -o-transform: scale(1);
+                transform: scale(1);
+                -moz-transform: 0.3s cubic-bezier(0.3, 1.6, 1, 1),0.3s opacity ease-out;
+                -webkit-transform: 0.3s cubic-bezier(0.3, 1.6, 1, 1),0.3s opacity ease-out;
+                -ms-transform: 0.3s cubic-bezier(0.3, 1.6, 1, 1),0.3s opacity ease-out;
+                -o-transform: 0.3s cubic-bezier(0.3, 1.6, 1, 1),0.3s opacity ease-out;
+                transform: 0.3s cubic-bezier(0.3, 1.6, 1, 1),0.3s opacity ease-out;
+            }
+			.phoneNum {
+				i  {
+					float: none; vertical-align: text-top;
+				}
+			}
+        }
+        &.downAppRateInfo{ padding: 15px 10px;
+            background: #f8f8f8;
+            .downAppHeading{ width: $body-width;
+                float: left;
+                @include fontStyle($openSansBold:true);
+                font-size:$body-font-size + 1;
+                color: $anchor-link-color;
+                letter-spacing: 0px;
+            }
+
+        }
+		.flageInfo {
+			display: inline-block;
+			border-radius: 50%;
+		}
+		&.hideLink { display: none; }
+    }
+}
+.menuAppDescInfo{ width: $body-width;
+    float: left;
+    padding: 15px 0 10px 0;
+    a + a{ margin: 0 0 0 10px;}
+}
+.menuAppRating{ width: $body-width;
+    float: left;
+    text-align: center;
+    padding: 15px 0 0 0;
+    @include fontStyle($openSans:true);
+    font-size:$body-font-size + 3;
+    color: $lighter-grey-textColor;
+    .unSelectedRate{ font-size:$body-font-size + 2 !important;
+        color: $dark-mid-gray-color;
+        padding: 0 10px 0 0;
+    }
+    .selectedRate{ @include fontStyle($openSansBold:true);
+        font-size:$body-font-size + 6;
+        color: $dark-mid-gray-color;
+    }
+}
+.playStoreApp{ width: 126px;
+    height:44px;
+}
+.iosStoreApp{ width: 130px;
+    height:44px;
+}
+ul.sideLinkMenu{
+    float: left;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+    -moz-transform: scale(0);
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+    -moz-transform: 50% 0px;
+    -webkit-transform: 50% 0px;
+    -ms-transform: 50% 0px;
+    -o-transform: 50% 0px;
+    transform-origin: 50% 0px;
+    -moz-transition: all 0.5s ease-out;
+    -webkit-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+    li{ width: 100%;
+            float: left;
+            padding:4px 0 !important;
+            border: none;
+        a, .linkSeoSpan{ font-family:$proximaNovaFamily;
+            font-size:$body-font-size + 1 !important;
+            color: $anchor-link-color !important;
+            line-height: $body-font-size*2 - 4 !important;
+            background: transparent !important;
+            padding: 0 !important;
+            cursor: pointer;
+        }
+        &.button-info{ padding: 10px 0 0 0 !important;}
+        &.hLine{ border-top:1px solid $light-mid-gray-color !important;
+            padding: 0 !important;
+            margin: 3px 0 2px 0;
+        }
+    }
+}
+
+/*** End New Header ***/
+/*** Start New Header Navigation ***/
+.clickInfo{ position: relative;
+    .iconArrow{-moz-transition:all 0.15s ease-in-out;
+        -webkit-transition:all 0.15s ease-in-out;
+        -ms-transition:all 0.15s ease-in-out;
+        -o-transition:all 0.15s ease-in-out;
+        transition: all 0.15s ease-in-out;
+    }
+    &.open{
+        .iconArrow{ -moz-transform: rotate(180deg);
+            -webkit-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+            -o-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
+    }
+}
+.open {
+    .clickListInfo{ display: block;}
+    .cityContListInfo{display: block;}
+}
+.clickListInfo{ position: absolute;
+    min-width:100px;
+    background:$white-color;
+    top:100%;
+    left: -15px;
+    z-index:12;
+    display: none;
+    border: 1px solid $light-mid-graylight-color;
+    white-space: nowrap;
+    padding: 7px 0 0 0;
+    margin: 10px 0 0 0 !important;
+    @include rounded($radius:2px);
+    @include box-shadow(rgba(0, 0, 0, 0.5) 1px 1px 2px);
+    &.rightTopClick{ right: -15px !important;
+        left: auto;
+        &:before{ content: "";
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: -12px;
+            right: 12px;
+            border-bottom: 12px solid $light-mid-graylight-color;
+            border-left: 12px solid transparent;
+            border-right:12px solid transparent;
+            z-index: 2;
+        }
+        &:after{ content: "";
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: -10px;
+            right: 14px;
+            border-bottom: 10px solid $white-color;
+            border-left: 10px solid transparent;
+            border-right:10px solid transparent;
+            z-index: 3;
+        }
+    }
+    &.leftTopClick{
+        &:before{ content: "";
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: -12px;
+            left: 12px;
+            border-bottom: 12px solid $light-mid-graylight-color;
+            border-left: 12px solid transparent;
+            border-right:12px solid transparent;
+            z-index: 2;
+        }
+        &:after{ content: "";
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: -10px;
+            left: 14px;
+            border-bottom: 10px solid $white-color;
+            border-left: 10px solid transparent;
+            border-right:10px solid transparent;
+            z-index: 3;
+        }
+    }
+    &.centerTopClick{  left: -230px;
+        &:before{ content: "";
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: -12px;
+            left: 260px;
+            border-bottom: 12px solid $light-mid-graylight-color;
+            border-left: 12px solid transparent;
+            border-right:12px solid transparent;
+            z-index: 2;
+        }
+        &:after{ content: "";
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: -10px;
+            left: 262px;
+            border-bottom: 10px solid $white-color;
+            border-left: 10px solid transparent;
+            border-right:10px solid transparent;
+            z-index: 3;
+        }
+    }
+    &.centerTopBuilClick{  left: -120px;
+        &:before{ content: "";
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: -12px;
+            left: 184px;
+            border-bottom: 12px solid $light-mid-graylight-color;
+            border-left: 12px solid transparent;
+            border-right:12px solid transparent;
+            z-index: 2;
+        }
+        &:after{ content: "";
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: -10px;
+            left: 186px;
+            border-bottom: 10px solid $white-color;
+            border-left: 10px solid transparent;
+            border-right:10px solid transparent;
+            z-index: 3;
+        }
+    }
+    > li{ font-size:$body-font-size + 1;
+        color: $darkligh-midlightgray-color;
+        line-height: $body-font-size + 3;
+        padding: 7px 15px;
+        display: block;
+        float: left;
+        width: $body-width;
+    }
+}
+.clickAnchListInfo{
+    >li{ padding: 0 !important;
+        a{ font-size:$body-font-size + 1;
+            color: $darkligh-midlightgray-color;
+            line-height: $body-font-size + 3;
+            padding: 7px 15px;
+            display: block;
+            text-decoration: none;
+            i{ font-size:$body-font-size + 5;
+                padding: 0 8px 0 0;
+                line-height: $body-font-size + 1;
+                vertical-align: text-top;
+            }
+            &:hover{ background: $lighter-mid-gray-color;
+                color: $dark-mid-gray-color;
+            }
+        }
+        &.clickBtnArea{ font-size:$body-font-size + 1;
+            color: $darkligh-midlightgray-color;
+            padding: 7px 15px !important;
+            cursor: pointer;
+            i{ font-size:$body-font-size + 5;
+                float: left;
+                padding: 0 8px 0 0;
+                line-height: $body-font-size + 1;
+            }
+            &:hover{ background: $lighter-mid-gray-color;
+                font-size:$body-font-size + 1;
+                color: $dark-mid-gray-color;
+            }
+
+        }
+    }
+}
+
+.compareBtnInfo{
+    label{ position:absolute;
+        height:15px !important;
+        min-width: 15px !important;
+        top:4px;
+        right:10px;
+        padding:4px;
+        line-height:8px;
+        background: #f39c13;
+        font-weight:bold;
+        font-size:$body-font-size - 1px;
+        color:#fff;
+        @include rounded($radius:3px);
+        @include box-sizing(border-box);
+    }
+    label + i{ margin: 3px 0 0 20px !important; }
+}
+
+.searchTopHeader{  width: 510px;
+    margin: 0 0 0 15px;
+    .searchCityListMenu{ height: 33px;
+        .dropdown-toggle{ padding: 7px 10px !important;}
+    }
+    .searchTypoMenu{  height: 35px;
+        padding: 0 50px 0 0;
+
+        .searchloading{ position: absolute;
+            top: 10px;
+            right: 6px;
+            width: 16px;
+            height: 16px;
+            font-size: $body-font-size + 5;
+            line-height: $body-font-size + 3;
+        }
+    }
+    .searchActionInfo{  width:50px;
+        height: 33px;
+        right: 1px;
+        .searchIconInfo{ display: block !important;}
+        .searchBtnInfo{ display: none !important;}
+    }
+    ul.dropdown-menu[typeahead-popup]{ width: $body-width;}
+}
+
+/*** End New Header Navigation ***/
+
+.ind-icon {  width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    margin-right: 3px;
+}
+.uk-icon { width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    margin-right: 3px;
+}
+.usa-icon { width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    margin-right: 3px;
+}
+
+ul.dropdown-menu{ min-width:100px;
+    border:none !important;
+    display:none;
+    position:absolute;
+    background:#ffffff;
+    @include box-shadow(rgba(0, 0, 0, 0.2) 0px 5px 10px);
+    top:100%;
+    left:0;
+    float:left;
+    z-index:1000;
+    padding: 0 0 10px 0;
+    @include rounded($radius:0px);
+    li { font-size:$body-font-size;
+        padding:0;
+        height:auto;
+        display:block !important;
+        a, .seoLink{
+            color:$Black-gray-color;
+            padding:6px 15px;
+            background-color:$dropdown-bgcolor;
+            font-weight:normal;
+            @include fontStyle($openSans:true);
+            white-space:nowrap;
+            display: block;
+            cursor: pointer;
+            i{ margin:4px 5px 0 0;
+               @include box-shadow(#ffffff 0px 0px 6px);}
+            &:hover{
+                color:$dark-mid-gray-color;
+                background-color:$lighter-mid-gray-color !important;
+                background-image:none;
+            }
+        }
+        &.active{
+            a, .seoLink{ color:$Black-gray-color;
+                background-color:$lighter-mid-gray-color !important;
+                background-image:none;
+            }
+            &:hover{
+                a, .seoLink{ color:$Black-gray-color;
+                    background-color:$lighter-mid-gray-color !important;
+                    background-image:none;
+                }
+            }
+        }
+    }
+
+}
+
+@media (max-width: 1024px){
+    .headerRightSide{
+        #compare_bucket{ display: none;}
+    }
+    .searchTopHeader{  width:380px;
+        .searchCityListMenu{ height: 33px;}
+        .searchTypoMenu{ height: 35px;}
+        .searchActionInfo{ height: 33px;}
+    }
+}
+
+@media (max-width: 768px){
+    .headerLeftSide{ width: $body-width - 15; }
+    .headerRightSide{ width: auto;
+        #compare_bucket{ display: none;}
+    }
+    .haderIteam{ margin: 9px 5px; display: none;}
+    .headerTopMenu{ display: block;
+        margin: 8px 0px 8px 2px !important;
+    }
+    .searchTopHeader{  width: 440px;
+        .searchCityListMenu{ height: 33px;
+            .searchCityBtn{
+                i{ display: none;}
+                span{ font-size:$body-font-size - 1;}
+            }
+
+        }
+        .searchTypoMenu{ height: 35px; }
+        .searchActionInfo{ height: 33px;
+            .searchIconInfo{ padding: 8px 5px;}
+        }
+		&.search-index { left: 147px; }
+    }
+	ul.sideMenuNav { 
+    	li {
+			&.hideLink { display: block; }
+		}
+	}
+
+}

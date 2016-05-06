@@ -1,0 +1,137 @@
+.polygon{
+    fill:#f39c13;
+    opacity:0.01;
+}
+.isometric_svg{
+    position: absolute;
+}
+svg{
+    position: absolute;
+    left:0.3%;
+    top:0.8%;
+    z-index: 9999;
+}
+svg .polygon{
+    position:absolute;
+    stroke:black;
+    stroke-width:0.0;
+    cursor: pointer;
+}
+.floor_detail_tooltip{
+    position: absolute;
+    top:10%;
+    left:10%;
+    width: 18%;
+    height: 18%;  
+    z-index: 100;
+    font-family: arial;
+    background-color:transparent;
+    z-index: 99999;
+    display: none;
+}
+.floor_tooltip{
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    width: 80%;
+    height: 70%;
+    z-index: 100;
+    color:white;
+    font-family: arial;
+    border-radius: 8px;
+    background-color: #324286;
+    opacity: 1;
+    display: none;
+}
+.floor_tooltip .header{
+    position: relative;
+    top:0%;
+    left:0%;
+    margin-left: 10%;
+    width: 80%;
+    height: 40%;
+    padding-top: 3%;
+    font-size: 12px;
+    font-family:trazan pro 3;
+    background-color: #324286;
+    text-align: center;
+    font-weight:  bold;
+}
+.floor_tooltip .content{
+    position: relative;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 70%;
+    font-size: 12px;
+    font-family:trazan pro 3;
+    text-align: center;
+}
+.floor_tooltip .content .tip{
+    position: relative;
+    color:#f39c13;
+    top:5%;
+    width:90%;
+    left: 5%;
+    height:20%;
+    border-radius:6px;
+    background-color: transparent;
+    font-size: 100%;
+    font-weight: bold;
+}
+.position_Right{
+    position: absolute;
+    width: 0%; 
+    height: 0%;
+    top: 34.5%;
+    left: 2%; 
+    border-top: 18px solid transparent;  
+    border-bottom: 18px solid transparent; 
+    border-right: 20px solid #324286; 
+    font-size: 0;
+    line-height: 0;
+    z-index: 100;
+    visibility: hidden;
+}
+.position_Left{
+    position: absolute;
+    width: 0%; 
+    height: 0%; 
+    top: 35%;
+    left: 90%;
+    border-top: 16px solid transparent;  
+    border-bottom: 16px solid transparent; 
+    border-left: 18px solid #324286; 
+    font-size: 0;
+    line-height: 0;
+    z-index: 100;
+    visibility: hidden;
+}
+.position_Bottom{
+    position: absolute;
+    width: 0%; 
+    height: 0%; 
+    top:1%;
+    left: 45%;
+    border-left: 14px solid transparent;  
+    border-right: 14px solid transparent; 
+    border-bottom: 16px solid #324286; 
+    font-size: 0;
+    line-height: 0;
+    z-index: 100;
+    visibility: hidden;
+}
+.position_Top{
+    position: absolute;
+    width: 0%; 
+    height: 0%; 
+    top:85%;
+    left: 45%;
+    border-left: 14px solid transparent;  
+    border-right: 14px solid transparent; 
+    border-top: 16px solid #324286; 
+    font-size: 0;
+    line-height: 0; 
+    z-index: 100;
+    visibility: hidden;
+}

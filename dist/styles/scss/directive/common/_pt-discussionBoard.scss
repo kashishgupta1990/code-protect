@@ -1,0 +1,152 @@
+/* 
+Desc: Project Discussion Comment Scss Document 
+Author: Sanjeev Verma
+Date: 17 Jan 2014
+*/ 
+.ec-comment-pane{ width:$body-width;
+	.ec-total{}
+	.ec-comment-info{ width:$body-width;
+		@include box-sizing(border-box);
+		.title{ font-family:$proximaNovaFamily;
+			font-size:$body-font-size + 4px;
+			font-weight: bold;
+			color:$darkligh-gray-color;
+			border:none;
+			margin-bottom: 10px;
+		}
+		.ec-comment-area{ width:$body-width;
+			height:80px;
+			resize:none;
+			@include box-sizing(border-box);
+			margin-bottom: 10px;			
+		}
+		.redBorder{ border:1px solid $error-color;}
+		.val_error{ color: $error-color;}
+		ul.ec-comment-list{ padding:20px 0 0 0;
+			margin:15px 0 0 0 !important; 
+			border-top:1px solid $lighter-gray-color;
+			.ec-non-indent-comment{ width:$body-width;
+				padding: 20px 0 0 0;				
+				clear:both;				
+			}
+			.ec-comment{ position:relative;
+				padding: 10px 0px 10px 60px;
+				width:$body-width;
+				display:inline-block;
+				@include box-sizing(border-box);
+				.anonym-user{ top:10px;}
+				.avatar{ position:absolute; 
+					width:45px; 
+					height:45px;
+					left:0;  
+					background: $dark-gray-color;
+					img{ width:$body-width; 
+						height:$body-width;
+						margin:0 auto;
+					}
+				}
+				.ec-com-disc-info{ padding: 0 20px 0 0;
+					min-height:50px;
+					.ec-author-info{ font-family:$proximaNovaFamily;
+						font-size:$body-font-size + 2px;
+						font-weight: bold;
+						color:$dark-gray-color;
+						.comment-time{ font-family:$proximaNovaFamily;
+							font-size:$body-font-size;
+							color:$gray-color;
+						}
+					}
+					.comment-html{ font-family:$proximaNovaFamily;
+						font-size:$body-font-size + 1;
+						color:$dark-gray-color;
+						line-height:22px;
+						padding:5px 0;
+					}				
+				}
+				.ec-comment{ padding:20px 0px 10px 60px; 
+					.anonym-user{ top:20px !important;}
+				}
+				.ec-com-rep-info{ width:$body-width;
+					float: left;
+					@include box-sizing(border-box);
+					padding:0;
+					a{ font-family:$proximaNovaFamily;
+						font-size:$body-font-size;
+						cursor:pointer;
+						&:hover{ text-decoration:underline;}
+					}
+					.ec-link{ padding:0 0 0 25px;
+						i{ font-size:$body-font-size + 2px;
+							background:$lighter-mid-gray-color;
+							color:$darkligh-gray-color;
+							cursor:pointer;
+							padding:2px 5px;
+							@include rounded($radius:3px);
+							&:hover{ background:$light-gray-color;
+								color:$darkBlack-gray-color;
+							}
+						}
+					}
+				}
+				
+				.ec-discu-info{ padding: 10px 0px 0px 0px;
+					min-height:50px;
+					.ec-discu-comm{ width:$body-width;
+						height:80px;
+						resize:none;
+						@include box-sizing(border-box);
+						margin-bottom: 10px;
+						}
+				}
+			}
+		}
+		.ec-page-info{ border-top:1px solid $lighter-gray-color;
+			padding:10px 0 25px 0;
+			margin:15px 0 0 0;
+			button[disabled]{ background-color:#ecedef;
+				color:$gray-color !important;
+				&:hover{ background-color:#ecedef !important;
+					color:$gray-color !important;
+				}
+			}
+			button{ background:$lighter-gray-color;
+				color:$darkligh-gray-color;
+				padding:2px 10px;
+				border:none;
+				@include rounded($radius:3px);
+				&:hover{ background:$gray-color; 
+					color:$white-color;
+				}
+			}		
+		}
+		
+		
+	}
+	
+	
+	.submit-btn{ font-family:$proximaNovaFamily;
+		font-size:$body-font-size;
+		color:$btn-primarycolor;
+		border-top:2px solid $btn-primary-bgcolor;
+		border-bottom:2px solid $btn-primary-bgcolor;
+		border-left:none;
+		border-right:none;
+		background: $btn-primary-bgcolor;
+		padding:4px 15px;
+		line-height:14px;
+		text-transform:uppercase;
+		@include rounded($radius:5px);
+		&:hover, &:focus{background: $btn-primary-bgcolor;
+			color:$btn-primarycolor;
+			border-top:2px solid $btn-primary-bgcolor;
+			border-bottom:2px solid $btn-primary-hov-bordercolor;
+		}	
+		&:active{background: $btn-primary-act-bgcolor;
+			color:$btn-primarycolor;
+			border-top:2px solid $btn-primary-act-bordercolor;
+			border-bottom:2px solid $btn-primary-hov-bordercolor;
+		}	
+	}
+	
+}
+

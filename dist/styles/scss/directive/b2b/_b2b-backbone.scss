@@ -1,0 +1,472 @@
+/*
+Desc: CSS Document for B2B backbone structure
+Author: Nimit Mangal - Nitish
+Date: 01 April 2014
+*/
+
+$theme_color: #0076a3;
+.theme_color { color: $theme_color; }
+
+
+/* color variables */
+$themed-blue: #0076a3;
+$reddish: #e4552e;
+$site-orangish: #fe8f17;
+
+.themed-blue { color: $themed-blue; }
+.reddish { color: $reddish; }
+.site-orangish { color: $site-orangish; }
+
+.themed-blue-bg { background-color: $themed-blue; }
+.reddish-bg { background-color: $reddish; }
+.site-orangish-bg { background-color: $site-orangish; }
+
+
+/* Locality colors */
+$purplish: #993366;
+$greenish: #1abc9c;
+$royal-blue: #0072bc;
+$yellowish: #f1c40f;
+$grayish: #555555;
+
+.purplish { color: $purplish; }
+.greenish { color: $greenish; }
+.royal-blue { color: $royal-blue; }
+.yellowish { color: $yellowish; }
+.grayish { color: $grayish; }
+
+.purplish-bg { background-color: $purplish; }
+.greenish-bg { background-color: $greenish; }
+.royal-blue-bg { background-color: $royal-blue; }
+.yellowish-bg { background-color: $yellowish; }
+.grayish-bg { background-color: $grayish; }
+
+
+
+body {
+	background-color: #f3f3f3;
+	color: #555;
+	font-family: $openSansFamily;
+	font-size: 14px;
+}
+
+/* This class has been used by Header to give full 100% width */
+.b2bmainContainer {
+    width: $body-width;
+    margin:0 auto;
+	min-height:270px;
+    clear: both;
+	padding:41px 0 0 0;
+	padding:41px 5px 0 5px\9;
+	@include box-sizing(border-box);
+	.searchFilterBar {
+		top:0;
+		position: relative;
+		.dropdown-menu {
+			left: initial;
+			right:0;
+		}
+	}
+
+
+}
+
+/* This class has been used below Header -- the Content Area -- */
+.b2b-main-container {
+	background: #fff;
+	@include box-shadow(#C7C7C7 0 0 7px);
+	margin: 30px auto;
+	padding: 10px;
+	width: 980px;
+	box-sizing: content-box;
+
+
+	&.transparent-wrap {
+		background: transparent;
+		@include box-shadow(none);
+		padding: 0px 10px;
+	}
+}
+
+/** Common classes for text-align **/
+.ta-left { text-align: left; }
+.ta-center { text-align: center; }
+.ta-right { text-align: right; }
+
+
+/****** FONT SIZES  ***********/
+.fs9 { font-size: 9px; }
+.fs10 { font-size: 10px; }
+.fs11 { font-size: 11px; }
+.fs12 {	font-size: 12px; }
+.fs13 {	font-size: 13px; }
+.fs14 {	font-size: 14px; }
+.fs15 {	font-size: 15px; }
+.fs16 {	font-size: 16px; }
+.fs17 {	font-size: 17px; }
+.fs18 {	font-size: 18px; }
+.fs19 {	font-size: 19px; }
+.fs20 {	font-size: 20px; }
+.fs21 {	font-size: 21px; }
+.fs22 {	font-size: 22px; }
+.fs23 {	font-size: 23px; }
+.fs24 {	font-size: 24px; }
+.fs25 {	font-size: 25px; }
+.fs26 {	font-size: 26px; }
+.fs27 {	font-size: 27px; }
+.fs28 {	font-size: 28px; }
+.fs29 {	font-size: 29px; }
+.fs30 {	font-size: 30px; }
+.fs31 {	font-size: 31px; }
+.fs32 {	font-size: 32px; }
+
+
+/*******************************************************************
+***************** CUSTOMIZED B2B CHECKBOX STARTS *******************
+*******************************************************************/
+
+.b2b-checkbox {
+	display: inline-block;
+	cursor: pointer;
+	font-size: 16px;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-align: right;
+	margin-right: 10px;
+
+	&:before, &:after {
+		box-sizing: border-box;
+	}
+
+	&:before {
+		content: "\f096";
+	}
+}
+
+.active > .pt-icon-square-o {
+	&:before {
+		content: "\f048";
+	}
+}
+
+/*******************************************************************
+***************** CUSTOMIZED B2B CHECKBOX ENDSSS *******************
+*******************************************************************/
+
+
+/*******************************************************************
+***************** CUSTOMIZED B2B RADIO STARTS *******************
+*******************************************************************/
+
+.b2b-radio {
+	display: inline-block;
+	cursor: pointer;
+	font-size: 16px;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-align: right;
+	margin-right: 10px;
+
+	&:before, &:after {
+		box-sizing: border-box;
+	}
+
+	&:before {
+		content: "\f10c";
+	}
+}
+
+.active > .b2b-radio {
+	&:before {
+		content: "\f192";
+	}
+}
+
+/*******************************************************************
+***************** CUSTOMIZED B2B RADIO ENDSSS *******************
+*******************************************************************/
+
+
+/*******************************************************************
+**************** CUSTOMIZED DROPDOWN LIST STARTS *******************
+*******************************************************************/
+.dd-list {
+	box-sizing: border-box;
+	width: $body-width;
+	@include box-shadow(#999999 0 -1px 3px);
+	border-radius: 0px;
+	padding: 0px;
+
+	li {
+		background-color: #fff;
+		color: #555;
+		padding: 5px 10px;
+		cursor: pointer;
+		font-size: 14px;
+		font-weight: normal;
+
+		&:hover, &.active, &:active {
+			background-color: #555;
+			color: #fff;
+
+			> a {
+				color: #fff;
+				&:hover {
+					background: none;
+					color: #fff;
+				}
+			}
+		}
+	}
+
+	/* used for 'save catchment and save builder' dropdowns */
+	&.saved-data-list {
+		min-width: 240px;
+
+		.ta-right {
+			color: #999;
+			font-size: 11px;
+		}
+
+		li {
+			a {
+				text-decoration: underline;
+
+				i.pt {
+					text-decoration: none;
+					padding-right: 5px;
+				}
+			}
+
+			&:hover, &.active, &:active {
+				background-color: #999;
+
+				a {
+					color: #fff;
+					text-decoration: underline;
+
+					i.pt {
+						text-decoration: none;
+						padding-right: 5px;
+					}
+				}
+			}
+		}
+	}
+
+	/* used for 'graph y-axis data-type' dropdowns */
+	&.labelled-list {
+		span.labelled {
+
+			> strong {
+				display: block;
+				padding: 3px 0px 3px 5px;
+				border-bottom: solid 1px #ffe6bf;
+				border-top: solid 1px #ffe6bf;
+				background: #fff7ea;
+			}
+
+			> li {
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+/*******************************************************************
+**************** CUSTOMIZED DROPDOWN LIST ENDSS *******************
+*******************************************************************/
+
+
+/* class for ellipsis */
+.put-ellipsis {
+	white-space: nowrap;
+	max-width: 98%;
+	overflow: hidden;  /* "overflow" value must be different from "visible" */
+	text-overflow: ellipsis;
+	display:inline-block;
+}
+
+/*********** Button for Toggle Graph and Time Summary. **************/
+.btn-accordion {
+
+}
+
+
+
+
+/*********************************************************************
+******************** GRAPH BUTTON AREA *******************************
+*********************************************************************/
+.graph-btn-area {
+	float: right;
+	padding:15px 10px 0px;
+	position:relative;
+	z-index:1;
+}
+
+/******* Color for Property type icons *************/
+.icon-apartment {
+	font-size: 16px;
+}
+
+.icon-plot {
+	color: $greenish;
+	font-size: 16px;
+}
+
+.icon-villa {
+	color: $royal-blue;
+	font-size: 16px;
+}
+
+/************ Close button for Modal Boxes  ***********/
+.closeBtn {
+    background: none repeat scroll 0 0 #E7E7E7;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    cursor: pointer;
+    padding: 5px 20px;
+    position: absolute;
+    right: 15px;
+    top: 0;
+
+	&:hover {
+		background-color: #f39c13;
+
+		i {
+			color: #fff;
+		}
+	}
+}
+
+
+/****** dropdown button ****/
+.btn-dd {
+	position: relative;
+	outline:none;
+	button {
+		margin-top: 0px;
+	}
+}
+
+/********************************************************************************
+*****************************  CSS for Customized MODALS BOXES ******************
+********************************************************************************/
+.modal-box  {
+	padding: 2px;
+	overflow:hidden;
+
+	h5 {
+		margin-bottom: 10px;
+		font-weight: normal;
+	}
+
+	/********************************************************************************
+	************  CSS for Create Catchment MODALS BOXES STARTS ***********************
+	********************************************************************************/
+	&.alert-new-catchment {
+		.save-old {
+			.save-checkbox {
+				margin: 0px;
+			}
+			.name-box {
+				display: none;
+			}
+			.small-btn.conti {
+				display: block;
+			}
+			.small-btn.save {
+				display: none;
+			}
+
+			&.entering-name {
+				.name-box {
+					display: block;
+				}
+				.small-btn.conti {
+					display: none;
+				}
+				.small-btn.save {
+					display: block;
+				}
+			}
+		}
+
+		.or {
+			padding-left:50px;
+		}
+
+		.ty-note {
+			display: none;
+		}
+
+		&.saving {
+			div {
+				display: none;
+			}
+			div.ty-note {
+				display: block;
+			}
+		}
+	}
+
+	/********************************************************************************
+	************  CSS for Create Catchment MODALS BOXES ENDSS ************************
+	********************************************************************************/
+
+
+
+	/********************************************************************************
+	************  CSS for Upgrade Plan MODALS BOXES STARTS **************************
+	********************************************************************************/
+
+	&.upgrade-plan {
+		padding: 20px;
+
+		.contact-details {
+			border-top: solid 1px #ccc;
+			margin: 20px 0 0 0;
+			padding: 20px 0;
+		}
+	}
+
+	/********************************************************************************
+	************  CSS for Upgrade Plan MODALS BOXES STARTS **************************
+	********************************************************************************/
+}
+
+/********************************************************************************
+***********************************  CSS for MODALS BOXES ***********************
+********************************************************************************/
+
+/********************************************************************************
+**********************  CSS for ACCESS DENIED PAGE STARTS ***********************
+********************************************************************************/
+.access-denied-wrap {
+	box-shadow: 0 0 3px #999999;
+	background: #fff;
+	padding: 30px;
+
+	.heading {
+		font-weight: bold;
+		line-height: 20px;
+		font-size: 18px;
+		padding: 0 0 10px;
+		border-bottom: solid 1px #eee;
+		margin: 0 0 20px 0;
+	}
+
+	p { font-size: 14px; }
+}
+/********************************************************************************
+**********************  CSS for ACCESS DENIED PAGE ENDSSS ***********************
+********************************************************************************/

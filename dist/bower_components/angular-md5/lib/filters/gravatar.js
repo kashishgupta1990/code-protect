@@ -1,0 +1,1 @@
+angular.module("gdi2290.gravatar-filter",[]).filter("gravatar",function(r){var t={};return function(a,e){return t[a]||(e=e?r.createHash(e.toString().toLowerCase()):"",t[a]=a?r.createHash(a.toString().toLowerCase()):e),t[a]}});

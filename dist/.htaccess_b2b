@@ -1,0 +1,129 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteCond %{HTTP_USER_AGENT} (httrack|GermCrawler|squider|mbot) [NC]
+RewriteRule .* - [G]
+RewriteCond %{HTTP_USER_AGENT} Amazon.CloudFront
+RewriteRule ^robots\.txt$ robots-cdn.txt [L]
+RewriteCond %{HTTP_HOST} ^proptiger.com
+RewriteRule ^(.*)$ http://www.proptiger.com/$1 [NE,R=301,L,QSA]
+
+RewriteCond %{HTTP_HOST} !www\.proptiger\.([a-z\.]+)$
+RewriteRule ^robots.txt /robots_static.txt [L]
+
+RewriteCond %{HTTP_HOST} ^54\.255\.197\.4
+RewriteCond %{HTTP_HOST} ^54\.169\.39\.80
+RewriteCond %{HTTP_HOST} ^54\.169\.49\.50
+RewriteRule (.*) http://www.proptiger.com/$1 [R=301,L]
+
+# 301 redirect of budget URL 
+RewriteRule ^(.*)\/(.*)*-[\d]*-(lacs|crores)(.*)$ $1$5 [R=301,L]
+
+# 301 redirect of city amenities to city listing page
+RewriteRule ^(.*)([\w]*+)-real-estate/(schools|atms|banks|petrol-pumps|hospitals|restaurants) $1-real-estate [R=301,L]
+
+# 301 redirect of SUBURB amenities
+RewriteRule ^(.*)([\w]*+)\/([\w\-]+-1\d{4,4})/(schools|atms|banks|petrol-pumps|hospitals|restaurants) $1/property-sale-$2-1$3 [R=301,L]
+
+# 301 redirect of locality amenities pages
+RewriteRule ^(.*)([\w]*+)-real-estate/([\w\-]+-\d{5,5}/)(schools|atms|banks|petrol-pumps|hospitals|restaurants) $1/$3$4 [R=301,L]
+
+# 301 redirect of grand diwali mela
+RewriteRule ^(.*)grand-diwali-mela(.*)$ /mega-property-sale$2 [R=301,L]
+
+
+RewriteRule ^$ /index.php [L]
+
+ErrorDocument 404 /404.html
+RewriteCond %{REQUEST_URI} ^/404/$
+RewriteRule ^(.*)$ /404.html [L]
+
+#RewriteCond %{REQUEST_URI} [A-Z]
+#RewriteCond %{REQUEST_FILENAME} !-s
+#RewriteRule (.*) /${lc:$1} [R=301,L]
+
+
+#old php urls which now need to redirect to new urls
+RewriteRule ^user_agreement.php$ user-agreement [R=301,L]
+RewriteRule ^privacy_policy.php$ privacy-policy [R=301,L]
+RewriteRule ^contact_us.php$ contactus [R=301,L]
+RewriteRule ^faqs.php$ faqs [R=301,L]
+RewriteRule ^documents.php$ documents [R=301,L]
+RewriteRule ^emi.php$ emi [R=301,L]
+RewriteRule ^about_us.php$ aboutus [R=301,L]
+RewriteRule ^vaastu.php$ vaastu [R=301,L]
+RewriteRule ^nri.php$ nri [R=301,L]
+RewriteRule ^disclaimer.php$ disclaimer [R=301,L]
+RewriteRule ^testimonials.php$ testimonials [R=301,L]
+RewriteRule ^homeloan.php$ homeloan [R=301,L]
+RewriteRule ^proptiger-media.php$ proptiger-media [R=301,L]
+RewriteRule ^our-services.php$ ourservices [R=301,L]
+RewriteRule ^careers.php$ careers [R=301,L]
+RewriteRule ^forgotpass.php$ reset-password [R=301,L]
+RewriteRule ^my-accounts.php$ portfolio/my-account [R=301,L]
+
+RewriteRule ^property-portfolio-tracker.php$ property-portfolio-tracker [R=301,L]
+RewriteRule ^property\/[A-Za-z]+(\/[a-zA-Z0-9-]*)*$ /list.php [L]
+RewriteRule ^resale-property-in-(.*).php$ $1/resale-property [NE,R=301,L,QSA]
+RewriteRule ^residential-apartments-flats-([\w\-]+)\.php$ $1-real-estate/$1-sitemap.php [NE,R=301,L,QSA]
+RewriteRule ^properties-in-(.*).php$ google_page_9.php?newLaunch=$1 [QSA]
+
+RewriteRule ^google_page\.php$ /google_page_4.php [QSA,R=301]
+RewriteRule ^google_page_[123567]\.php$ /google_page_4.php [QSA]
+RewriteRule ^all-builders$ all_builders\.php [L]
+RewriteRule ^(([\w]+)/)?all-localities$ localities_in_city.php?viewType=localities [QSA,L]
+RewriteRule ^(([\w]+)/)?all-cities$ /all_cities.php [L]
+RewriteRule ^([\w]+)/all-builders$ /builders-in\.php?cityName=$1 [QSA,L]
+RewriteRule ^([\w]+)-real-estate/\1-sitemap\.php$ sitemap-details.php?cityName=$1 [L]
+RewriteRule ^([\w]+)-real-estate/localities$ $1/all-localities [R=301,L]
+
+#<IfModule mod_rewrite.c>
+#   Options +FollowSymlinks
+#  # Options +SymLinksIfOwnerMatch
+#    RewriteEngine On
+#  # RewriteBase /
+#    RewriteBase /
+#    RewriteCond %{HTTP_USER_AGENT} (android|blackberry|googlebot-mobile|iemobile|iphone|ipod|opera\ mobile|palmos|webos) [NC]
+#    RewriteCond %{REQUEST_FILENAME} !-s
+#    RewriteCond %{REQUEST_FILENAME} !-d
+#    RewriteCond %{REQUEST_FILENAME} !-f
+#    RewriteCond %{REQUEST_URI} !/styles
+#    RewriteRule  ^(.*)$ http://mob.proptiger.com/$1  [L,P]
+#</IfModule>
+
+<IfModule mod_rewrite.c>
+    Options +FollowSymlinks
+  # Options +SymLinksIfOwnerMatch
+    RewriteEngine On
+  # RewriteBase /
+    RewriteBase /
+    RewriteCond %{REQUEST_FILENAME} !-s
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_URI} !/styles
+    RewriteCond %{REQUEST_URI} !/index.php
+    RewriteRule ^(.*) index.php [L,QSA]
+</IfModule>
+
+<Files  ~ "\.less$">
+  Order allow,deny
+  Deny from all
+</Files>
+
+# compress text, html, javascript, css, xml:
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+
+
+<IfModule mod_headers.c>
+<FilesMatch "\.(eot|font.css|otf|ttc|ttf|woff)$">
+ Header set Access-Control-Allow-Origin "*"
+</FilesMatch>
+</IfModule>

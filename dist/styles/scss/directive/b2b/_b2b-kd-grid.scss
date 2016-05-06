@@ -1,0 +1,208 @@
+/*
+Desc: CSS Document for B2B Dashboard Kay Data Grid
+Author: Nimit Mangal
+Date: 01 April 2014
+*/
+
+
+/**********************************************************************
+************************** KEY DATA GRID STARTS ***********************
+**********************************************************************/
+.kd-cntnr {
+	margin:30px 0 0 0;
+
+	.kd-title {
+		background-color: #f3f3f3;
+		@include box-shadow(#999999 0 -1px 3px);
+		font-size: 16px;
+		line-height: 45px;
+		font-family: $latoFamily;
+		font-weight: bold;
+		color: $theme_color;
+		padding: 0px 8px 0px 5px;
+		display: inline-block;
+		float:left;
+	}
+
+	/* Key Data Head */
+	.kd-head {
+		width: 100%;
+		background-color: #fff;
+		@include box-shadow(#999999 0 0 7px);
+		padding: 0 10px 0 0;
+		line-height: 45px;
+		margin:0 0 4px 0;
+
+		.time-col-name {
+			font-size: 14px;
+			font-family: $openSansFamily;
+			font-weight: normal;
+			text-align: center;
+			color: #777;
+		}
+	}
+
+	/* Key Data One single type of Group -- Ex: Units Sold  OR  Units Launched etc. */
+	.kd-group {
+		background-color: #fff;
+		margin: 0px 0px 10px 0;
+		border: solid 1px #e4e4e4;
+
+		.hdng {
+			display: block;
+			font-size: 16px;
+			font-family: $latoFamily;
+			font-weight: bold;
+			color: #555;
+			padding: 15px 10px 0px;
+		}
+
+		/** Table to show the key data **/
+		.kd-set {
+			border-bottom: solid 1px #e4e4e4;
+			padding: 10px 0px 0px;
+			position:relative;
+			min-height: 70px;
+			[class*="pt_col-"] {
+				text-align: center;
+			}
+
+			/** One single city Row **/
+			.kd-city-title {
+				font-size: 14px;
+				line-height: 30px;
+				font-family: $latoFamily;
+				font-weight: bold;
+				padding: 0 0 0 10px;
+				text-align: left;
+			}
+
+			.kd-city-set {
+				border-bottom: solid 1px #e4e4e4;
+				line-height: 35px;
+				a.link {
+					color:#2980B9;
+					&:hover {
+						color:#2980B9;
+					}
+				}
+				a.no-link {
+					color:#666;
+					cursor: default;
+					&:hover {
+						text-decoration: none;
+					}
+				}
+
+				.time-col-data {
+					font-size: 14px;
+					font-family: $openSansFamily;
+					font-weight: normal;
+					text-align: center;
+					color: #898989;
+
+					i.pt {
+						color: #c0c0c0;
+					}
+				}
+
+				&:last-of-type {
+					border-bottom: none;
+				}
+			}
+		}
+	}
+}
+
+.loading-icon-size{
+    font-size:20px !important;
+}
+
+/** Key Data Time Summary Container as per the Graph **/
+.time-summry-wrap {
+	background-color: #e4e4e4;
+	padding: 10px 0;
+	overflow:auto;
+	&.popwrap {
+		padding:0px 20px;
+		max-height:385px;
+	}
+
+	h4 {
+		clear: both;
+		padding:0 0 0 8px;
+
+		.highlight {
+			color: #fe8f17;
+		}
+		.sub-link {
+			color: $theme_color;
+			text-decoration: underline;
+			font-size: 12px;
+			font-weight: normal;
+			float: right;
+		}
+	}
+
+	.pt_row {
+		font-size: 12px;
+		line-height: 18px;
+		border-bottom: solid 1px #ccc;
+
+		&.row-head {
+			margin-top: 10px;
+			text-transform: capitalize;
+			font-weight:bold;
+		}
+		&:nth-child(even) {
+			background:#f6f6f6;
+		}
+
+		&.row-data {
+
+		}
+
+		[class*='pt_col-'] {
+			text-align: center;
+
+			.icon-plot, .icon-apartment, .icon-villa {
+				padding: 0px 3px;
+			}
+		}
+		[class*='pt_col-']:nth-child(1) {
+			/*font-weight: normal;*/
+			text-align: left;
+
+			.put-ellipsis {
+				max-width: 48%;
+			}
+		}
+
+		[class*='pt_col-']:last-of-type {
+			/*font-weight: normal;*/
+			text-align:right;
+		}
+	}
+}
+
+.toggle-graph {
+	z-index:1;
+	position:absolute;
+	right:0;
+	top:-29px;
+}
+.dspl-inline {
+	display:inline-block;
+	&.viewload {
+		vertical-align:super;
+	}
+}
+/* for high chart graphs */
+.chartStyle{
+	width:978px !important;
+	height: 400px;
+	overflow: hidden;
+	.highcharts-container{
+		width:978px !important;
+	}
+}

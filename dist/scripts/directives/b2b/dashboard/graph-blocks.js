@@ -1,0 +1,1 @@
+define(["app","text!views/directives/b2b/dashboard/graph-blocks.html"],function(a,b){a.directive("graphBlocks",[function(){return{restrict:"EA",replace:!0,template:b,controller:[function(){$(".graph-blk.blank .pin-graph").click(function(){$(this).find(".dd-saved-ctchmnt-list").toggle("easeOut")})}]}}])});

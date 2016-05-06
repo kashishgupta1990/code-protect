@@ -1,0 +1,24 @@
+<div class="modal-header bg-modal">
+	<span><i class="pt pt-icon-info-circle"></i> <b>Please select a city to continue</b></span>
+</div>
+<div class=choose_city>
+        <div class=city_option>
+        	<h5>TOP CITIES</h5>
+            <ul>
+                <li data-ng-repeat=" city in cityList | filter: {authorized: true, displayPriority: 1}">
+                    <div data-ng-click=setSelected(city)>{{city.label}}</div>
+                </li>
+            </ul>
+        </div>
+      
+        <div data-ng-show="otherCities && otherCities.length" class=city_option style=padding-top:15px>
+        	<h5>OTHER CITIES</h5>
+            <ul>
+                <li data-ng-repeat=" city in otherCities">
+                    <div data-ng-click=setSelected(city)>{{city.label}}</div>
+                </li>
+            </ul>
+        </div>
+</div>
+<div class="modal-footer md-footer">
+</div>

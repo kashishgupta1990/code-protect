@@ -1,0 +1,39 @@
+<div ng-if=!imgFullWidth class=img-cont-info data-ng-class="{'img-buil-view-info' : fit, 'img-top-info' : fitop, 'img-grey-view-info' : fitgrey, 'img-left-view-info' : fitleft}">
+    <div class=big-img-info>
+        <div class=img-crop-info itemscope itemtype=//schema.org/ImageObject>
+           <img class=buil-img alt={{altText}} data-ng-class="{'image-hide':!imageLoaded, 'image-show':imageLoaded}" data-ng-click=invokeModal() itemprop=contentURL>
+           
+           <div pt-loading-block="" loading-object=imageLoaded></div>
+        </div>
+        
+    </div>
+</div>
+<div ng-if=imgFullWidth class=full-img-info itemscope itemtype=//schema.org/ImageObject>
+    <img class=buil-img alt={{altText}} data-ng-class="{'image-hide':!imageLoaded, 'image-show':imageLoaded}" data-ng-click=invokeModal() itemprop=contentURL>
+    <div pt-loading-block="" loading-object=imageLoaded></div>
+</div>
+<div class=buil-prop-local-info data-ng-if=projectData>
+  <div class=prop-name tooltip={{projectData.name}} data-ng-if=projectData.name>{{projectData.name}}</div>
+  <div class=prop-address>{{projectData.locality.label}}, {{projectData.locality.suburb.city.label}}</div>
+  <div pt-shallow-range="" property-name=ResaleOrPrimaryPrice base-object=projectData type=price> </div>
+</div>
+
+
+<div class="modal fade" tabindex=-1 role=dialog aria-hidden=true style=display:none data-ng-if=allowModal>
+  <div class=modal-dialog>
+    <div class=modal-content>
+    	<div class=closeBtn data-dismiss=modal aria-hidden=true>
+            <i class="pt pt-icon-times"></i>
+      </div>
+      <div class="modal-header text-left">
+        <span class="modal-title modal-head-info" id=myModalLabel>Floor Plan</span>
+      </div>
+      <div class=modal-body>
+        <img data-ng-src={{imageSource}} style=height:400px>
+      </div>
+      <div class=modal-footer>
+        <button type=button class=btn data-dismiss=modal>Close</button>
+      </div>
+    </div>
+  </div>
+</div>

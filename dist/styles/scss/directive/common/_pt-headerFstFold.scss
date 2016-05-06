@@ -1,0 +1,152 @@
+/*
+Desc: Header First Fold Scss Document
+Author: Sanjeev Verma
+Date: 11 June 2015
+*/
+
+.header{ width:$body-width;
+    /*background:$white-color;
+    border-bottom:1px solid $light-mid-gray-color;*/
+    position:fixed;
+    z-index:16;
+    top:0;
+	-moz-transition:all 1.5s ease-in-out;
+    -webkit-transition:all 1.5s ease-in-out;
+    -ms-transition:all 1.5s ease-in-out;
+    -o-transition:all 1.5s ease-in-out;
+    transition: all 1.5s ease-in-out;
+}
+.header {
+	&.header-index { transition: none!important; }
+}
+.hideHeader{ top:-46px;}
+.headerLeftSide{
+    padding: 5px 0 5px 10px;
+}
+.headerRightSide{ padding: 0 10px 0 0;}
+
+.haderIteam{ float: left;
+    font-size:$body-font-size - 1;
+    color: $dark-mid-gray-color;
+    margin: 9px 12px;
+    .topMenuLinkBtn{ font-size:$body-font-size - 1;
+        color: $white-color;
+        cursor: pointer;
+        padding: 4px 0 1px 0;
+        i{ font-size:$body-font-size - 1;
+            display: inline-block;
+            vertical-align: text-top;
+        }
+    }
+}
+.headerTopMenu{ margin: 8px 0px 8px 5px !important;}
+.call-detail-info{ position: relative;
+    .callInfo{ font-size:$body-font-size;
+        color: $white-color;
+        cursor: pointer;
+        padding: 4px 0 0 0;
+    }
+    .flageInfo{ display: inline-block;
+        @include rounded($radius:14px);
+    }
+}
+.topArrowInfo{
+    .topArrow{-moz-transition:all 0.15s ease-in-out;
+        -webkit-transition:all 0.15s ease-in-out;
+        -ms-transition:all 0.15s ease-in-out;
+        -o-transition:all 0.15s ease-in-out;
+        transition: all 0.15s ease-in-out;
+        vertical-align: middle;
+    }
+    &:hover{
+        .topArrow{ -moz-transform: rotate(180deg);
+            -webkit-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+            -o-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
+    }
+}
+.haderTransBgInfo{
+	.header{ background:$white-color;
+		border-bottom:1px solid $light-mid-gray-color;
+		border-bottom: 1px solid $light-mid-gray-color !important;
+		.haderIteam{ color: $dark-mid-gray-color;
+            .topMenuLinkBtn{ color: $dark-mid-gray-color;
+            }
+        }
+		.topMenuBtn{color: $dark-mid-gray-color;
+            &:hover, &.activeTopMenu{ color: $dark-mid-gray-color; }
+        }
+		.call-detail-info{ position: relative;
+            .callInfo{ color: $dark-mid-gray-color !important;
+            }
+		}
+		.hBtn{ color: $body-selected-color;
+			border:1px solid $body-selected-color;
+			background: transparent;
+			&:hover{ color: $white-color;
+				background: $body-selected-color;
+			}
+		}
+	}
+}
+.headerTranInfo{
+    .header{  background:$white-color;
+    	border-bottom:1px solid $light-mid-gray-color;
+        .hBtn{ color: $white-color;
+            border:1px solid $body-selected-color;
+            background: $body-selected-color;
+            &:hover{ color: $body-selected-color;
+                background: transparent;
+            }
+
+        }
+        .haderIteam{ color: $dark-mid-gray-color;
+			.topMenuLinkBtn{ color: $dark-mid-gray-color;
+			}
+		}
+        .topMenuBtn{color: $dark-mid-gray-color;
+			&:hover, &.activeTopMenu{ color: $dark-mid-gray-color; }
+		}
+        .call-detail-info{ position: relative;
+                .callInfo{ color: $dark-mid-gray-color !important;
+			}
+		}	
+    }
+}
+.showHeaderBgInfo{ background:$white-color;
+	border-bottom:1px solid $light-mid-gray-color;
+	-moz-transition:all 0.50s ease-in-out;
+	-webkit-transition:all 0.50s ease-in-out;
+	-ms-transition:all 0.50s ease-in-out;
+	-o-transition:all 0.50s ease-in-out;
+	transition: all 0.50s ease-in-out;
+	.haderIteam{ color: $dark-mid-gray-color;
+		.topMenuLinkBtn{ color: $dark-mid-gray-color;
+		}
+	}
+	.topMenuBtn{color: $dark-mid-gray-color;
+		&:hover, &.activeTopMenu{ color: $dark-mid-gray-color; }
+	}
+	.call-detail-info{ position: relative;
+		.callInfo{ color: $dark-mid-gray-color !important;
+		}
+	}
+}
+.hBtn{ font-size:$body-font-size - 1;
+    padding: 2px 10px;
+	color: $white-color;
+	border:1px solid $body-selected-color;
+	background: $body-selected-color;
+    -moz-transition:all 0.50s ease-in-out;
+    -webkit-transition:all 0.50s ease-in-out;
+    -ms-transition:all 0.50s ease-in-out;
+    -o-transition:all 0.50s ease-in-out;
+    transition: all 0.50s ease-in-out;
+    font-weight: bold;
+    @include rounded($radius:5px);
+    &:hover{ color: $body-selected-color;
+      background: transparent;
+    }
+}

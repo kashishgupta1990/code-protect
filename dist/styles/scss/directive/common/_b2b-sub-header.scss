@@ -1,0 +1,119 @@
+/*
+Desc: Sub-Header Scss Document
+Date: 1st Apr 2014
+*/
+
+
+/****************************************************************************
+********* CSS Code for Sub-Headers Across the whole B2B web-pages ***********
+****************************************************************************/
+
+.sub-header {
+	border-bottom: 1px solid #AFAFAF;
+	padding: 4px 0 4px;
+	margin-top: 0px;
+	position: relative;
+	z-index:13;
+}
+.b2bfilterBar {
+	.btn {
+		padding: 5px 15px;
+	}
+}
+
+.container {
+	width:980px;
+	padding:0 10px;
+	margin: 0px auto;
+}
+
+span {
+	.pt-icon-tachometer {
+		font-size:24px;
+		line-height:0px;
+	}
+	.sub-link {
+		color: #0076A3;
+		font-size: 12px;
+		font-weight: bold;
+		line-height:22px;
+		text-decoration: underline;
+
+		&:hover {
+			text-decoration:none;
+		}
+	}
+}
+.big_text {
+	font-size:15px;
+	font-weight: bold;
+	color:#0076A3;
+	line-height: normal;
+	padding: 0 20px 0 0;
+	min-width:155px;
+	display:inline-block;
+
+	&.catch {
+		padding:12px 20px 4px 0;
+		color: #fff;
+		a {
+			color: #fff;
+		}
+		.saved-data-list {
+			color: #333;
+		}
+	}
+    .textWrap {
+        width:120px;
+        display:inline-block;
+    }
+}
+
+.lh35 {
+	line-height: 35px;
+}
+
+.tree-view-link {
+	display:inline-block;
+	padding:0 10px;
+}
+
+
+/** Extending above code for BUILDER SEARCH page STARTSS **/
+ul.rec-view-wrap {
+	float: right;
+
+	li {
+		float: left;
+		text-align: right;
+		padding: 0px 0px 0px 20px;
+		display: block;
+		width: 80px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+
+		&:first-child {
+			width: 130px;
+		}
+	}
+}
+/** Extending above code for BUILDER SEARCH page ENDSSS **/
+
+
+/** Extending above code for BUILDER ANALYSIS page STARTSS **/
+.b-analysis {
+	.b-logo {
+		display: inline-block;
+		max-width: 120px;
+		max-height: 36px;
+		img {
+			width:80px;
+			height:36px;
+		}
+	}
+	.printBtn {
+		margin-left: 10px;
+	}
+}
+/** Extending above code for BUILDER ANALYSIS page ENDSS **/

@@ -1,0 +1,51 @@
+
+
+<div class=commute>
+    <div class="font-weight paddingT15">
+        Get direction to any location from this project.
+    </div>
+    <div class=destination>
+        <i class="pt pt-icon-search"></i>
+        <input class="pull-left input-bigger" type=search data-ng-model=searchText typeahead="result.displayText for result in searchSuggestions($viewValue)" typeahead-template-url=views/static/searchTypeAhead.html typeahead-on-select="searchOptionSelected($item); searchText='';" typeahead-min-length=2 typeahead-input-formatter="$model = ''" data-ng-keypress=customDirectionTracking(searchText) data-ng-paste="customDirectionTracking(searchText, 'paste')" pt-placeholder="Search for destination here...">
+        <div data-ng-if=showMessage class=tooltip-txt>{{showMessage}}</div>
+    </div>
+    
+    
+</div>
+<div class=clear data-ng-if="!searchedPlaces || (searchedPlaces.length == 0)">
+    <div class="font-weight subline padding10">Recent Search history </div>
+    <div class=padding10>You haven't searched for anything yet. Search for a location to populate this list.</div>
+</div>
+<div class=clear data-ng-if="searchedPlaces && searchedPlaces.length">
+    <div class="font-weight subline padding10">All Previous Searches</div>
+    <div class=direction_search>
+        <div class=direction-distance data-ng-repeat="eachPlace in searchedPlaces" data-ng-class="{'selected': data.item.tab ==='customDirections' && data.item.name === eachPlace.displayText}" data-ng-click="searchOptionSelected(eachPlace, true, $index);" data-ng-init="isExpanded=false">
+            <div class=destinaion-name>
+                <div class=pull-left data-ng-click="isExpanded=!isExpanded; sendGAEvent(isExpanded);"> 
+                    <i data-ng-class="{'pt pt-icon-plus-circle':!isExpanded, 'pt pt-icon-minus-circle':isExpanded}"></i>
+                </div>
+                <div class="pull-left paddingL5"><i class="pt pt-icon-Car"></i></div>
+                <div class="pull-left pro-name">
+                    {{eachPlace.displayText}}
+                </div>
+            </div>
+            <div data-ng-if=data.searchedPlacesLocalData[$index].duration class=destinaion-time>
+                {{data.searchedPlacesLocalData[$index].duration.value | secToHM }}
+            </div>
+            <div data-ng-if=data.searchedPlacesLocalData[$index].distance class=destinaion-distance>
+                {{data.searchedPlacesLocalData[$index].distance.text}}
+            </div>
+            <div data-ng-hide="data.searchedPlacesLocalData[$index].duration || data.searchedPlacesLocalData[$index].distance">
+                <a class=pull-right>Draw Directions</a>
+            </div>
+            <ul class=directionladder>
+                <li class="direction-steps clear" data-ng-repeat="eachstep in data.searchedPlacesLocalData[$index].steps" data-ng-if=isExpanded>
+                    <span data-ng-bind-html=eachstep.instructions></span>
+                    <span>{{eachstep.distance.text}}</span>
+                </li>
+            </ul>
+        </div>
+        
+       
+    </div>
+</div>

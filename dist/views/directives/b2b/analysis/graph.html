@@ -1,0 +1,145 @@
+<div class=ga-cntnr>
+    <div class="pt_row tags">
+
+        <div data-ng-repeat="category in catchment" class=pt_col-1-3>
+            <span class=tag-supply>
+                {{category.label}}
+            </span>
+        </div>
+        
+    </div>
+    
+
+    <div class="ga-head pt_row">
+        <div data-ng-repeat="category in catchment" class=pt_col-1-3>
+            <a data-ng-repeat="prime in category.primes" analytics-on="" data-analytics-event="Select_AnalyseBuilderSearch_Graph View" data-analytics-category="Builder Analysis" data-analytics-label={{prime.label}} data-ng-class="{'active' : prime == catchment.prime}" data-ng-click="catchment.prime = prime">
+                {{prime.label}}
+            </a>
+        </div>
+    </div>
+
+    <div class=graph-area-wrap>
+        <div class=pt_row>
+            <div class="pt_col-8-8 text-center">
+                <div class=graph-filter>
+                    <a data-ng-repeat="split in catchment.splits" data-ng-class="{'active': split == catchment.split}" data-ng-click=activateSplit(split)> 
+                        {{split.label}} 
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class=graph-area>
+            <div class=lhs>
+                <div class="data-type one" data-ng-if="catchment.prime.ordinates.length > 1">
+                    <a class="selected dropdown-toggle">
+                        {{catchment.ordinate.label}}&nbsp;
+                        <i class="pt pt-icon-caret-down"></i> 
+                    </a>
+                    <ul class="dropdown-menu dd-list">
+                        <li data-ng-repeat="ordinate in catchment.prime.ordinates" data-ng-click="catchment.ordinate = ordinate; assignSplit(ordinate.splits); getGraphData(ordinate)">   
+                            {{ordinate.label}}
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="data-type one" data-ng-if="!catchment.prime.ordinates  || catchment.prime.ordinates.length <= 1">
+                    <a class="selected dropdown-toggle">
+                        {{catchment.ordinate.label}}&nbsp;
+                    </a>
+                </div>
+
+                <div class="data-type two" data-ng-if="catchment.measure && catchment.measure.values">
+                    <a class="selected dropdown-toggle">
+                        <strong> {{catchment.measure.label}} </strong>
+                        <span data-ng-if="catchment.measure.values.length > 1"> {{catchment.measureValue.label}}&nbsp; </span>
+                        <i class="pt pt-icon-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dd-list labelled-list">
+                        <span class=labelled data-ng-repeat="measure in catchment.prime.measures">                             
+                            <strong>{{measure.label}}</strong>
+                            <li data-ng-repeat="value in measure.values" analytics-on="" data-analytics-event=Select_AnalyseBuilderPrice_Rate data-analytics-category="Builder Analysis" data-analytics-label={{value.label}} class=clearfix data-ng-click="justConvertData(measure, value); catchment.measure = measure; catchment.measureValue = value; ">
+                                {{value.label}}
+                            </li>
+                        </span>
+                    </ul>
+                </div>
+
+                <div class="data-type one" data-ng-if="catchment.measure && !catchment.measure.values">
+                    <a class="selected dropdown-toggle">
+                        {{catchment.measure.label}}&nbsp;
+                    </a>
+                </div>
+
+                <div data-ga-title=AnalyseBuilderPrice data-ga-category="Builder Analysis" pt-interval="" duration-changed=durationChanged(data) duration=intervalDefault constant=yearConstant class=time-duration style="display:inline-block;margin:54px 0 0 11px;min-width:110px" data-ng-show=!catchment.ordinate.isTimeIndependentOrdinate> </div>
+            </div>
+
+            <div class="rhs paddingTB20">
+                <span data-ng-if=!graphDataCalled>
+                    <div class=graph></div>
+                </span>
+                <span data-ng-if=graphDataCalled>
+                   <div pt-loading-block=""></div>
+                </span>
+			</div>
+
+            
+
+            
+        </div>
+        <div data-ng-if=showDrillDown class=drilldown>
+            <div class="title pull-left lh35">
+                 <span data-ng-if="projectLength >= 10">Top 10</span> Projects 
+
+                <span data-ng-if="catchmentId && currentCatchment.status !== 'Inactive'"> in {{currentCatchment.name}}</span>
+
+                <span data-ng-if="drillForSplit != 'Aggregate'"> 
+                    of  {{catchment.ordinate.label}} - {{drillForSplit}}
+                </span> 
+                <span data-ng-if="drillForSplit == 'Aggregate'"> 
+                    of  {{catchment.ordinate.label}}
+                </span> 
+
+
+                in {{drillForMonth}}
+    
+                <span data-ng-if=builderId> for {{builder.data.name}}</span>
+    
+                
+            </div>
+            <div class="btn-accordion-wrap pull-right">
+                <button class="btn btn-lg drillBtn" data-ng-click=toggleDrillDown() data-ng-class="{'active':!drillDownClosed}">
+                    <i class="pt pt-icon-chevron-down"></i>
+                    <span data-ng-if=drillDownClosed>SHOW SNAPSHOT</span>
+                    <span data-ng-if=!drillDownClosed>HIDE SNAPSHOT</span>
+                </button>
+            </div>
+            <div class=clearfix></div>
+        </div>
+
+
+        <div class="graph-area last">
+            <div class=lhs data-ng-if=showDrillDown>
+                <div>{{catchment.ordinate.label}}</div>
+                <div>{{catchment.measure.label}} 
+                    <span data-ng-if="catchment.measure.values.length > 1"> {{catchment.measureValue.label}}&nbsp; </span>
+                </div>
+
+            </div>
+
+        	<div class=rhs>
+                <span data-ng-if=!gettingDrillDown id=drillDown>
+                    
+                    <div class=paddingTB20 data-ng-if=showDrillDown>
+                        <div class=graph-drill-down> </div>
+
+                    </div>
+                </span>
+                <span data-ng-if=gettingDrillDown>
+                    <div pt-loading-block=""></div>
+                </span>
+            </div>
+            <div class=clearfix></div>
+        </div>
+    </div>
+</div>

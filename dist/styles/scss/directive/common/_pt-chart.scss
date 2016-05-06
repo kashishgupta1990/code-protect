@@ -1,0 +1,13 @@
+/* 
+Desc: Grid Scss Document 
+Author: Sanjeev Verma
+Date: 30 Sept 2013
+*/
+.chartStyle{ 
+	width:$body-width;
+    height: 300px;
+    overflow: hidden; 
+	.highcharts-container{
+		width:$body-width !important;
+	}
+}

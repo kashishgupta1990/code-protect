@@ -1,0 +1,1 @@
+if("function"!=typeof define)var requirejs=require("requirejs");define([],function(){return function(){var e=requirejs.s.contexts;for(var r in e)if(e.hasOwnProperty(r)){var n=e[r].defined;for(var i in n)n.hasOwnProperty(i)&&!i.match(/cleanup|sinon/)&&requirejs.undef(i)}}});

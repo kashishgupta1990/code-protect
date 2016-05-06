@@ -1,0 +1,68 @@
+<div class=pr-tr-cntnr>
+    <div class=pr-tr-head>
+        <div class="hdng pt_row">
+            <div class=pt_col-6-19>Price Trend for Apartments in</div>
+            <div class="pt_col-3-19 btn-dd marginT5">
+                    <button class="btn marginT5 btn-block dropdown-toggle" data-toggle=dropdown>
+                        {{ptSelectedCity}} <span class=caret></span>
+                    </button>
+                    <ul class="dropdown-menu dd-list">
+                        <li data-ng-repeat="city in detail.cities" data-ng-click="cityChanged(city.id, city.name)" once-text=city.name></li>
+                    </ul>
+            </div>
+           
+        </div>
+        <div class="pt_row top-line1">
+            <div class=pt_col-1-7><strong>TOP LOCALITIES BY</strong></div>
+            <div class=pt_col-1-7>&nbsp;</div>
+            <div class=pt_col-1-7>&nbsp;</div>
+            <div class=pt_col-1-7>&nbsp;</div>
+            <div class=pt_col-1-7>&nbsp;</div>
+            <div class=pt_col-2-7></div>
+        </div>
+        <div class="pt_row top-line2">
+            <div class="pt_col-1-7 pt_top-margin-10" data-ng-repeat="opt in options" analytics-on="" data-analytics-event=Click_{{opt.title}}_Graph data-analytics-category=Dashboard data-analytics-label="" data-ng-click="typeChanged($event, opt.key)">
+                <a data-ng-class="{'active' : opt.key== _defaults.DEFAULT_OPTION}" href=javascript:void(0) once-text=opt.title ng-click=updateSelectedPriceTrend(opt.title)></a></div>
+            <div class=pt_col-1-7>&nbsp;</div>
+            <div class=pt_col-1-7>&nbsp;</div>
+            <div class=pt_col-1-7>
+                <div data-ga-category=Dashboard pt-interval="" data-ga-title="Price Trend" duration-changed=periodChanged(data) duration=intervalDefault constant=yearConstant></div>
+            </div>
+            <div class=pt_col-2-7></div>
+        </div>
+        
+        
+    </div>
+    
+    <div class="pr-tr-group tabgraph-max" data-ng-attr-tabindex={{tabIndex}}>
+        <div pt-loading-block="" class="keyloading price-trend-keyloading" icon-styling-class=loading-icon-size>loading...</div>
+        <div class=sub-link data-ng-if="displayType !== 'all'">
+            
+            <a class=view-all href=javascript:void(0) data-ng-click=allLocalities() title="View all Localities">Change Localities</a>
+            <div class=pt_col-1-{{tableColomns}}>
+                <div class="btn-accordion-wrap pull-right marginR10 marginB10 toggle-graph" style=top:2px>
+                    <button class="btn btn-lg" data-ng-click="toggleGraph(); _display=!_display;"><i data-ng-class="(_display)?['pt pt-icon-list-alt']:['pt pt-icon-bar-chart-o']"></i></button>
+                </div>
+            </div>
+        </div>
+        <div data-ng-repeat="obj in data.data | limitTo: displayCount" class=loc-set data-ng-hide=showGraph>
+            <div ng-if=enableLocalitySelect class=loc-color>
+                <input type=checkbox ng-model=obj.selectLocality checked ng-change=validateSelectedLocalityMaxLimit(obj)>
+            </div>
+            <div class=loc-color once-text=data.locality[obj.id]></div>
+            <div class="pt_row pt_row_pad10rt0 row-sale">
+                <div data-ng-repeat="m in data.sortedIntervals" class=pt_col-1-{{tableColomns}}>
+                    <div data-ng-if="obj['sale'][m]['price'] !== 'NA'" once-html="obj['sale'][m]['price']"></div>
+                    <div data-ng-if="(!obj['sale'][m]['price'] || obj['sale'][m]['price'] ==='NA') && (obj['sale'][m]['sumInventory'] === 0)">Sold out</div>
+                    <div data-ng-if="(!obj['sale'][m]['price'] || obj['sale'][m]['price'] ==='NA') && (obj['sale'][m]['sumInventory'] !== 0)">Coming soon</div>
+                </div>
+                <div class=pt_col-1-{{tableColomns}}>primary</div>
+            </div>
+            
+		</div>
+        
+        <div class=pr-tr-graph-wrap data-ng-show=showGraph>
+            <div pt-widgetchart="" widget-data=trend data-ng-if=data></div>
+        </div>
+    </div>
+</div>

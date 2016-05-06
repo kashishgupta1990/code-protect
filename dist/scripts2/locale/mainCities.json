@@ -1,0 +1,340 @@
+[	
+	{
+		"id": 11,
+		"authorized": true,
+		"label": "Gurgaon",
+		"centerLatitude": 28.45949936,
+		"centerLongitude": 77.0266037,
+		"displayPriority": 1,
+		"displayOrder": 2,
+		"minZoomLevel": 11,
+		"maxZoomLevel": 14,
+		"amenities": [
+			{
+				"id": 83486,
+				"name": "Indiragandhi International Airport - T3",
+				"latitude": 28.555086,
+				"longitude": 77.084747,
+				"localityAmenityTypes": {
+					"id": 13,
+					"name": "airport"
+				}
+			},
+			{
+				"id": 83487,
+				"name": "Indiragandhi International Airport - T1D",
+				"latitude": 28.562746,
+				"longitude": 77.119637,
+				"localityAmenityTypes": {
+					"id": 13,
+					"name": "airport"
+				}
+			}
+		]
+	},
+	{
+		"id": 18,
+		"authorized": true,
+		"label": "Mumbai",
+		"centerLatitude": 19.11169052,
+		"centerLongitude": 72.92162323,
+		"displayPriority": 1,
+		"displayOrder": 3,
+		"minZoomLevel": 11,
+		"maxZoomLevel": 14,
+		"amenities": [
+			{
+				"id": 83483,
+				"name": "Chhattarpati Shivaji International Airport",
+				"latitude": 19.096132,
+				"longitude": 72.873215,
+				"localityAmenityTypes": {
+					"id": 13,
+					"name": "airport"
+				}
+			},
+			{
+				"id": 83484,
+				"name": "Santacruz Domestic Airport",
+				"latitude": 19.091427,
+				"longitude": 72.853798,
+				"localityAmenityTypes": {
+					"id": 13,
+					"name": "airport"
+				}
+			}
+		]
+	},
+	{
+		"id": 21,
+		"authorized": true,
+		"label": "Pune",
+		"centerLatitude": 18.52039909,
+		"centerLongitude": 73.85669708,
+		"displayPriority": 1,
+		"displayOrder": 4,
+		"minZoomLevel": 11,
+		"maxZoomLevel": 14,
+		"amenities": [
+			{
+				"id": 83485,
+				"name": "Pune International Airport",
+				"latitude": 18.581711,
+				"longitude": 73.91893,
+				"localityAmenityTypes": {
+					"id": 13,
+					"name": "airport"
+				}
+			}
+		],
+		"maxDiscount": 1164000,
+		"isCouponAvailable": true
+	},
+	{
+		"id": 2,
+		"authorized": true,
+		"label": "Bangalore",
+		"centerLatitude": 12.97159958,
+		"centerLongitude": 77.59459686,
+		"displayPriority": 1,
+		"displayOrder": 5,
+		"minZoomLevel": 11,
+		"maxZoomLevel": 14,
+		"amenities": [
+			{
+				"id": 83482,
+				"name": "Kempegowda International Airport",
+				"latitude": 13.200779,
+				"longitude": 77.709503,
+				"localityAmenityTypes": {
+					"id": 13,
+					"name": "airport"
+				}
+			}
+		]
+	},
+	{
+		"id": 5,
+		"authorized": true,
+		"label": "Chennai",
+		"centerLatitude": 13.06040001,
+		"centerLongitude": 80.24960327,
+		"displayPriority": 1,
+		"displayOrder": 6,
+		"minZoomLevel": 12,
+		"maxZoomLevel": 14,
+		"amenities": [
+			{
+				"id": 83490,
+				"name": "Chennai International Airport",
+				"latitude": 12.981642,
+				"longitude": 80.161934,
+				"localityAmenityTypes": {
+					"id": 13,
+					"name": "airport"
+				}
+			}
+		]
+	},
+	{
+		"id": 16,
+		"authorized": true,
+		"label": "Kolkata",
+		"centerLatitude": 22.57259941,
+		"centerLongitude": 88.36389923,
+		"displayPriority": 1,
+		"displayOrder": 7,
+		"minZoomLevel": 11,
+		"maxZoomLevel": 14,
+		"amenities": [
+			{
+				"id": 83489,
+				"name": "Netaji Subhashchandra Bose International Airport",
+				"latitude": 22.644749,
+				"longitude": 88.442596,
+				"localityAmenityTypes": {
+					"id": 13,
+					"name": "airport"
+				}
+			}
+		]
+	},
+	{
+		"id": 1,
+		"authorized": true,
+		"label": "Ahmedabad",
+		"centerLatitude": 23.03960037,
+		"centerLongitude": 72.56600189,
+		"displayPriority": 1,
+		"displayOrder": 8,
+		"minZoomLevel": 11,
+		"maxZoomLevel": 13,
+		"amenities": [
+			{
+				"id": 83488,
+				"name": "Sardar Vallabhbhai International Airport",
+				"latitude": 23.073435,
+				"longitude": 72.626556,
+				"localityAmenityTypes": {
+					"id": 13,
+					"name": "airport"
+				}
+			}
+		]
+	},
+	{
+		"id": 6,
+		"authorized": true,
+		"label": "Delhi",
+		"centerLatitude": 28.63529968,
+		"centerLongitude": 77.22499847,
+		"displayPriority": 1,
+		"displayOrder": 10,
+		"minZoomLevel": 11,
+		"maxZoomLevel": 14,
+		"amenities": [
+			{
+				"id": 83492,
+				"name": "Indiragandhi International Airport - T3",
+				"latitude": 28.555086,
+				"longitude": 77.084747,
+				"localityAmenityTypes": {
+					"id": 13,
+					"name": "airport"
+				}
+			},
+			{
+				"id": 83493,
+				"name": "Indiragandhi International Airport - T1D",
+				"latitude": 28.562746,
+				"longitude": 77.119637,
+				"localityAmenityTypes": {
+					"id": 13,
+					"name": "airport"
+				}
+			}
+		]
+	},
+	{
+		"id": 8,
+		"authorized": true,
+		"label": "Ghaziabad",
+		"centerLatitude": 28.6692009,
+		"centerLongitude": 77.45379639,
+		"displayPriority": 1,
+		"displayOrder": 15,
+		"minZoomLevel": 12,
+		"maxZoomLevel": 15,
+		"amenities": [
+			{
+				"id": 83496,
+				"name": "Indiragandhi International Airport - T3",
+				"latitude": 28.555086,
+				"longitude": 77.084747,
+				"localityAmenityTypes": {
+					"id": 13,
+					"name": "airport"
+				}
+			},
+			{
+				"id": 83497,
+				"name": "Indiragandhi International Airport - T1D",
+				"latitude": 28.562746,
+				"longitude": 77.119637,
+				"localityAmenityTypes": {
+					"id": 13,
+					"name": "airport"
+				}
+			}
+		]
+	},
+	{
+		"id": 12,
+		"authorized": true,
+		"label": "Hyderabad",
+		"centerLatitude": 17.38500023,
+		"centerLongitude": 78.48670197,
+		"displayPriority": 2,
+		"displayOrder": 9,
+		"minZoomLevel": 11,
+		"maxZoomLevel": 14,
+		"amenities": [
+			{
+				"id": 83491,
+				"name": "Rajiv Gandhi INternational Airport",
+				"latitude": 17.236584,
+				"longitude": 78.429504,
+				"localityAmenityTypes": {
+					"id": 13,
+					"name": "airport"
+				}
+			}
+		]
+	},
+	{
+		"id": 88,
+		"authorized": true,
+		"label": "Faridabad",
+		"centerLatitude": 28.28000069,
+		"centerLongitude": 77.41999817,
+		"displayPriority": 2,
+		"displayOrder": 16,
+		"minZoomLevel": 12,
+		"maxZoomLevel": 14,
+		"amenities": [
+			{
+				"id": 83498,
+				"name": "Indiragandhi International Airport - T3",
+				"latitude": 28.555086,
+				"longitude": 77.084747,
+				"localityAmenityTypes": {
+					"id": 13,
+					"name": "airport"
+				}
+			},
+			{
+				"id": 83499,
+				"name": "Indiragandhi International Airport - T1D",
+				"latitude": 28.562746,
+				"longitude": 77.119637,
+				"localityAmenityTypes": {
+					"id": 13,
+					"name": "airport"
+				}
+			}
+		]
+	},
+	{
+		"id": 20,
+		"authorized": true,
+		"label": "Noida",
+		"centerLatitude": 28.53549957,
+		"centerLongitude": 77.39099884,
+		"displayPriority": 1,
+		"displayOrder": 1,
+		"minZoomLevel": 12,
+		"maxZoomLevel": 14,
+		"amenities": [
+			{
+				"id": 83494,
+				"name": "Indiragandhi International Airport - T3",
+				"latitude": 28.555086,
+				"longitude": 77.084747,
+				"localityAmenityTypes": {
+					"id": 13,
+					"name": "airport"
+				}
+			},
+			{
+				"id": 83495,
+				"name": "Indiragandhi International Airport - T1D",
+				"latitude": 28.562746,
+				"longitude": 77.119637,
+				"localityAmenityTypes": {
+					"id": 13,
+					"name": "airport"
+				}
+			}
+		]
+	}
+]

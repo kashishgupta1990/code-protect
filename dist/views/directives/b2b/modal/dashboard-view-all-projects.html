@@ -1,0 +1,45 @@
+<div data-ng-click=cancel() analytics-on="" data-analytics-event="PopUp_{{ opt.title }}_View all projects_Close" data-analytics-category=Dashboard data-analytics-label="" class=closeBtn>
+    <i class="pt pt-icon-times"></i>
+</div>
+<div class=modal-header>
+    <h4>
+        <span>Top Projects in {{cityname}} by {{ opt.title }} in <span class=highlight>{{ heading }}</span></span>
+    </h4>
+</div>
+
+<div class="time-summry-wrap popwrap" data-ng-if=durationData.all>
+    <div class="pt_row pt_row_pad10rt0 row-head">
+        <div class=pt_col-2-10>Project Name</div>
+        <div class=pt_col-1-10>&nbsp;</div>
+        <div class=pt_col-1-10>Locality</div>
+        <div class=pt_col-2-10>Status</div>
+        <div class=pt_col-1-10>Type</div>
+        <div class=pt_col-1-10>Rate(<i class="pt pt-icon-inr"></i>/sq ft)</div>
+        <div class=pt_col-1-10>Total Sold(%)</div>
+        <div class=pt_col-1-10>{{ opt.title }}</div>
+    </div>
+    <div class="pt_row pt_row_pad10rt0 row-body" data-ng-repeat="project in durationData.all" data-ng-if=project.extraAttributes[opt.key]>
+        <div class=pt_col-2-10 tooltip="{{ project.projectFullName }}">
+            <a analytics-on="" data-analytics-event="PopUp_{{ opt.title }}_View all projects_Click" data-analytics-category=Dashboard data-analytics-label="Project Id: {{project.projectId}}, Project Rank: {{($index+1)}}, Project Name: {{project.projectName}}" data-ng-href="/phase-detail?projectId={{project.projectId}}" target=_blank>{{ project.projectFullName }}</a>
+        </div>
+        <div class="pt_col-1-10 textWrap">
+            <i class=pt-icon-info-circle ng-hide=project.clicked data-ng-click="_getBuilderInfoFromId(project, opt.title ,$index)" tooltip="click for contact info"></i>
+            <i ng-show=project.clicked tooltip="{{ project.builderAddress }}" class=pt-icon-info-circle></i>
+        </div>
+        <div class="pt_col-1-10 textWrap" tooltip="{{ project.localityName || 'NA' }}">{{ project.localityName || 'NA' }}</div>
+        <div class="pt_col-2-10 textWrap" tooltip="{{ project.constructionStatus || 'NA' }}">{{ project.constructionStatus || 'NA' }}</div>
+        <div data-ng-show="project.extraAttributes.groupConcatDistinctUnitType && project.extraAttributes.groupConcatDistinctUnitType.length > 0" class=pt_col-1-10>
+            <i data-ng-repeat="icn in project.extraAttributes.groupConcatDistinctUnitType" class="pt-icon-{{icn | lowercase }}" tooltip={{icn}}></i>
+        </div>
+        <div data-ng-show="project.extraAttributes.groupConcatDistinctUnitType && project.extraAttributes.groupConcatDistinctUnitType.length === 0" class=pt_col-1-10>&nbsp
+        </div>
+        <div class=pt_col-1-10 tooltip="{{ project.wavgPricePerUnitAreaOnSupplyLtdHover  | round | figureFMT}}">{{ project.extraAttributes.wavgPricePerUnitAreaOnLtdSupply| round | figureFMT}}</div>
+        <div class=pt_col-1-10 tooltip="{{ project.soldPercentageHover }}">{{ project.soldPercentage }}</div>
+        <div class=pt_col-1-10>{{ project.extraAttributes[opt.key] | round | number_in:'0' }}</div>
+    </div>
+    <div class="pt_row pt_row_pad10rt0 row-body text-center">
+    <a href=javascript:void(0); analytics-on="" data-analytics-event="PopUp_{{ opt.title }}_View all projects_View More" data-analytics-category=Dashboard data-analytics-label="" data-ng-click=viewMore() data-ng-hide=_hideViewMore class="dspl-inline viewload">View more </a>
+    <div pt-loading-block="" data-ng-if=_showLoader class=dspl-inline></div>
+    </div>
+</div>
+<div class=modal-footer></div>

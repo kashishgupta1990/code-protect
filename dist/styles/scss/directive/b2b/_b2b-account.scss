@@ -1,0 +1,174 @@
+/* 
+Desc: CSS Document for Account, save-graph and prefernece
+Author: Nitish Saraswat
+Date: 30 April 2014
+*/
+
+/**********************************************************************
+********************** myAccount save-graph and preference ***********************
+**********************************************************************/
+.account_head {
+	padding:10px 0;
+	margin-left:4%;
+	.contentHeader {
+		padding:0 0 10px;
+		h5 {
+			display:inline-block;
+			line-height:30px;
+		}
+	}
+	.pt-icon-check {
+		color:#4ED73E;
+	}
+	.pt-icon-times {
+		color:#F5080C;
+	}
+}
+
+.preference {
+	.contentHeader {
+		h4 {
+			display:inline-block;
+		}
+	}
+	
+	.btn-dd {
+		.dropdown-menu.dd-list.city-dd {
+			width: 180px;
+		}
+	}
+	
+	.city-budget-filter {
+		width: 400px;
+	}
+	
+	.ui-slider-horizontal{
+		width:400px;
+		float:left;
+		height:7px;
+		
+		.ui-slider-handle {
+			border-radius: 0;
+			margin-left: -0.35em;
+			top: 0.5em; 
+		}
+	}
+	.rupee_wrap {
+		display: block;
+		float: left;
+		line-height: 12px;
+		padding: 0 0 0 0px;
+		text-align: center;
+		height: 30px;
+		
+		.area-min-size {
+			display: block;
+			float: left;
+			line-height: 12px;
+			min-width: 55px;
+			padding: 0;
+			text-align: center;
+			font-weight:bold;
+		}
+		.area-max-size {
+			@extend .area-min-size;
+		}
+	}
+}
+.city-budget-filter{
+	h5{
+		font-weight:normal;
+		font-size:14px;
+	}
+	.filter-budget{
+   		 min-width: 600px;
+   		 	 > li {
+			    margin-right: 0;
+			    padding: 10px 5px 20px;
+			}
+			.pt-icon-inr {
+			    min-width: 0;
+			    padding-left: 4px;
+			}
+			.budget-max-size{
+				float: left;
+				display: block;
+				font-weight: 700;
+			    line-height: 12px;
+			    min-width: 70px;
+			    padding: 0 0 0 1px;
+			    text-align: left;
+			}
+			.budget-min-size{
+				@extend .budget-max-size;
+			}
+	}
+}
+/* project phase css start */
+
+.project_phase {
+	width:100%;
+	display:inline-block;
+	padding-bottom:45px;
+	.stat_project_data {
+		text-align:right;
+		color:#666;
+		font-size:$body-font-size;
+	}
+	.dynmic_project_data {
+		min-height:151px;
+		.col-sm-3 {
+			background:#f2f2f2;
+			text-align:center;
+			font-size:$body-font-size;
+			margin-left:1.128%;
+			ul {
+				padding-bottom:10px;
+				li {
+					min-height:20px;
+				}
+			}
+			.stat_header {
+				color:#2391ec;
+				border-bottom:1px solid #2391ec;
+			}
+			&:hover, &.active {
+				.stat_header {
+					background:#004466;
+					padding:9px 10px;
+					border-top-right-radius:5px;
+					border-top-left-radius:5px;
+					color:#fff;
+				}
+				.stat_data {
+					background:#006699;
+					color:#fff;
+					position:relative;
+					bottom:0;
+					left:0;
+					&:after {
+						width: 0; 
+						height: 0;
+						content:" ";
+						position:absolute; 
+						border-left: 102px solid transparent; 
+						border-right: 93px solid transparent; 
+						border-top: 50px solid #006699;
+						left:0;
+					}
+				}
+			}
+		}
+	}
+}
+
+.prop-address {
+	color:#a7a7a7;
+	font-size:14px;
+}
+.contentHeader {
+	h5 {
+		display:inline-block;
+		line-height:26px;
+	}
+}

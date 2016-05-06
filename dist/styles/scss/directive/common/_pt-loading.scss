@@ -1,0 +1,230 @@
+/* 
+Desc: loading Scss Document 
+Author: Sanjeev Verma
+Date: 23 Nov 2013
+*/
+
+/*! 
+ * angular-loading-bar v0.7.0
+ * https://chieffancypants.github.io/angular-loading-bar
+ * Copyright (c) 2015 Wes Cruver
+ * License: MIT
+ */
+
+/* Make clicks pass-through */
+#loading-bar,
+#loading-bar-spinner {
+  pointer-events: none;
+  -webkit-pointer-events: none;
+  -webkit-transition: 350ms linear all;
+  -moz-transition: 350ms linear all;
+  -o-transition: 350ms linear all;
+  transition: 350ms linear all;
+}
+
+#loading-bar.ng-enter,
+#loading-bar.ng-leave.ng-leave-active,
+#loading-bar-spinner.ng-enter,
+#loading-bar-spinner.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+#loading-bar.ng-enter.ng-enter-active,
+#loading-bar.ng-leave,
+#loading-bar-spinner.ng-enter.ng-enter-active,
+#loading-bar-spinner.ng-leave {
+  opacity: 1;
+}
+
+#loading-bar .bar {
+  -webkit-transition: width 350ms;
+  -moz-transition: width 350ms;
+  -o-transition: width 350ms;
+  transition: width 350ms;
+
+  background: $loader-color;
+  position: fixed;
+  z-index: 10002;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  border-bottom-right-radius: 1px;
+  border-top-right-radius: 1px;
+}
+
+/* Fancy blur effect */
+#loading-bar .peg {
+  position: absolute;
+  width: 70px;
+  right: 0;
+  top: 0;
+  height: 2px;
+  opacity: .45;
+  -moz-box-shadow: #29d 1px 0 6px 1px;
+  -ms-box-shadow: #29d 1px 0 6px 1px;
+  -webkit-box-shadow: #29d 1px 0 6px 1px;
+  box-shadow: #29d 1px 0 6px 1px;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+}
+
+#loading-bar-spinner {
+  display: block;
+  position: fixed;
+  z-index: 10002;
+  top: 10px;
+  left: 10px;
+  display: none;
+}
+
+#loading-bar-spinner .spinner-icon {
+  width: 14px;
+  height: 14px;
+
+  border:  solid 2px transparent;
+  border-top-color:  #29d;
+  border-left-color: #29d;
+  border-radius: 10px;
+
+  -webkit-animation: loading-bar-spinner 400ms linear infinite;
+  -moz-animation:    loading-bar-spinner 400ms linear infinite;
+  -ms-animation:     loading-bar-spinner 400ms linear infinite;
+  -o-animation:      loading-bar-spinner 400ms linear infinite;
+  animation:         loading-bar-spinner 400ms linear infinite;
+}
+
+@-webkit-keyframes loading-bar-spinner {
+  0%   { -webkit-transform: rotate(0deg);   transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@-moz-keyframes loading-bar-spinner {
+  0%   { -moz-transform: rotate(0deg);   transform: rotate(0deg); }
+  100% { -moz-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@-o-keyframes loading-bar-spinner {
+  0%   { -o-transform: rotate(0deg);   transform: rotate(0deg); }
+  100% { -o-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@-ms-keyframes loading-bar-spinner {
+  0%   { -ms-transform: rotate(0deg);   transform: rotate(0deg); }
+  100% { -ms-transform: rotate(360deg); transform: rotate(360deg); }
+}
+@keyframes loading-bar-spinner {
+  0%   { transform: rotate(0deg);   transform: rotate(0deg); }
+  100% { transform: rotate(360deg); transform: rotate(360deg); }
+}
+
+/***** New Loading bar style End  *****/
+
+
+
+
+.parent-blocking { position:relative; 
+	width:$body-width; 
+	height:$body-width; 
+	text-align:center;	
+	.loader-info{ display:block;
+		top:0px;
+		left:0px;
+		&:before{ content: '';
+			height:100%;
+			vertical-align:middle;
+		}
+		i{ display:block;
+			font-size :$body-font-size + 18px; 
+			color: $darkligh-gray-color; 
+			line-height:normal;
+		}
+		.big-loader{display:none;
+			.spinLoader{ width:20px;
+				height:20px;
+				display:inline-block;			 
+				background: url("../images/loader_small.gif");
+			}
+		}
+		
+	}
+}
+.lt-ie10{
+	.parent-blocking{
+		.loader-info{
+			i{display: none;
+			}
+			.big-loader{
+			display:block;
+			}
+		}
+	}
+}
+.mapSpin{width:$body-width; 
+	height:$body-width;
+	display:table;
+	.parent-blocking { vertical-align:middle; 
+		display:table-cell;		
+		.big-loader{display:none;
+			.spinLoader{ width:20px;
+				height:20px;
+				display:inline-block;			 
+				background: url("../images/loader_small.gif");
+			}
+		}
+	}
+}
+.lt-ie10 .mapSpin{
+	.parent-blocking{
+		i{ display:none;
+		}
+		.big-loader{
+			display:block; 
+		}	
+	}
+}
+
+#veil {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height:100%;
+	z-index: 3;
+	width:100%;	
+	background: #000000;
+	cursor:default;
+	filter: alpha(opacity=50);
+	opacity: 0.5;
+}
+#feedLoading {
+	position: absolute;
+	top:46%;
+	left:48%;
+	width:82px;
+	z-index: 4;
+	text-align: center;
+	font-size: 3em;
+	color:#333333;
+	line-height:normal;
+}
+.loadingArea{
+	background: #FFFFFF;
+	padding:15px 25px;
+	border:1px solid #414141;
+	@include rounded($radius:5px);
+	i{ width:72px; 
+		height:72px; 
+		background:url(../images/loader.gif) no-repeat top center;
+		display:block;
+		margin:0 auto;}
+	}
+.neighbr_load {
+	position: absolute;
+	top: 40%;
+	text-align: center;
+	left: 0%;
+	width:100%;
+}
+.keyloading {
+	position:absolute;
+	text-align:center;
+	min-width:980px;
+}

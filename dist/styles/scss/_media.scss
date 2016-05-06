@@ -1,0 +1,77 @@
+/* 
+Desc: Media Queries Scss Document 
+Author: Sanjeev Verma
+Date: 3 Dec 2013
+*/ 
+
+@media (min-width: 1200px){
+	.resStickyNav{ 
+		.projNContTabInfo{ width: 1140px;
+			margin: 0 auto;
+		}
+	}
+}
+@media (max-width: 1024px){
+	.resStickyNav{ 
+		.projNContTabInfo{ width: 940px;
+			margin: 0 auto;
+		}
+	}
+	.container{width:970px;}
+	
+}
+@media (min-width:992px) and (max-width: 1024px){
+	.container{width:970px;}
+}
+@media (max-width: 768px){
+	.resStickyNav{ 
+		.projNContTabInfo{ width: 720px;
+			margin: 0 auto;
+		}
+	}
+	.container{width:750px;}
+		    	
+}
+
+@media (min-width:700px) and (max-width: 768px){
+	.container{width:750px;}
+}
+@media (min-width: 300px) and (max-width: 480px){
+	.container{width:100% !important;}
+	.mainContainer.removeSearchBar { padding-top: 40px !important;}
+	.headerTopMenu { display: block !important;}
+	.headerLeftSide .searchTopHeader { display: none !important;}
+	.headerRightSide .clickInfo { display: none !important;}
+	.headerRightSide .compareBtnInfo { display: none !important;}
+	.headerRightSide .topMenuLinkBtn { display: none !important;}
+	/* compare page responsive */
+	.compare-top-container { width: 100% !important;}
+	.copm-img-info { height: 140px !important;}
+	.imgbottomGrad{ 
+		background: -moz-linear-gradient(top, rgba(51,51,51,0) 26%, rgba(51,51,51,1) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(26%,rgba(51,51,51,0)), color-stop(100%,rgba(51,51,51,1))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, rgba(51,51,51,0) 26%,rgba(51,51,51,1) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, rgba(51,51,51,0) 26%,rgba(51,51,51,1) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, rgba(51,51,51,0) 26%,rgba(51,51,51,1) 100%); /* IE10+ */
+		background: linear-gradient(to bottom, rgba(51,51,51,0) 26%,rgba(51,51,51,1) 100%) !important; /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00333333', endColorstr='#333333',GradientType=0 ); /* IE6-9 */
+
+	}
+	.compScoInfo h1 { font-size: 17px !important; line-height: 22px !important; width: 100% !important;}
+	ul.comp-detail-row-info .comp-detail-title { font-size: 15px !important; line-height: 15px !important; font-weight: bold !important;}
+	h2.comp-head-info { font-size: 20px !important; line-height: 25px !important; padding: 0 10px !important;}
+	ul.comp-detail-row-info ul.comp-detail-colu-info li select { width: 125px !important;}
+	ul.comp-detail-row-info ul.comp-detail-colu-info li { padding: 25px 0 !important; min-width: 130px !important;}
+	.lifestyle-container .overlay-Wrapper, .safetypin-container .overlay-Wrapper{ display: none !important;}
+	.comp-proj-active .compScoDetaInfo .copm-img-info .copm-proj-img-info {
+		height: 140px !important;
+	}
+	ul.comp-detail-row-info ul.comp-detail-colu-info li .comp-proj-amenity-data .stat-block {
+		display: table !important;
+        padding: 0 10px 10px !important;
+        text-align: center !important;
+        margin: 0 auto !important;
+	}	 
+	.comp-colum-text .btn-action { width: 82% !important;}   	
+}
+

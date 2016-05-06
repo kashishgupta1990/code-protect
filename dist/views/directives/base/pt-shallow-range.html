@@ -1,0 +1,12 @@
+<span data-ng-if="min != max && min && max" class=prop-price-info> 
+	<i class="pt pt-icon-inr" data-ng-if="type == 'price'"></i> {{min}} - <i class="pt pt-icon-inr" data-ng-if="type == 'price'"></i> {{max}}  <span data-ng-if=unit>{{unit}}</span>
+</span>
+<span data-ng-if="min == max && min && min != 'NA'" class=prop-price-info> 
+	<i class="pt pt-icon-inr" data-ng-if="type == 'price'"></i> {{min}}  <span data-ng-if=unit>{{unit}}</span>
+</span>
+<span data-ng-if="min == 'NA' && propertyName=='Size'">  
+	<a data-ng-click="openLeadForm($event, 'size', index, 'hidden-sizerequest-listing')">Size On Request</a>
+</span>
+<span data-ng-if="min == 'NA' && propertyName!='Size'" class=prop-price-info> 
+	{{min}}
+</span>

@@ -1,0 +1,152 @@
+/* 
+Desc: CSS Document for B2B Dashboard Pinned Catchment Graph Blocks
+Author: Nimit Mangal
+Date: 15 April 2014
+*/
+
+/*************************************************************************************
+********************** PINNED GRAPH BLOCKS IN DASHBOARD STARTS ***********************
+*************************************************************************************/
+
+.graph-blk {
+	float: left;
+	width: 49%; 
+	min-height: 400px; 
+	background-color: #FFFFFF; 
+	box-shadow: 0 0 3px #999999; 
+	margin: 20px 9px 0px 0px; 
+	padding: 0px 0px 10px 0px;
+	
+	.hdng {
+		padding: 10px;
+		background-color: #f3f3f3;
+		line-height: 35px;
+		
+		.graph-name {
+			color: #0076a3;
+			font-size: 18px;
+			font-weight: bold;
+		}
+		
+		.btn-thumb-tack {
+			background-color: #333;
+			color: #fff;
+			margin-left: 5px;
+			border: none;
+		}
+	}
+	
+	.filters-controls {
+		padding: 10px;
+		
+		[class*="pt_col-"]:last-of-type {
+			text-align: right;
+		}
+	}
+	
+	&:nth-child(2n) {
+		margin: 20px 0px 0px 10px; 
+	}
+	
+	&.blank {
+		background-color: #e4e4e4;
+		box-shadow: none; 
+		
+		.pin-graph-wrap {
+			padding: 20px 15px;
+			
+			.pin-graph {
+				background-color: #FFFFFF;
+				border: 1px solid #333333;
+				border-radius: 5px;
+				margin: 100px auto;
+				padding: 20px 10px;
+				text-align: center;
+				width: 33%;
+				position: relative;
+				cursor: pointer;
+				
+				.pt-icon-plus {
+					font-size: 32px;
+					line-height: 48px;
+				}
+				
+				.dd-saved-ctchmnt-list {
+					display: none;
+					box-sizing: border-box;
+					background-color: #666666;
+					height: 280px;
+					width: 420px;
+					padding: 10px;
+					margin-bottom: 20px;
+					position: absolute;
+					top: 120px;
+					left: -135px;
+					color: #fff;
+					text-align: left;
+					overflow: auto;
+					
+					&:before {
+						top: -12px;
+						border: solid transparent;
+						content: " ";
+						height: 0;
+						width: 0;
+						position: absolute;
+						pointer-events: none;
+						border-right: 11px solid transparent;
+						border-left: 11px solid transparent;
+						border-bottom: 11px solid #666;
+						left: 200px;
+					}
+					
+					ul.list1 {
+						width: auto;
+						
+						li {
+							padding: 0px;
+							margin: 0px 0px 10px 0px;
+							
+							.c-name {
+								text-transform: uppercase;
+								font-size: 14px;
+								line-height: 20px;
+								clear: both;
+							}
+							
+							ul.list2 {
+								li {
+									float: left;
+									width: 48%;
+									margin: 0px 7px 10px 0px;
+									font-size: 12px;
+									color: #333;
+									
+									&:nth-child(2n) {
+										margin: 0px 0px 10px 8px; 
+									}
+									
+									.graph-thumb {
+										position: relative;
+										
+										.graph-name {
+											position: absolute;
+											bottom: 40px;
+											left: 20px;
+											font-weight: bold;
+										}
+										.breadcrumb-link {
+											position: absolute;
+											bottom: 20px;
+											left: 20px;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,69 @@
+<header class=header>
+    <div class="navbar navbar-inverse navbar-fixed-top custom-nav">
+        <div pt-notification="" class=notification-info></div>
+        <div class=navbar-inner>
+            <div class=container-fluid>
+                <div class=logo>
+                    <a analytics-on="" data-analytics-event="Click_Proptiger Logo" data-analytics-category=Dashboard data-analytics-label="" href="/">
+                        <img src=../../../styles/images/logo1.png alt=logo></a>
+                    <span class=tagline>powered by <span class=firsttag>Prop</span><span class=secondtag>Tiger</span></span>
+                </div>
+                <div>
+                	<ul class="nav navbar-nav">
+                     	<li data-ng-class="{active: 'dashboard'===selectedTab}"><a href=/dashboard>Dashboard</a></li>
+                        <li data-ng-class="{active: 'maps'===selectedTab}"><a data-ng-click=catchmentClick()>Catchment Analysis</a></li>
+                        <li data-ng-class="{active: 'builderAnalysis'===selectedTab}"><a href=/buildersearch>Builder Analysis</a></li>
+                        <li data-ng-class="{active: 'knowledgeBank'===selectedTab}"><a href=/projectdatabase>Project Database</a></li>
+                    </ul>
+                </div>
+                <div class="pull-right searchitem">
+                	<div>
+                        <ul class="nav navbar-nav">
+                            <li class=dropdown>
+                            	<a analytics-on="" data-analytics-event="Top Search" data-analytics-category="Button Click" data-analytics-label="" href=javascript:void(0) class=dropdown-toggle data-toggle=dropdown data-ng-click=hideChildDropdown()><i class="pt pt-icon-search"></i> <b class=caret></b></a>
+                                <div class=dropdown-menu role=menu aria-labelledby=dropdownMenu>
+                                	<div class=searchdrop data-ng-click=$event.stopPropagation();>
+                                    	<form id=form1 name=form1 method=post>
+                                        	<div class="input-prepend input-append input-group paddingB10">
+                                                <div class="add-on btn-dd input-group-addon" data-ng-class="{'open': toggleMenu}">
+                                                    <a class=dd-btn data-ng-click=menuToggle()>
+                                                        <span data-ng-if=hSelectedCity> {{hSelectedCity}} </span>
+                                                        <span data-ng-if=!hSelectedCity>
+                                                            All Cities
+                                                        </span>
+                                                        <i class="pt pt-icon-caret-down"></i>
+                                                    </a>
+                                                    <ul class="dropdown-menu dd-list ta-left">
+                                                        <li analytics-on="" data-analytics-category="Top Search" data-analytics-event="All Cities" data-analytics-label="" data-ng-click=selectCity(null)> All Cities</li>
+                                                        <li data-ng-repeat="city in cities" data-ng-if=city.authorized data-ng-click=selectCity(city) analytics-on="" data-analytics-category="Top Search" data-analytics-event={{city.label}} data-analytics-label="">
+                                                            {{city.label}}
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <input type=text data-ng-model=searchedItem placeholder="Search builders, projects, localites, landmarks and cities" typeahead="result.displayText for result in getSearchResults($viewValue, hSelectedCity)" typeahead-template-url=views/controller/b2b/headerSearch.html class=input-xxlarge typeahead-on-select="searchedItem = undefined" id=appendedDropdownButton>
+                                                <span class="add-on input-group-addon"><i class="pt pt-icon-search"></i></span>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                             </li>
+                            <li class=dropdown>
+                            	<a href=javascript:void(0) class="dropdown-toggle toUpperCase" data-toggle=dropdown>{{userFirstName}} <b class=caret></b></a>
+                                <ul class="dropdown-menu dd-list acc-btn" role=menu aria-labelledby=dropdownMenu>
+                                    
+                                    <li>
+                                        <a analytics-on="" data-analytics-event=Settings data-analytics-category=Account data-analytics-label="" href=settings>Settings</a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a analytics-on="" data-analytics-event="Log Out" data-analytics-category=Account data-analytics-label="" href=javascript:void(0) data-ng-click=logout()>Log Out</a>
+                                    </li>
+                                </ul>
+                             </li>
+                        </ul>
+                	</div>
+                </div>        
+            </div>
+        </div>
+    </div>
+</header>

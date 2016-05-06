@@ -1,0 +1,118 @@
+/* 
+Desc: Similar Properties list Item for ALV Scss Document --- [ Transcends from Project listitem ALV ]
+Author: Nimit Mangal  
+Date: 03 Dec 2013
+*/
+
+/* Similar Properties ::::::::::  Ready to overwrite -- Projects ALV list Item Starts */
+.alv-listitem-projects {
+	
+		
+	.proj-name-wrap {
+		
+		.prop-type {
+			float:left;
+			margin-right:4px;
+			font-size:12px;
+			color:#666;
+		}
+		
+		.proj-name {
+			
+		}
+		
+		.rise-fall {
+			
+		}
+		
+		.btn-area {
+			
+			
+			.btn-mini {
+				
+				
+				&:hover, &:focus{
+					
+				}	
+				
+				&:active, &.active{
+					
+				}
+			}
+		}
+	}
+	
+	.col1 {
+		
+		&.img-wrap {
+			
+			
+			img.proj-imgs {
+				
+			}
+			
+			.proj-status {
+				
+				.bnr {
+					
+					&:after {
+						
+					}
+				}
+			}
+		}
+	}
+	
+	.col2 {
+		
+		.address {
+			
+		}
+		
+		.prop-types {
+			
+		}
+		
+		.prices {
+			
+		}
+	
+		.deal-wrap {
+			
+			
+			.deal-bar {
+				
+				
+				strong {
+					
+				}
+				
+				.deal-info {
+					
+				}
+				
+				&:hover {
+					.deal-info {
+						
+					}
+				}
+			}
+		}
+	}
+	
+	&:hover {
+		
+		
+		.proj-name {
+			
+		}
+		
+		.btn-area {
+			.btn-mini {
+				
+			}
+		}
+	}
+}
+
+/* Similar Properties ::::: Projects ALV list Item Ends */

@@ -1,0 +1,33 @@
+<div class=time-controller-wrap>
+    <button class="btn marginT5 btn-block dropdown-toggle" data-toggle=dropdown title="Click to choose the Time Period">
+        <span class=put-ellipsis>{{duration.period}} {{duration.title}}</span> <i class="pt pt-icon-caret-down"></i>
+    </button>
+
+    <div class="dropdown-menu dd-list">
+        <ul tabset="" class=timeControllerTabs>
+            <li tab="" heading=Monthly id=Monthly data-ng-click=$event.stopPropagation();>
+                <ul class=time-options>
+                    <li data-ng-repeat="period in constant.Monthly.period" data-ng-click="updateDuration($event, period, constant.Monthly)">
+						<i data-ng-class="duration.period == period && duration.key == 'month' ? 'pt  pt-icon-dot-circle-o' : 'pt  pt-icon-circle-o'"></i>
+						Last {{period}} {{constant.Monthly.title}}
+					</li>
+                    
+                </ul>
+            </li>
+
+            <li tab="" heading=Quarterly id=Quarterly data-ng-click=$event.stopPropagation(); data-ng-show=constant.Quarterly>
+                <ul class=time-options>
+                    <li data-ng-repeat="period in constant.Quarterly.period" data-ng-click="updateDuration($event, period, constant.Quarterly)"><i class="pt pt-icon-circle-o"></i>  Last {{period}} {{constant.Quarterly.title}}</li>
+                </ul>
+            </li>
+
+            <li tab="" heading=Annualy id=Annualy data-ng-click=$event.stopPropagation(); data-ng-show=constant.Annualy>
+                <ul class=time-options>
+                    <li data-ng-repeat="period in constant.Annualy.period" data-ng-click="updateDuration($event, period, constant.Annualy)"><i class="pt pt-icon-circle-o"></i>  Last {{period}} {{constant.Annualy.title}}</li>
+                </ul>
+            </li>
+        </ul>
+
+        
+    </div>
+</div>

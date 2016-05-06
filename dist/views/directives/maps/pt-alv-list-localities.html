@@ -1,0 +1,13 @@
+<div data-ng-show=localities class=alv-result-count-prop>
+    <strong>{{ projectCount }}</strong> Projects in 
+    <strong>{{ localities.length }}</strong> Localities
+</div>
+
+<div data-ng-show="localities && localities.length" class=alv-result-count-proj>
+	<select data-ng-options="eachOption.key as eachOption.label for eachOption in alvSortOptions" data-ng-change=sortResults() data-ng-model=alvSortingValue name=alvSortingValue>
+	</select>
+</div>
+
+<div data-ng-repeat="locality in localities | limitTo: perPageItem">
+    <div pt-alv-listitem-locality="" locality=locality></div>
+</div>

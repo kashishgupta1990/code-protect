@@ -1,0 +1,17 @@
+<div class="svg-info-bubble legend-tooltip-txt" data-ng-show=showTooltip>
+ 	
+    <div ng-if=svgHovered>
+    	<div class=locality-name>
+    		<div class=pull-left ng-if=iconType>
+    			<i class="pt pt-icon-{{iconType}}"></i>
+    		</div>
+    		<div class="pull-left paddingL5 area-name">
+    			<strong> {{areaName}}</strong>
+    		</div>
+    	</div>
+    </div>
+    <div ng-if=svgClicked>
+    	Clicked
+    	<div class=locality-name><strong>{{areaName}}</strong></div>
+    </div>
+</div>

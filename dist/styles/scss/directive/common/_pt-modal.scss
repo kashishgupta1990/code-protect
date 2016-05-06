@@ -1,0 +1,82 @@
+/* 
+Desc: Modal View Scss Document 
+Author: Sanjeev Verma
+Date: 28 Feb 2014
+*/
+.modal-backdrop{ position: fixed !important;
+	bottom: 0;
+	&.fade{
+		&.in{
+			opacity: 0.5;
+			filter: alpha(opacity=50);
+		}
+	}
+}
+.modal {
+	&.big-modal{ width: $body-width - 40%;
+		margin-left: -30%;
+		overflow:hidden;
+	}
+	.modal-header {		
+		padding: 7px 18px;
+		border-bottom: 1px solid $modal-header-bottom-bordercolor;
+		background-color:$modal-header-bgcolor; 
+		@include rounded( $top:true, $radius:5px);
+		.modal-head-info { font-family:$proximaNovaFamily; 
+			font-size: $body-font-size + 4;
+			font-weight: bold;
+			color:$body-color;
+			@include text-shadow(none);	
+		}
+		
+		h4 {
+			font-size: $body-font-size + 2px;
+			font-weight: normal;
+			color:$body-color;
+			@include text-shadow(none);	
+		}
+	}
+	.modal-body{ background:$modal-bgcolor; overflow-y: inherit; min-height:120px; max-height:inherit; padding:10px 15px;}
+	.addProp-switch-container {overflow: inherit;}
+}
+.modalGallery{ width:70%;
+	height:70%;
+	left:15%;
+	top:15%;
+	margin:0; 
+	@include rounded( $radius:0px);
+	.modal-dialog{ width: $body-width !important;
+		height:$body-width;
+		margin: 0 !important;
+		.modal-content{ @include rounded( $radius:0px);
+			height:$body-width;
+			overflow: hidden; 
+		}
+	}
+	.contentHeader{ padding:10px 15px 7px 15px;
+		margin:0;
+		a{ margin:0 60px 0 0;}
+	}
+	.projectMarker { position:absolute !important;
+        width: $body-width;
+		height:$body-width;
+		max-height:$body-width;
+		img{ max-width:none;}
+    }	
+}
+.hContentInfo{ display:none;}
+.backContentView{ 
+	ul{ list-style-type:disc;
+		margin:0 0 0 30px !important;
+		li{ padding-bottom:3px;
+			font-size:$body-font-size + 1;
+			color:$lighter-grey-textColor;
+			line-height:$body-font-size*2 - 4;
+		} 
+	}	
+}
+.prop-buil-descr-info{ 
+	.backContentView{ max-height:400px !important; 
+		overflow:auto;
+	}	
+}

@@ -1,0 +1,96 @@
+/*
+Desc: Projects First Fold Scss Document
+Author: Sanjeev Verma
+Date: 22 May 2015
+*/
+
+.projLeadContInfo{ background:$white-color;}
+.prop-meta-detail-info{
+    .prop-name{ font-family:$proximaNovaFamily;
+        font-size:$body-font-size + 5;
+        font-weight: bold;
+        color:$dark-gray-color;
+        h1 {
+            @extend .prop-name;
+            line-height:20px;
+            max-width:$body-width;
+            text-overflow:ellipsis;
+            overflow:hidden;
+            white-space:nowrap;
+        }
+    }
+
+    .city-label{ font-family:$proximaNovaFamily;
+        font-size:$body-font-size + 2;
+        color:$darkligh-gray-color;
+		i {
+			color: $anchor-link-color;
+			cursor: pointer;
+		}
+    }
+    .locality-label{ @extend .city-label;
+        border-bottom:1px dashed $gray-color;
+    }
+    .locality-nolink-label{ @extend .city-label;
+    }
+    .locality-link-label{ @extend .city-label;
+        color:$darkligh-gray-color;
+        &:hover{ color:$anchor-link-color;
+            text-decoration:underline;
+        }
+    }
+
+}
+.project-topmenu-info{ background:$dark-blue-gray-color;
+    padding: 10px 10px 10px 0;
+    margin: 0 15px;
+}
+.proj-toplink-info{ padding: 0;
+    float: left;
+    .quickContactLink{
+        li:first-child{ margin: 0;
+            &:before{ content: '';
+                border-left: none;
+            }
+        }
+        li{ float:left;
+            padding:4px 13px !important;
+            margin:0 0 0 1px;
+            position: relative;
+            font-size:$body-font-size + 2;
+            color:$white-color;
+            line-height: $body-font-size*2 - 3;
+            border:none;
+            cursor: pointer;
+            i{ display: none;}
+            span{ display: none;}
+            &:hover, &.selected{ color:$body-selected-color;
+                span{ background: $white-color;
+                    color: $anchor-link-color;
+                    i{color:$white-color;}
+                }
+            }
+            &:before{ content: '';
+                position: absolute;
+                border-left:1px solid $light-gray-color;
+                top: $body-width - 65;
+                left: -1px;
+                width: 1px;
+                height: $body-width - 70;
+                z-index: 1;
+
+            }
+        }
+    }
+}
+.proj-lifestyle-info{
+    .lifestyle-container{ min-width:75px;
+        padding:9px 10px;
+        border-left:1px dashed $light-gray-color;
+        border-right:1px dashed $light-gray-color;
+    }
+    .safetypin-container{ border-right:none;
+        @extend.lifestyle-container;
+    }
+}
+

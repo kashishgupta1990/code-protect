@@ -1,0 +1,141 @@
+.polygon{
+    fill:#F0CC34;
+    opacity:0.01;
+}
+.isometric_svg{
+    position: relative;
+    display: inline-block;
+}
+.svgInfo{
+    position: absolute;
+    z-index: 9999;
+}
+.svgInfo .polygon{
+    position:absolute;
+    cursor: pointer;
+}
+.floor_detail_tooltip{
+    position: absolute;
+    top:10%;
+    left:10%;
+    width: 205px;
+    height: 120px;
+    z-index: 100;
+    font-family: arial;
+    background-color:transparent;
+    z-index: 99999;
+    display: none;
+}
+.floor_tooltip{
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    width: 80%;
+    height: 70%;
+    z-index: 100;
+    color:white;
+    font-family: "proxima_nova",Arial,Helvetica,sans-serif;
+    border-radius: 8px;
+    background-color: #3C3C3C;
+    opacity: 1;
+    display: none;
+}
+.floor_tooltip .header{
+    position: relative;
+    top:0%;
+    left:0%;
+    margin-left: 10%;
+    width: 80%;
+    height: 40%;
+    padding-top: 3%;
+    font-size: 1em;
+    font-family:"proxima_nova",Arial,Helvetica,sans-serif;
+    background-color: #3C3C3C;
+    text-align: center;
+    font-weight:  bold;
+}
+.floor_tooltip .content{
+    position: relative;
+    top: 5%;
+    left: 0%;
+    width: 100%;
+    height: 70%;
+    font-size: 1.1em;
+    font-family:"proxima_nova",Arial,Helvetica,sans-serif;
+    text-align: center;
+}
+.floor_tooltip .content .tip{
+    position: relative;
+    color:yellow;
+    top:0%;
+    width:90%;
+    left: 5%;
+    height:20%;
+    border-radius:6px;
+    background-color: transparent;
+    font-size: .95em;
+    font-weight: bold;
+}
+.position_Right{
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    top: 35%;
+    left: 2%;
+    border-top: 18px solid transparent;  /* top arrow slant */
+    border-bottom: 18px solid transparent; /* bottom arrow slant */
+    border-right: 20px solid #3C3C3C; /* right, add background color here */
+    font-size: 0;
+    line-height: 0;
+    z-index: 100;
+    opacity:1;
+    visibility: hidden;
+}
+
+.position_Left{
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    top: 35%;
+    right: 2%;
+    border-top: 16px solid transparent;  /* top arrow slant */
+    border-bottom: 16px solid transparent; /* bottom arrow slant */
+    border-left: 18px solid #3C3C3C; /* left, add background color here */
+    font-size: 0;
+    line-height: 0;
+    z-index: 100;
+    opacity:1;
+    visibility: hidden;
+}
+
+.position_Bottom{
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    top:2%;
+    left: 44%;
+    border-left: 16px solid transparent;  /* left arrow slant */
+    border-right: 16px solid transparent; /* right arrow slant */
+    border-bottom: 16px solid #3C3C3C; /* bottom, add background color here */
+    font-size: 0;
+    line-height: 0;
+    z-index: 100;
+    opacity:1;
+    visibility: hidden;
+}
+
+.position_Top{
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    bottom:2%;
+    left: 44%;
+    border-left: 16px solid transparent;  /* left arrow slant */
+    border-right: 16px solid transparent; /* right arrow slant */
+    border-top: 16px solid #3C3C3C; /* top, add background color here */
+    font-size: 0;
+    line-height: 0;
+    z-index: 100;
+    opacity:1;
+    visibility: hidden;
+}

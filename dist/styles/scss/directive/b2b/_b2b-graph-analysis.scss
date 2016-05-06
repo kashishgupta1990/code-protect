@@ -1,0 +1,242 @@
+/* 
+Desc: CSS Document for B2B Graphical Analysis (Catchment & Builder)
+Author: Nimit Mangal
+Date: 25 April 2014
+*/
+
+
+/*********************************************************************
+*********************** GRAPH ANALYSIS STARTS ************************
+*********************************************************************/
+
+.ga-cntnr {
+	position: relative;
+	margin: 60px 0 10px;
+	width: auto;
+	min-height: 50px;
+	background-color: #fff;
+	
+	.pt_row.tags {
+		position: absolute;
+		top: -25px;
+		width: 980px;
+		
+		[class*="tag-"] {
+			background-color: $greenish;
+			padding: 5px 10px;
+			font-size: 14px;
+			line-height: 18px;
+			color: #fff;
+		}	
+	}
+	
+	.ga-head {
+		background-color: #fff;
+		@include box-shadow(#666666 0 -1px 3px);
+		min-height: 40px;
+		
+		a {
+			text-align: center;
+			font-weight: bold;
+			padding: 0px 12px;
+			color: #666;
+			line-height: 40px;
+			display: inline-block;
+			font-family: $latoFamily;
+			
+			&:hover, &.active {
+				background-color: #666;
+				color: #fff;
+				text-decoration: none;
+			}
+		}
+	}
+	
+	.graph-area-wrap {
+		.graph-filter {
+			margin: 15px auto 0;
+			background-color: #fff;
+			border: solid 1px #ccc;
+			border-radius: 6px;
+			text-align:center;
+			display:inline-block;
+			
+			a {
+				display: inline-block;
+				line-height: 32px;
+				color: #666;
+				padding: 0px 10px;
+				text-align: center;
+				
+				&:hover, &.active {
+					color: #fff;
+					background-color: #666;
+					text-decoration: none;
+				}
+				
+				&:first-child {
+					border-top-left-radius: 6px;
+					border-bottom-left-radius: 6px;
+				}
+				
+				&:last-child {
+					border-top-right-radius: 6px;
+					border-bottom-right-radius: 6px;
+				}
+			}
+		}
+		
+		.graph-area {
+			margin: 25px 0px 0;
+			background:#e7efef;
+			
+			.lhs {
+				float: left;
+				width: 18%;
+				padding-top:17%;
+				
+				.data-type {
+					position: relative;
+					margin: 5px 10px 25px 10px;
+					width: auto;
+					text-align:center;
+					background-color: #EBE8E8;
+					border: solid 1px #ccc;
+					border-radius: 6px;
+					padding: 1px 2px;
+					display:inline-block;
+					
+					a {
+						color: #333;
+						padding: 5px 10px;
+						display: block;
+						font-size:$body-font-size;
+						
+						&:hover {
+							text-decoration: none;
+						}
+					}	
+				}
+				.time-duration {
+					display:inline-block;
+					margin:54px 0 0 11px;
+					min-width:110px;
+					.time-controller-wrap {
+						.dd-list {
+							right:auto;
+						}
+					}
+				}
+			}
+			
+			.rhs {
+				float: right;
+				width: 80%;
+				padding-right:10px;
+				
+				img  {
+					width: 700px;
+				}
+				
+				.graph-drill-down {
+					min-width: 784px;
+				}
+			}
+			
+
+			.template {
+				display: inline-block;
+				width: 100%;
+
+				.tbl-summary {
+					margin: 20px 30px 20px 5px;
+
+					.data-name{
+						width: 223px;
+						float: left;
+						border-right: solid 1px #ccc;
+						border-left: solid 1px #ccc;
+						text-align: center;
+
+					}
+
+					.data-container{
+						float: left;
+						width: 710px
+					}
+					
+					.pt_row {
+						border: solid 1px #ccc;
+						border-right: none;
+						border-left: none;
+
+						[class*="pt_col-"] {
+							line-height: 20px;
+							text-align: center;
+							border-right: solid 1px #ccc;
+							
+							.c-sq {
+								width: 10px;
+								height: 10px;
+								display: inline-block;
+								margin-right: 10px;
+							}
+						}
+						
+						&.header {
+							[class*="pt_col-"] {
+								border: none;
+								font-size: 10px;
+								font-weight: bold;
+								text-transform: capitalize;
+							}
+						}
+					}
+				}	
+			}
+			
+			
+			&.last {
+				margin:0 0 10px 0;
+				border-top:1px solid #666;
+				background:#F5F7F7;
+				clear: both;
+				
+				.lhs {
+					padding-left:10px;
+					width: 17%;
+				}
+			}
+		}
+			
+		.drilldown {
+			background: #333;
+			padding: 10px;
+			clear: both;
+			
+			.title {
+				font-size: 14px;
+				font-weight: bold;
+				color: #fff;
+			}
+		}
+	}
+}
+
+.table-cell {
+	display:table-cell;
+}
+
+.drillBtn {
+	&.hover, &.active {
+		color: #fff;
+		
+		i.pt-icon-chevron-down:before {
+			content: "\f077";
+		}
+	}
+}
+
+/*********************************************************************
+*********************** GRAPH ANALYSIS ENDSS ************************
+*********************************************************************/

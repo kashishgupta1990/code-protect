@@ -1,0 +1,1 @@
+angular.module("gdi2290.md5-filter",[]).filter("md5",function(r){return function(t){return t?r.createHash(t.toString().toLowerCase()):t}});

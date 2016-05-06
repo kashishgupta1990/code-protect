@@ -1,0 +1,1 @@
+define(["../core"],function(n){var l=function(e,r,c,i,t,o,u){var f=0,a=e.length,v=null==c;if("object"===n.type(c)){t=!0;for(f in c)l(e,r,f,c[f],!0,o,u)}else if(void 0!==i&&(t=!0,n.isFunction(i)||(u=!0),v&&(u?(r.call(e,i),r=null):(v=r,r=function(l,e,r){return v.call(n(l),r)})),r))for(;a>f;f++)r(e[f],c,u?i:i.call(e[f],f,r(e[f],c)));return t?e:v?r.call(e):a?r(e[0],c):o};return l});

@@ -1,0 +1,243 @@
+/* 
+Desc: Static Pages Scss Document 
+Author: Nimit Mangal	
+Date: 04 March 2014
+*/
+
+/****  Contact Us Page CSS  ****/
+
+.contactus-wrap {
+	address {
+		border-left:solid 4px $lighter-mid-gray-color; 
+		padding-left:10px; 
+		margin-bottom:15px;
+	}
+	.contact-head{ font-family:$proximaNovaFamily;
+		font-size:$body-font-size + 6px;
+		font-weight: bold; 
+		color:$darkBlack-gray-color; 
+	}
+	
+}
+.staticView{ 
+	.sidebar{padding:0 0 15px 0 !important;}
+}
+.listUiInfo{ margin: 0 0 0 18px !important;
+	list-style-type: octal;
+}
+/**** Proptiger in Media  ****/
+.media_page {
+	.row-three-column.pull-left {
+		text-align:center;
+		padding:7px 0px;
+		
+		a img.playimg {
+			border:1px solid #c2c2c2;
+			width:230px; 
+			height:189px;
+		}
+	}
+}
+
+/**** Careers ****/
+.prop-car-cont-info{ position:relative;
+	top:5px; 
+	margin: 0 auto;
+	width: $body-width - 28%;
+	background:$White-gray-color;
+	padding:5px;
+	height:74px;
+	font-family:$proximaNovaFamily;
+	font-size:$body-font-size - 1px;
+	color:$darkligh-gray-color;
+	line-height:16px;
+	@include box-sizing(border-box);
+}
+.prop-car-link-info{ padding-left:5%;}
+.prop-car-img-info{ position:relative; 
+	margin: 0 auto;
+	width: $body-width - 28%;
+}
+.prop-car-pop-info{position:absolute;
+		width: $body-width;
+		background:$darkBlack-gray-color;
+		bottom:0;
+		height: 30px;
+		font-family:$proximaNovaFamily;
+		font-size:$body-font-size + 2px;
+		color:$white-color;
+		overflow:hidden;
+		text-overflow:ellipsis;
+		white-space:nowrap;
+		padding:3px 7px;
+		opacity:0.8;
+		filter:Alpha(Opacity=80);
+		z-index:1;
+		@include box-sizing(border-box);
+}
+/***** Testimonials  *****/
+.testimo-info:first-child{
+	.paddingT10{ padding-top:0;}
+	.border-Top{ border-top:none;}
+	
+	}
+.testimo-info:nth-child(2){
+	.paddingT10{ padding-top:0;}
+	.border-Top{ border-top:none;}
+}
+
+
+
+/* common css for login page start */
+
+.marginT25 { 
+	margin:25px 0 0;
+}
+.marginB20 {
+	margin-bottom:20px;
+}
+.marginL15 {
+	margin-left:15px;
+}
+.button-ripple.button-footer { 
+	border:1px solid #fff; color:#fff !important;
+}
+.login-form{
+    width: 320px;
+    padding:15px;
+}
+.login-header { 
+	color:grey;
+	font-size: 20px;
+	line-height: 23px;
+	padding-bottom: 10px;
+}
+
+.login-info {  
+	border:1px solid #ccc;
+	position: relative;
+	width:700px; 
+	height:450px;
+    margin: 20px auto 0;
+  	left: 19%;
+	background:#fff url(../images/newssitebanner.jpg) no-repeat bottom center;
+}
+
+.or {
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 15px;
+	margin:100px 0 0 35px;
+}
+.other-option {
+	margin:52px 0 0 10%;
+}
+
+.footer-option {
+	position:absolute;
+	bottom:0;
+}
+.footer-option-signup {
+	position:absolute;
+	bottom:0;
+	right:15px;
+}
+.button-ripple.signup {
+	color:#fff;
+	border:1px solid #fff;
+	right:0;
+}
+.googlebtn a {
+	width: 184px;
+}
+.error-pos {
+	z-index:1;
+	bottom:-20px;
+	right:0;
+	color:red;
+	font-size:12px;
+}
+
+.why-signup-info {
+	position:absolute;
+	top:0;
+	right:0;
+	width:30px;
+	height:30px;
+	overflow:hidden;
+	box-shadow:-4px 5px 6px 0px #ccc;
+}
+.why-signup-info .signup-corner {
+	
+	content: "";
+	position: absolute;
+	top: 0%;
+	right: 0%;
+	width: 0px;
+	height: 0px;
+	border-bottom: 30px solid #03A9F4; 
+	border-right: 30px solid transparent;
+	box-shadow:-4px 5px 6px 0px #ccc;
+	cursor:pointer;
+}
+.why-signup-description {
+	width:245px;
+	height:220px;
+	padding-top:10px;
+	margin-left: 30px;
+
+	ul {
+		list-style-type: disc;
+		margin-left: 22px !important;
+		padding-top: 10px;
+	}
+}
+.why-signup-info{
+	-webkit-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
+.why-signup-info:hover{
+	margin-right:0px;
+	-webkit-transition: width 0.7s ease-in-out, height 0.5s ease-in-out;
+	transition: width 0.7s ease-in-out, height 0.5s ease-in-out;
+	width:250px;
+	height:220px;
+	border:1px solid #03A9F4;
+	box-shadow:-4px 5px 6px 0px #ccc;
+	background: #f1f1f1;
+	color: #555;
+	padding:5px;
+	border:0;
+}
+.why-signup-info:hover .signup-corner{ 
+	left:0;
+	top:auto;
+	bottom:0;
+}
+.why-signup-info:hover .why-signup-description {
+	margin-left: 0;
+}
+
+.material .material-input input{
+	margin-bottom: 0;
+	border-radius: 0;
+	padding: 0 !important;
+}
+.material .material-input input[type="email"]:focus, .material .material-input input[type="password"]:focus {
+	border: 0;
+	box-shadow: none;
+}
+.login-info a {
+	text-decoration: none;
+	&:hover{
+		text-decoration: none;
+	}
+}
+
+/* Common css for login page end */
+
+
+

@@ -1,0 +1,9 @@
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/" xmlns:moz="http://www.mozilla.org/2006/browser/search/">
+<ShortName>proptiger.com</ShortName>
+<Description>
+Property in India - Buy Properties in India, Real Estate India Property
+</Description>
+<InputEncoding>UTF-8</InputEncoding>
+<Image width="16" height="16" type="image/x-icon">http://www.proptiger.com/favicon.ico</Image>
+<Url type="text/html" method="get" template="http://www.proptiger.com/filters?q={searchTerms}"/>
+</OpenSearchDescription>

@@ -1,0 +1,664 @@
+/* 
+Desc: Button View Scss Document 
+Author: Sanjeev Verma
+Date: 24 December 2013
+*/
+
+.closeBtn{ 
+	position:absolute; 
+	right:15px;
+	top:0px;
+	padding:5px 20px;
+	@include rounded($bottom:true, $radius:3px);
+	cursor:pointer;
+	background: #e7e7e7; 
+	
+	i{ color:#555555;
+		font-size:16px;
+	}
+	
+	&:hover{
+		background: #f39c13;
+		i{ color:#ffffff;} 
+	}
+}
+.btn-close{	
+	position:absolute;
+	right:15px;
+	background:$lighter-gray-color;
+	font-size:$body-font-size + 2px;
+	color:$gray-color; 
+	padding:1px 5px; 
+	cursor:pointer;
+	z-index:3;
+	&:hover{ background:$darkBlack-gray-color; 
+		color:$white-color;
+	}
+}
+
+.btn-link{ 
+	font-size:$body-font-size;
+	padding:4px 12px;
+	color:$anchor-link-color;
+	text-decoration:none;
+	
+	&:hover, &:focus {
+		text-decoration:underline;		
+	}
+}
+
+.btn{ font-family:$proximaNovaFamily;
+	font-size:$body-font-size + 2px;
+	color:$btn-color;
+	text-transform:uppercase;
+	border:1px solid $btn-bordercolor;
+	background: $btn-bgcolor;
+	padding:8px 20px 7px 20px;
+	line-height:normal;
+	font-weight:normal !important;
+	cursor:pointer;
+	@include text-shadow(none); 
+	@include box-shadow(none);
+	@include rounded($radius:5px);
+
+	&:hover, &:focus {background: $btn-hov-bgcolor;
+		color:$btn-color;
+		@include text-shadow(none); 
+		@include box-shadow(none);
+		border:1px solid $btn-hov-bordercolor;
+	}	
+	
+	&:active, &.active {background: $btn-act-bgcolor;
+		color:$btn-color;
+		@include text-shadow(none); 
+		@include box-shadow(none);
+		border:1px solid $btn-act-bordercolor;
+	}	
+}
+
+.btn-default{ font-family:$proximaNovaFamily;
+	font-size:$body-font-size + 2px;
+	color:$btn-defaulcolor;
+	text-transform:uppercase;
+	border-top:4px solid $btn-defaul-bgcolor;
+	border-bottom:4px solid $btn-defaul-bgcolor;
+	border-left:none;
+	border-right:none;
+	background: $btn-defaul-bgcolor;
+	padding:4px 20px;
+	line-height:20px;
+	font-weight:normal !important;
+	cursor:pointer;
+	@include text-shadow(none); 
+	@include box-shadow(none);
+	@include rounded($radius:5px);
+	
+	&:hover, &:focus{
+		background: $btn-defaul-bgcolor;
+		color:$btn-defaulcolor;
+		@include text-shadow(none); 
+		@include box-shadow(none);
+		border: none;
+		border-top:4px solid $btn-defaul-bgcolor;
+		border-bottom:4px solid $btn-defaul-hov-bordercolor;
+	}	
+	
+	&:active, &.active, &:focus:active {
+		background: $btn-defaul-act-bgcolor;
+		color:$btn-defaulcolor;
+		@include text-shadow(none); 
+		@include box-shadow(none);
+		border: none;
+		border-top:4px solid $btn-defaul-act-bordercolor;
+		border-bottom:4px solid $btn-defaul-act-bgcolor;
+	}	
+}
+
+.btn-primary{font-family:$proximaNovaFamily;
+	font-size:$body-font-size + 2px;
+	color:$btn-primarycolor;
+	text-transform:uppercase;
+	border-top:4px solid $btn-primary-bgcolor;
+	border-bottom:4px solid $btn-primary-bgcolor;
+	border-left:none;
+	border-right:none;
+	background: $btn-primary-bgcolor;
+	padding:4px 20px;
+	line-height:20px;
+	font-weight:normal !important;
+	cursor:pointer;
+	@include text-shadow(none); 
+	@include box-shadow(none);
+	@include rounded($radius:5px);
+	
+	&:hover, &:focus{background: $btn-primary-bgcolor;
+		color:$btn-primarycolor;
+		@include text-shadow(none); 
+		@include box-shadow(none);
+		border-top:4px solid $btn-primary-bgcolor;
+		border-bottom:4px solid $btn-primary-hov-bordercolor;
+		text-decoration:none;
+	}
+		
+	&:active, &.active{background: $btn-primary-act-bgcolor;
+		color:$btn-primarycolor;
+		@include text-shadow(none); 
+		@include box-shadow(none);
+		border-top:4px solid $btn-primary-act-bordercolor;
+		border-bottom:4px solid $btn-primary-hov-bordercolor;
+	}
+	
+	&.disabled{ background:$btn-primary-dis-bgcolor !important;
+		border-top:4px solid $btn-primary-dis-bgcolor !important;
+		border-bottom:4px solid $btn-primary-dis-bgcolor !important;
+		cursor:default;
+		&:hover{background:$btn-primary-dis-bgcolor;
+		border-top:4px solid $btn-primary-dis-bgcolor;
+		border-bottom:4px solid $btn-primary-dis-bgcolor;
+		cursor:default;}
+	}	
+}
+
+.btn-cta{@extend .btn-primary;
+	font-size:$body-font-size + 6px;
+	font-family:$proximaNovaFamily;
+	font-weight:bold;
+	padding:15px 50px;
+}
+
+.lt-ie10 {
+	.btn-primary{padding:4px 10px;
+	}
+}
+
+.btn-action { font-family:$proximaNovaFamily;
+	font-size:$body-font-size + 2px;
+	color:$btn-actioncolor;
+	text-transform:uppercase;
+	border-top:4px solid $btn-action-bgcolor;
+	border-bottom:4px solid $btn-action-bgcolor;
+	border-left:none;
+	border-right:none;
+	background: $btn-action-bgcolor;
+	padding:4px 15px;
+	line-height:20px;
+	font-weight:normal !important;
+	cursor:pointer;
+	@include text-shadow(none); 
+	@include box-shadow(none);
+	@include rounded($radius:5px);
+	i{ font-size:$body-font-size + 4;
+		vertical-align: middle;
+	}
+	&:hover, &:focus{background: $btn-action-hov-bgcolor;
+		color:$btn-actioncolor;
+		@include text-shadow(none); 
+		@include box-shadow(none);
+		border-top:4px solid $btn-action-bgcolor;
+		border-bottom:4px solid $btn-action-hov-bordercolor;
+	}	
+	
+	&:active, &.active{background: $btn-action-act-bgcolor;
+		color:$btn-actioncolor;
+		@include text-shadow(none); 
+		@include box-shadow(none);
+		border-top:4px solid $btn-action-act-bordercolor;
+		border-bottom:4px solid $btn-action-hov-bordercolor;
+	}
+	
+	&.disabled{ cursor:default;
+		opacity:0.6;
+		filter: alpha(opacity=60);
+	}	
+}
+.lt-ie10 {
+	.btn-action{padding:4px 10px;
+	}
+}
+.small-btn{font-size:$body-font-size !important;
+	padding:3px 10px !important;
+	@include rounded($radius:5px);
+	border-top-width:3px;
+	border-bottom-width:3px;
+	line-height:16px;
+	
+	&:hover, &:focus{ border-top-width:3px;
+	border-bottom-width:3px;
+	}
+	
+	&:active, &.active{ border-top-width:3px;
+	border-bottom-width:3px;
+	}
+}
+
+.btn-primary+ .btn, .btn+ .btn-primary, .btn-primary+ .btn-primary, .btn-action+ .btn, .btn-action+ .btn-action, .gray-btn-primary, .gray-btn-action{ margin-left:10px;}
+
+.btn-action+ .btn, .btn+ .btn-action{ margin-left:10px;}
+
+.btn.btn-small {
+	font-size:11.9px; 
+	padding:5px 10px;
+	border:1px solid #cccccc;
+	color:$btn-color;
+	
+	&:hover, &:focus{
+		background: $btn-hov-bgcolor;
+	}
+	&:active, &.active{
+		background: $btn-act-bgcolor;
+	}
+}
+
+.btn{
+	&.disabled{ cursor:default;
+		background: $btn-bgcolor;
+		color:$darkligh-mid-gray-color;
+		opacity:0.6;
+		filter: alpha(opacity=60);
+		
+		&:hover{ cursor:default;
+			color:$darkligh-mid-gray-color;
+			border:1px solid $btn-bordercolor;
+			background: $btn-bgcolor;
+		}
+		
+		&:focus{cursor:default;
+			color:$darkligh-mid-gray-color;
+			border:1px solid $btn-bordercolor;
+			background: $btn-bgcolor;
+		}
+	}
+}
+
+.btn.search-bg {
+	background:#777777;
+	border:1px solid #a7a7a7;
+	color:#f6f6f6;
+	
+	&:hover, &:focus {
+		background:#777777;
+		border:1px solid #a7a7a7;
+		color:#f6f6f6;
+	}
+}
+
+.btn.btn-small-builer {
+	font-size:11.9px; 
+	padding:5px 10px 6px;
+	border:none;
+	margin: 0 7px 5px 21px;
+	
+	&:hover, &:focus{
+		background-position:right bottom;
+    	background: linear-gradient(to right, #333333 70%, #c0392b 30%);
+		color: $btn-checkbox-act-color;
+	}
+
+	&:active, &.active{
+		background: $btn-act-bgcolor;
+	}
+
+	.buider-ellipse{
+		display: inline-block;
+		float: left;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		width: 75px;
+	}
+}
+
+.btn.btn-small-builer .pt-icon-times:before {
+	padding-left:11px;
+	paddding-right:3px;
+}
+
+
+
+.btn.btn-mini {
+	font-size:10.9px; 
+	padding:2px 10px 3px;
+	
+	&:hover, &:focus{
+		background: $btn-hov-bgcolor;
+	}
+}
+
+
+/* Filter Checkbox Buttons */
+.filter-checkbox {	
+	> .btn {
+		background: $btn-checkbox-bgcolor;
+		padding:4px 15px;
+		font-size:13px;
+		font-weight:bold;
+		text-transform:none;
+		color:#777777;
+
+		&:hover, &:focus{
+			background: $btn-checkbox-hov-bgcolor;
+			color:$btn-checkbox-hov-color;
+		}	
+
+		&:active, &.active{
+			background: $btn-checkbox-act-bgcolor;
+			color:$btn-checkbox-act-color;
+			border:1px solid #333;
+		}
+		
+		&.btn-mini {
+			font-size:10px; 
+			padding:2px 10px 3px;
+
+			&:hover, &:focus{
+				background: $btn-checkbox-hov-bgcolor;
+				color:$btn-checkbox-hov-color;
+			}	
+
+			&:active, &.active{
+				background: $btn-checkbox-act-bgcolor;
+				color:$btn-checkbox-act-color;
+			}
+		}
+	}
+}
+
+/* Filter Radio Buttons */
+.filter-radio {	
+	> .btn {
+		background: $btn-radio-bgcolor;
+		padding:4px 15px;
+		font-size:13px;
+		font-weight:bold;
+		color:#777777;
+		text-transform:none;
+
+		&:hover, &:focus{
+			background: $btn-radio-hov-bgcolor;
+			color:$btn-radio-hov-color;
+		}	
+
+		&:active, &.active{
+			background: $btn-radio-act-bgcolor;
+			color:$btn-radio-act-color;
+		}
+	}
+}
+/* Gray Color Button */
+.gray-btn-primary{ font-family:$proximaNovaFamily;
+	font-size:$body-font-size + 2px;
+	color:$gray-btn-color;
+	text-transform:uppercase;
+	border-top:4px solid $gray-btn-bgcolor;
+	border-bottom:4px solid $gray-btn-bgcolor;
+	border-left:none;
+	border-right:none;
+	background: $gray-btn-bgcolor;
+	padding:6px 20px;
+	line-height:normal;
+	font-weight:normal !important;
+	cursor:pointer;
+	@include text-shadow(none); 
+	@include box-shadow(none);
+	@include rounded($radius:5px);
+
+	&:hover, &:focus{background: $btn-primary-bgcolor;
+		color:$btn-primarycolor;
+		@include text-shadow(none); 
+		@include box-shadow(none);
+		border-top:4px solid $btn-primary-bgcolor;
+		border-bottom:4px solid $btn-primary-hov-bordercolor;
+	}	
+
+	&:active, &.active{background: $btn-primary-act-bgcolor;
+		color:$btn-primarycolor;
+		@include text-shadow(none); 
+		@include box-shadow(none);
+		border-top:4px solid $btn-primary-act-bordercolor;
+		border-bottom:4px solid $btn-primary-hov-bordercolor;
+	}
+}
+
+.gray-btn-action { font-family:$proximaNovaFamily;
+	font-size:$body-font-size + 2px;
+	color:$gray-btn-color;
+	text-transform:uppercase;
+	border-top:4px solid $gray-btn-bgcolor;
+	border-bottom:4px solid $gray-btn-bgcolor;
+	border-left:none;
+	border-right:none;
+	background: $gray-btn-bgcolor;
+	padding:6px 20px;
+	line-height:normal;
+	font-weight:normal !important;
+	cursor:pointer;
+	@include text-shadow(none); 
+	@include box-shadow(none);
+	@include rounded($radius:5px);
+
+	&:hover, &:focus{background: $btn-action-hov-bgcolor;
+		color:$btn-actioncolor;
+		@include text-shadow(none); 
+		@include box-shadow(none);
+		border-top:4px solid $btn-action-hov-bgcolor;
+		border-bottom:4px solid $btn-action-hov-bordercolor;
+	}	
+
+	&:active, &.active{background: $btn-action-act-bgcolor;
+		color:$btn-actioncolor;
+		@include text-shadow(none); 
+		@include box-shadow(none);
+		border-top:4px solid $btn-action-act-bordercolor;
+		border-bottom:4px solid $btn-action-hov-bordercolor;
+	}
+}
+
+/* Small Gray Color Icon Button */
+.gray-icon-btn-primary { font-family:$proximaNovaFamily;
+	font-size:$body-font-size + 2px;
+	color:$gray-btn-color;
+	min-width:35px;
+	text-transform:uppercase;
+	border-top:4px solid $gray-btn-bgcolor;
+	border-bottom:4px solid $gray-btn-bgcolor;
+	border-left:none;
+	border-right:none;
+	background: $gray-btn-bgcolor;
+	padding:4px 10px 2px 10px;
+	line-height:normal;
+	font-weight:normal !important;
+	cursor:pointer;
+	@include text-shadow(none); 
+	@include box-shadow(none);
+	@include rounded($radius:5px);
+	
+	&:hover { 
+		background: $btn-primary-bgcolor;
+		color:$btn-primarycolor;
+		@include text-shadow(none); 
+		@include box-shadow(none);
+		border-top:4px solid $btn-primary-bgcolor;
+		border-bottom:4px solid $btn-primary-hov-bordercolor;
+	}	
+	
+	&:active{
+		background: $btn-primary-act-bgcolor;
+		color:$btn-primarycolor;
+		@include text-shadow(none); 
+		@include box-shadow(none);
+		border-top:4px solid $btn-primary-act-bordercolor;
+		border-bottom:4px solid $btn-primary-hov-bordercolor;
+	}
+
+	&.active {
+		background: $btn-primary-bgcolor;
+		color:$btn-primarycolor;
+		@include text-shadow(none); 
+		@include box-shadow(none);
+		border-top:4px solid $btn-primary-bgcolor;
+		border-bottom:4px solid $btn-primary-bgcolor;
+		&:hover{
+			background: $btn-primary-act-bgcolor;
+			color:$btn-primarycolor;
+			@include text-shadow(none); 
+			@include box-shadow(none);
+			border-top:4px solid $btn-primary-act-bordercolor;
+			border-bottom:4px solid $btn-primary-hov-bordercolor;
+		}
+	}
+	i{font-size:$body-font-size + 10px;}
+}
+
+.lt-ie10{
+	.gray-icon-btn-primary {padding:4px 5px 2px 5px;
+	}
+}
+
+.gray-icon-btn-action :focus{border-top:4px solid transparent !important;
+	border-bottom:4px solid transparent !important;
+}
+
+.gray-icon-btn-action { font-family:$proximaNovaFamily;
+	font-size:$body-font-size + 2px;
+	color:$gray-btn-color;
+	text-transform:uppercase;
+	border-top:4px solid $gray-btn-bgcolor;
+	border-bottom:4px solid $gray-btn-bgcolor;
+	border-left:none;
+	border-right:none;
+	background: $gray-btn-bgcolor;
+	padding:4px 10px 2px 10px;
+	line-height:normal;
+	font-weight:normal !important;
+	cursor:pointer;
+	@include text-shadow(none); 
+	@include box-shadow(none);
+	@include rounded($radius:5px);
+	
+	&:hover, &:focus {
+		background: $btn-action-hov-bgcolor;
+		color:$btn-actioncolor;
+		@include text-shadow(none); 
+		@include box-shadow(none);
+		border-top:4px solid $btn-action-hov-bgcolor;
+		border-bottom:4px solid $btn-action-hov-bordercolor;
+	}	
+	
+	&:active, &.active {
+		background: $btn-action-act-bgcolor;
+		color:$btn-actioncolor;
+		@include text-shadow(none); 
+		@include box-shadow(none);
+		border-top:4px solid $btn-action-act-bordercolor;
+		border-bottom:4px solid $btn-action-hov-bordercolor;
+	}	
+	i {font-size:$body-font-size + 10px;}	
+}
+.gray-icon-btn-primary+ .gray-icon-btn-action, .gray-icon-btn-action+ .gray-icon-btn-primary, .gray-icon-btn-primary+ .gray-icon-btn-primary, .btn-action+ .gray-icon-btn-primary {margin-left:10px;}
+
+/* More button style */
+.btn-more{ position:relative;
+	&.rightPop{
+		.dropdown-menu{ right:0;
+			left:inherit !important;
+		}
+	}
+	.dropdown-menu{ display:none;
+	}
+	
+	&:hover{
+		.dropdown-menu{ display:block !important;}
+	}	
+}
+
+.btn-search-map{ font-family:$proximaNovaFamily;
+	font-size:$body-font-size + 2px;
+	color:$white-color;
+	text-transform:uppercase;
+	border-top:4px solid $darkBlack-gray-color;
+	border-bottom:4px solid $darkBlack-gray-color;
+	border-left:none;
+	border-right:none;
+	background: $darkBlack-gray-color;
+	padding:4px 20px;
+	line-height:20px;
+	font-weight:normal !important;
+	cursor:pointer;
+	@include text-shadow(none); 
+	@include box-shadow(none);
+	@include rounded($radius:5px);
+	
+	&:hover{background: $darkBlack-gray-color;
+		color:$white-color;
+		@include text-shadow(none); 
+		@include box-shadow(none);
+		border-top:4px solid $darkBlack-gray-color;
+		border-bottom:4px solid $Black-gray-color;
+		text-decoration:none;
+	}	
+	
+	&:active{background: $Black-gray-color;
+		color:$white-color;
+		@include text-shadow(none); 
+		@include box-shadow(none);
+		border-top:4px solid $Black-gray-color;
+		border-bottom:4px solid $Black-gray-color;
+	}	
+}
+.clubBtn{ position:relative;
+	.upBtn{ position:absolute;
+		bottom:-2px;
+		right:5px;
+		font-size:$body-font-size + 2px;
+		@include text-shadow($white-color -1px -1px 2px);
+	}
+	&:hover{
+		.upBtn{ @include text-shadow($btn-primary-bgcolor -1px -1px 2px);}
+	}
+}
+.btn-action-o{ font-size:$body-font-size + 1;
+	color: $btn-action-bgcolor;
+	border:1px solid $btn-action-bgcolor;
+	background:transparent;
+	padding:5px 20px;
+	line-height:20px;
+	font-weight: bold;
+	cursor:pointer;
+	text-transform:uppercase;
+	@include text-shadow(none); 
+	@include box-shadow(none);
+	@include rounded($radius:5px);
+	
+	&:hover{ background:  $btn-action-bgcolor;
+		color:$white-color;
+		@include text-shadow(none); 
+		@include box-shadow(none);
+	}
+	i{ font-size:$body-font-size + 4;
+		vertical-align: middle;
+		font-weight: bold;
+	}
+}
+
+.btn-WhiteFl-action-o{ font-size:$body-font-size + 1;
+	color:$white-color;
+	border:1px solid $white-color;
+	background:transparent;
+	padding:5px 20px;
+	line-height:20px;
+	font-weight: bold;
+	cursor:pointer;
+	text-transform:uppercase;
+	@include text-shadow(none); 
+	@include box-shadow(none);
+	@include rounded($radius:5px);
+	i{ font-size:$body-font-size + 4;
+		vertical-align: middle;
+		font-weight: bold;
+	}
+	&:hover{ background: $white-color;
+		color:$dark-blue-gray-color;
+		@include text-shadow(none); 
+		@include box-shadow(none);
+	}
+}

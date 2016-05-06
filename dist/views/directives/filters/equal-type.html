@@ -1,0 +1,17 @@
+<div ng-class="{'dropdown-toggle' : isdropdown}" class="searchDropInfo dropdown-toggle">
+    <span data-ng-if="filter.activeCount && isdropdown"> 
+        {{filter.tempLabel}}
+    </span>
+    <span data-ng-if="!filter.activeCount && isdropdown"> {{filter.label}} </span>
+    <label data-ng-if=!isdropdown> {{filter.label}} </label>
+    <i class="pt pt-icon-angle-down iconArrow" data-ng-if=isdropdown></i>
+</div>
+<ul class=rightTopClick data-ng-class="{'filtClickListInfo' : isdropdown, 'filtMoreContInfo' : !isdropdown}">
+    <li class=checkboxInfo data-ng-repeat="option in filter.options" data-ng-class="{'active': option.selected || option.selectedFromUrl, 'disable':option.disable || option.disabledFromUrl}" data-ng-click="filterChanged(option, $event)">
+        <span class=checkIconInfo>
+            <i class="pt pt-icon-square-o"></i>
+            <i class="pt pt-icon-check-square-o"></i>
+        </span>
+        <label>{{option.label}}</label>
+    </li>
+</ul>

@@ -1,0 +1,37 @@
+<div class=row-full data-ng-show=showImage>
+    <div class="col-lg-12 col-md-12 col-sm-12 pull-left">
+        <div id=bannerscollection_zoominout_generous>            
+            <div class="myloader myloaderLarge"></div>
+            <ul class=bannerscollection_zoominout_list>              
+                    <li data-initialzoom=1 data-finalzoom=1 data-duration=0 data-text-id=#photoText1{{($index+1)}} data-horizontalposition=left data-verticalposition=top data-ng-repeat="slide in ptslides" data-bottom-thumb="{{slide.image}}?width=130&height=100">
+                    <img data-ng-src="{{slide.image}}?width={{options.imageWidth}}&height={{options.imageHeight}}" data-ng-alt={{slide.text}} style=margin:auto>
+                    </li>                    
+            </ul>
+            <div data-ng-click=expand() class=expand-btn><i class="pt pt-icon-expand"></i></div>
+        </div>
+        <div class=photoGalleryTab>
+             <ul>
+                <li data-ng-repeat="image in currentImageObject">
+                    <a data-ng-click=updateAlbum(image) data-ng-class=image.selected>{{image.index}}</a>
+                </li>
+            </ul>
+        </div>      
+    </div>
+</div>
+<div class=row-full data-ng-show=noImage>
+    {{noImageText}}
+</div>
+<div data-ng-repeat="slide in ptslides">
+    <div id=photoText1{{($index+1)}} class=bannerscollection_zoominout_texts>              
+        <div class="bannerscollection_zoominout_text_line textElement12_MiniGallery1" data-initial-left=190 data-initial-top=200 data-final-left=30 data-final-top=16 data-duration=0.5 data-fade-start=0 data-delay=0.23>{{slide.text}}<br> </div>            
+   </div>
+</div>
+
+<div style=display:none>
+    <ul>
+        <li data-ng-repeat="item in perfImages">
+            <img data-ng-src="{{item.image}}?width={{options.imageWidth}}&height={{options.imageHeight}}" width={{options.width}} height={{options.height}} data-ng-alt={{slide.text}} style=margin:auto>
+            <img data-ng-src="{{item.image}}?width=130&height=100" width={{options.width}} height={{options.height}} data-ng-alt={{slide.text}} style=margin:auto>
+        </li> 
+    </ul>
+</div>

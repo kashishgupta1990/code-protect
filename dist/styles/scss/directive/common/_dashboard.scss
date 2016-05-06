@@ -1,0 +1,26 @@
+/* 
+Desc: Dashboard Scss Document 
+Author: Sanjeev Verma
+Date: 03 Oct 2013
+*/
+.dashboardColumn{ width:$body-width;}
+.dashboardTwoColumn{ width:$body-width - 50%;}
+.dropPortfolio{
+    width: auto; 
+    height: auto;
+    margin:0;
+}
+.ui-sortable{ overflow: hidden;}
+.ui-sortable-placeholder { 
+	background:#f8f7f7;
+    border: 1px dashed #c1c0c0; 
+    visibility: visible !important; 
+    min-height: 260px;
+	@include rounded( $radius:5px);
+	margin:0 0 15px 0; 
+}
+.ui-sortable-placeholder *{ visibility: hidden;}
+.ui-sortable-helper{ @include rounded( $radius:5px);
+	@include box-shadow(#b9b9b9 0px 1px 10px);
+	.widgetContainer{ border:1px solid #b9b9b9;}
+}

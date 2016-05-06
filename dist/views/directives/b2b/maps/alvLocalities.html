@@ -1,0 +1,30 @@
+<div data-ng-show=showList class=clear id=target>
+    <div class="view-all-wrapper fixed-header">
+        <span grid-head="" units=localityHeaderUnits sort=sort></span>
+    </div>
+	<div class=view-all-wrapper id=locDiv>
+        <div id=header-fixed></div>
+        <div data-ng-hide="localitiesList && localitiesList.length">
+            <span> No Localities Found.</span>
+        </div>
+        <div class="pt_row body row-alt-color" data-ng-repeat="loc in localitiesList | limitTo:perPageItem" data-ng-if=loc.data.authorized>
+            <div class="pt_col-1-8 ta-left"><span class=put-ellipsis once-text=loc.data.label></span></div>
+            <div class=pt_col-1-8>
+                <a href=javascript:void(0)><i class="pt pt-icon-map-marker" tooltip="View Projects" data-ng-click=viewProjects(loc.data)></i></a>
+                <a href=javascript:void(0) tooltip="View Analysis"><i class="pt pt-icon-bar-chart-o" data-ng-click=viewAnalysis(loc.data)></i></a>
+            </div>
+            <div class=pt_col-1-8><i class="pt pt-icon-inr" data-ng-if="loc.data.avgPricePerUnitArea !== 'NA'"></i><span once-text=loc.data.avgPricePerUnitArea></span></div>
+            <div class=pt_col-1-8 once-html=loc.data.priceRise6MonthsHtml></div>
+            <div class=pt_col-1-8 once-text=loc.data.localityUnitsLaunched6Months></div>
+            <div class=pt_col-1-8 once-text=loc.data.localityUnitsSold6Months></div>
+            <div class=pt_col-1-8 once-text=loc.data.localityUnitsDelivered6Months></div>
+            <div class=pt_col-1-8>6 months</div>
+        </div>
+    </div>
+</div>
+
+<div class=viewall-project-open data-ng-click=toggleALV()>
+    <span data-ng-show=!showList analytics-on="" data-analytics-event="Click_All Localities" data-analytics-category="Catchment Analysis" data-analytics-label=View>View all Localities</span>
+    <span data-ng-show=showList analytics-on="" data-analytics-event="Click_All Localities" data-analytics-category="Catchment Analysis" data-analytics-label=Hide>Hide all Localities</span>
+    <span><i data-ng-class="{'pt  pt-icon-caret-up':showList, 'pt  pt-icon-caret-down':!showList}"></i></span>
+</div>

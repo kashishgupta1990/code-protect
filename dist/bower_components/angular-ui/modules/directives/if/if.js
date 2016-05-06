@@ -1,0 +1,1 @@
+angular.module("ui.directives").directive("uiIf",[function(){return{transclude:"element",priority:1e3,terminal:!0,restrict:"A",compile:function(e,i,t){return function(e,i,n){var r,u;e.$watch(n.uiIf,function(n){r&&(r.remove(),r=void 0),u&&(u.$destroy(),u=void 0),n&&(u=e.$new(),t(u,function(e){r=e,i.after(e)}))})}}}}]);

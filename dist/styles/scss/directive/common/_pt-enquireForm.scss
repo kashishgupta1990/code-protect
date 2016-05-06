@@ -1,0 +1,419 @@
+/*
+Desc: Enquire Form Scss Document
+Author: Nitish Saraswat & Sabjeev Verma
+Date: 16 Dec 2013
+*/
+
+.enq-form-info{
+    .form-info{ width:$body-width;
+        padding:10px 0;
+        @include box-sizing(border-box);
+    }
+    .formHeader{ margin:0 0 10px 0;
+        .formSubHeadInfo{ font-family:$proximaNovaFamily;
+            font-size:$body-font-size + 4;
+            color:$darkBlack-gray-color;
+            font-weight: bold;
+        }
+
+    }
+    .error{
+        input{ border:1px solid $error-color !important;}
+        select{ border:1px solid $error-color;}
+        .error-info{ font-family:$proximaNovaFamily;
+            font-size:$body-font-size - 1px;
+            color:$error-color !important;
+            margin:-7px 0 10px 0;
+            float:left;
+        }
+    }
+    input[type="text"], input[type="password"], input[type="email"]{ width:$body-width;
+        height:36px;
+        color: $lighter-grey-textColor;
+        @include box-sizing(border-box);
+        margin:0 0 10px 0;
+        border: 2px solid $lighter-mid-gray-color;
+    }
+    select{ font-size: $body-font-size;
+        color:$lighter-grey-textColor;
+        width:$body-width;
+        height: 36px;
+        border: 2px solid $lighter-mid-gray-color ;
+        @include rounded( $radius:2px);
+    }
+    .btn-action{ width: $body-width;
+        padding: 8px 15px;
+        margin: 0;
+    }
+
+}
+.promLeadInfo{ width: $body-width;
+    text-align: center;
+    padding: 10px 0 0 0;
+    .promHeadInfo{ font-size: $body-font-size + 5;
+        color: $darkBlack-gray-color;
+        position: relative;
+        &:after{ content: '';
+            position: absolute;
+            left: $body-width - 53;
+            bottom: -2px;
+            width: 30px;
+            height: 2px;
+            margin: 0 auto;
+            background: $light-red-color;
+        }
+    }
+    ul.promLeadListInfo{ width: $body-width;
+        float: left;
+        display: block;
+        padding: 20px 0 10px 0;
+        li{ width: $body-width - 75;
+            float: left;
+            display:block;
+            padding: 0 5px;
+            text-align: center;
+            .promCirInfo{ @include rounded( $radius: 50%);
+                width: 48px;
+                height: 48px;
+                text-align: center;
+                display: inline-block;
+                padding: 10px 0 0 0;
+                border: 1px solid $darkligh-mid-gray-color;
+                i{ font-size: $body-font-size*2 + 2;
+                    color: $body-selected-color;
+                }
+            }
+            .promLeadListTextInfo{ font-size: $body-font-size - 1;
+                color: $darkligh-mid-gray-color;
+                display: block;
+                line-height: $body-font-size - 1;
+                padding: 5px 0;
+            }
+        }
+    }
+}
+
+
+
+.formListViewInfo{ padding: 0 0 20px 0;
+    ul.formListContInfo{
+        li{ font-size: $body-font-size - 2;
+            color:$darkBlack-gray-color;
+            line-height: $body-font-size + 1;
+            position: relative;
+            padding: 2px 0 2px 10px;
+            i{ font-size: $body-font-size - 7;
+                position: absolute;
+                top: 5px;
+                left: 0;
+                color: $anchor-link-color;
+            }
+            .formListCityName{ text-transform: capitalize;}
+        }
+    }
+}
+.formTermsInfo{ font-size: $body-font-size - 2;
+    color:$darkBlack-gray-color;
+    line-height: $body-font-size + 1;
+}
+
+.formTopMessInfo{ padding: 15px ;
+    text-align: center;
+    background: $white-color;
+    @include rounded( $radius:2px);
+    &.success{ width: $body-width - 10;
+        margin: 0 auto;
+        margin-top: 15px;
+        @include rounded( $radius:5px);
+        border: 2px solid $success-green-color; }
+    span{ font-size: $body-font-size + 5;
+        color:$success-green-color;
+        i{ font-size: $body-font-size + 7;
+            padding: 0 5px 0 0;
+            vertical-align: top;
+            line-height: $body-font-size + 3;
+        }
+    }
+}
+.formTopVerInfo{ font-size: $body-font-size + 5;
+    color: $darkBlack-gray-color;
+    text-align: center;
+    padding: 15px 0 0 0;
+    i{ font-size: $body-font-size*3 - 3;
+        color: $darkBlack-gray-color;
+        display: inline-block;
+    }
+    i + i{ font-size: $body-font-size - 1;
+        color:$mid-green-color;
+        padding-top: 13px;
+        margin-left: -7px;
+        vertical-align: top;
+        &:after{ content: '';
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 10px;
+            height: 10px;
+            background: $white-color;
+
+
+        }
+    }
+    span{ display: inline-block;
+        vertical-align: top;
+        padding-top: 10px;
+    }
+
+}
+.formTopLinkVerInfo{ font-size: $body-font-size + 3;
+    color: $darkBlack-gray-color;
+    text-align: center;
+    padding: 15px 0 0 0;
+    i{ font-size: $body-font-size*2 - 4;
+        color: $mid-green-color;
+        display: inline-block;
+    }
+    span{ display: inline-block;
+        vertical-align: top;
+        padding-top: 2px;
+    }
+
+}
+.formMobiContInfo{ padding: 20px 0;}
+.formMobiReqContInfo{ padding: 30px 0 10px 0;}
+.formVeriHeadInfo{ font-size: $body-font-size*2 - 4;
+    color: $darkBlack-gray-color;
+    text-align: center;
+    line-height: $body-font-size*2;
+    position: relative;
+    &:after{ content: '';
+        position: absolute;
+        left: $body-width - 53;
+        bottom: -2px;
+        width: 30px;
+        height: 2px;
+        margin: 0 auto;
+        background: $light-red-color;
+    }
+}
+.otpSendMessInfo{ font-size: $body-font-size + 1;
+    color:$success-green-color;
+    position: absolute;
+    top:50px;
+}
+.successInfo{ font-size: $body-font-size - 2;
+    color:$success-green-color;
+    line-height: $body-font-size + 1;
+}
+.notSuccessInfo{ font-size: $body-font-size - 2;
+    color:$error-color;
+    line-height: $body-font-size + 1;
+}
+.otpContInfo{ font-size: $body-font-size - 2;
+    color:$darkligh-midlightgray-color;
+    line-height: $body-font-size + 1;
+}
+.formVeriSubHeadInfo{ font-size: $body-font-size + 1;
+    color: $lighter-grey-textColor;
+    text-align: center;
+}
+.instPropOpInfo{ font-size: $body-font-size + 3;
+    color: $lighter-grey-textColor;
+}
+.formMobiFormInfo{ padding: 20px 0 0 0;
+    .error{ position: relative;
+        input{ border:1px solid $error-color !important;}
+        select{ border:1px solid $error-color;}
+        .error-info{ font-family:$proximaNovaFamily;
+            font-size:$body-font-size - 1px;
+            color:$error-color !important;
+            margin:-7px 0 10px 0;
+            float:left;
+            display:block;
+            position: absolute;
+            top:15px;
+            right: 5px;
+        }
+    }
+    .formMobiRow{ width:$body-width;
+        float: left;
+        margin: 0 0 10px 0;
+        input{ margin: 0;}
+    }
+    .formMobTwoColumn:first-child{ padding: 0;}
+    .formMobTwoColumn{ width:$body-width - 50;
+        padding:0 0 0 10px;
+        float: left;
+        @include box-sizing(border-box);
+    }
+    .filter-checkbox {
+        .btn{ font-size: $body-font-size + 3;
+            padding: 6px 15px;
+            @include rounded( $radius:2px);
+
+        }
+    }
+    .checkboxInfo{
+        i{ font-size: $body-font-size + 5;}
+        label{ font-size: $body-font-size + 3;}
+    }
+
+}
+.optConFirmInfo{ position: absolute;
+    top:35px;
+    right: 15px;
+    background: $white-color;
+    border:1px solid $light-gray-color;
+    padding: 0 5px 0 0;
+    @include rounded($bottom:true, $radius:5px);
+    .optConBoxInfo{ margin: 2px 3px 1px 8px;
+        font-size: $body-font-size + 2;
+        cursor: pointer;
+        color: $dark-gray-color;
+    }
+}
+.editNumBoxInfo{ width: $body-width;
+    position: relative;
+    .optConFirmInfo{
+        right: 0;
+    }
+    .error-info{ right: 30px !important;}
+    .editBtnInfo{ position: absolute;
+        width: 30px;
+        height: 30px;
+        right: 0;
+        top:0;
+        padding: 8px 0 0 5px;
+        i{ font-size: $body-font-size + 3;
+            cursor: pointer;
+            color: $dark-gray-color;
+        }
+    }
+}
+.formSecViewInfo{
+    top:5% !important;
+}
+/***** Start last screen for login  *****/
+
+.morePropHeadInfo{ font-size: $body-font-size + 5;
+    border-bottom: 1px solid $light-gray-color;
+    padding: 0 0 5px 0;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.morePropContInfo{ width: $body-width;
+    float: left;
+    padding: 10px 0 15px 0;
+    ul.moreListDescInfo{
+        li:first-child{ padding: 0;}
+        li{ width: $body-width - 75;
+            float: left;
+            padding: 0 0 0 10px;
+            .listContInfo{ height: 120px;
+                position: relative;
+                overflow: hidden;
+                @include rounded( $radius:5px);
+            }
+        }
+    }
+
+}
+.likePropContInfo{ width: $body-width;
+    float: left;
+    padding: 10px 0 15px 0;
+    .slick-slider{
+        .slick-prev{ left: 5px;
+            &:before{ opacity: 0.9;}
+        }
+        .slick-next{ right: 5px;
+            &:before{ opacity: 0.9;}
+        }
+    }
+    .likePropProjInfo{ width: 210px;
+        padding: 0 15px 0 0;
+        .listContInfo{ width: $body-width;
+            height: 160px;
+            position: relative;
+            overflow: hidden;
+            @include rounded( $radius:5px);
+            img{ width: $body-width;
+                height: $body-width;
+            }
+        }
+    }
+    .likeProjHeadInfo{font-size: $body-font-size + 5;
+        color: $white-color;
+        @include text-shadow($black-color 1px 2px 1px);
+        position: absolute;
+        width: $body-width;
+        height: $body-width - 58;
+        left: 0;
+        bottom: 0;
+        padding: 0 0 0 10px;
+        z-index: 0;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .likelistProjContInfo{ position: absolute;
+        width: $body-width;
+        height: $body-width - 72;
+        left: 0;
+        bottom: 0;
+        z-index: 0;
+        &:before{ content: '';
+            position: absolute;
+            width: $body-width;
+            height: $body-width;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: -1;
+        }
+        span:first-child{ padding: 3px 10px;}
+        .listprojdesc{ font-size: $body-font-size + 1;
+            color: $white-color;
+            padding: 1px 10px;
+            line-height: $body-font-size + 3;
+            display: block;
+            width: $body-width;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+    }
+}
+.listProjContInfo{ position: absolute;
+    width: $body-width;
+    height: $body-width - 65 ;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+    &:before{ content: '';
+        position: absolute;
+        width: $body-width;
+        height: $body-width;
+        background: rgba(0, 0, 0, 0.8);
+        z-index: -1;
+    }
+    .listprojdesc{ font-size: $body-font-size - 1;
+        color: $white-color;
+        padding: 5px 10px;
+        line-height: $body-font-size + 3;
+        display: block;
+    }
+}
+
+/***** End last screen for login  *****/
+
+
+
+
+
+
+
+
+
+
+
+
+
+

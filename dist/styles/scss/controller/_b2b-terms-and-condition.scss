@@ -1,0 +1,19 @@
+.termsBox {
+    overflow: auto;
+    padding: 20px;
+    margin: 20px 0;
+    height: 480px;
+    background-color: #fff;
+}
+
+.termsBox ul {
+    list-style: decimal;
+    padding-left: 16px;
+}
+
+.termsBox li {
+    margin-bottom: 10px;
+}
+.v-align{
+    vertical-align: middle;
+}

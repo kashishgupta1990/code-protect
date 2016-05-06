@@ -1,0 +1,843 @@
+/*
+Desc: Project View Scss Document
+Author: Sanjeev Verma
+Date: 30 Dec 2013
+*/
+.content-info{ font-family:$proximaNovaFamily;
+    color:$dark-gray-color;
+    font-size:$body-font-size + 1;
+    line-height: $body-font-size*2 - 4;
+}
+.proj-sub-head-text-info{ font-family:$proximaNovaFamily;
+    margin:0 0 5px 0;
+    font-size:$body-font-size + 2;
+    color:$dark-gray-color;
+    &.sub-Header{ color:$dark-gray-color;
+        border-bottom: 1px solid $lighter-gray-color;
+        font-weight:normal !important;
+        h2{ font-size: $body-font-size + 2;
+            line-height: $body-font-size + 4;
+        }
+        .seoListLink{ font-size:$body-font-size;
+            color:$darkligh-gray-color !important;
+            text-align:right;
+            padding:0 2px 0 0;
+            cursor: pointer;
+            &:hover{ color:$anchor-link-color !important
+            }
+        }
+        a{ font-family:$proximaNovaFamily;
+            font-size:$body-font-size;
+            color:$darkligh-gray-color !important;
+            text-align:right;
+            padding:0 2px 0 0;
+            cursor:pointer;
+            &:hover{ color:$anchor-link-color !important;
+                text-decoration:underline;
+            }
+        }
+    }
+}
+.hidePropDetaInfo{ display:none;}
+.forw-link-info{ font-family:$proximaNovaFamily;
+    font-size:$body-font-size;
+    color:$darkligh-gray-color !important;
+    cursor:pointer;
+    font-weight:normal !important;
+    &:hover{ color:$anchor-link-color !important;
+        text-decoration:underline;
+    }
+}
+.prop-buil-logo{ width: auto;
+    height:auto;
+    padding:0 10px 0 0;
+    @include box-sizing(border-box);
+    img{ height:auto;
+        max-height:40px;
+    }
+}
+.prop-speci-info{ width: $body-width - 50%;
+    @include box-sizing(border-box);
+    clear:left;
+    &:nth-child(even){
+        clear:none;
+    }
+}
+.lt-ie10{
+    .prop-speci-info{clear:inherit;
+    }
+}
+.prop-over-info{ padding: 0 0 0 15px;
+    font-family:$proximaNovaFamily;
+    color:$dark-gray-color;
+    font-size:$body-font-size + 1;
+    @include box-sizing(border-box);
+    span{ width: $body-width - 50%;
+        float:left;
+    }
+}
+.prop-neigh-over-info{ width: $body-width - 12;
+    float: right;
+}
+
+.proj-over-img-info{
+    img{ max-width: $body-width - 50;
+        height: 110px;
+    }
+}
+.over-post-info{ background:$White-gray-color;
+    @include rounded($radius:5px);
+    &.post-about-it-info{ padding:15px 15px 7px 15px;
+        .posts-icon-cont{ padding:5px 0 0 0;}
+        .posts-label{ padding:5px 0 0 0;}
+    }
+    .prop-img-local-info{ background:$Black-gray-color;
+        width: $body-width - 70%;
+        height:80px;
+        @include rounded($left:true, $radius:5px);
+        overflow:hidden;
+        img{ width: $body-width; height:$body-width;}
+    }
+    .prop-local-info{ width: $body-width - 30%;
+        @include box-sizing(border-box);
+        padding: 7px 10px;
+        > div{ width: $body-width;
+            @include box-sizing(border-box);
+        }
+        .prop-head-info{ font-family:$proximaNovaFamily;
+            font-size:$body-font-size;
+            color:$darkBlack-gray-color;
+            font-weight:bold;
+        }
+        .prop-local-rating-info{ font-family:$proximaNovaFamily;
+            font-size:$body-font-size - 1px;
+            color:$darkligh-gray-color;
+            font-weight:bold;
+            text-transform:uppercase;
+        }
+        .prop-local-rev-info{ font-family:$proximaNovaFamily;
+            font-size:$body-font-size - 1px;
+            color:$darkligh-gray-color;
+            font-weight:bold;
+            text-transform:uppercase;
+            span{ font-size:$body-font-size;
+            color:$dark-gray-color;}
+        }
+    }
+    .ameni-icon-info{ padding:0 0 0 15px;
+        .ameni-icon-container{ min-width: 40px;
+            padding:0 15px 0 0;
+            text-align:center;
+            @include box-sizing(border-box);
+            i{ font-size: $body-font-size + 16px;
+                color:$dark-gray-color;
+                padding:0;
+            }
+        }
+    }
+    .ameni-link-info{ padding:0 15px 0 0;
+        .seoLink{ font-family:$proximaNovaFamily;
+            font-size:$body-font-size - 1;
+            color:$gray-color !important;
+            text-align:right;
+            padding:0 2px 0 0;
+            cursor:pointer;
+            text-align:right;
+            &:hover{ color:$anchor-link-color !important;
+                text-decoration:underline;
+            }
+        }
+
+    }
+}
+
+.sub-date-info{ font-family:$proximaNovaFamily;
+    font-size:$body-font-size;
+    font-weight:bold;
+    color:$dark-gray-color;
+    padding:0 0 0 5px;
+     display:block;
+    .date-info{ font-family:$proximaNovaFamily;
+        font-weight: bold;
+        color:$darkligh-gray-color;
+        font-size:$body-font-size - 1px;
+        text-transform:uppercase;
+        display:inline-block;
+        padding:0 5px 0 0;
+    }
+    .launch-soon-prot{ background:$mid-blue-color;
+        font-family:$proximaNovaFamily;
+        font-size:$body-font-size;
+        font-weight: bold;
+        color:$white-color;
+        padding:2px 10px;
+        margin:0 0 0 10px;
+    }
+    .new-launch-prot{ background:$light-green-color;
+        font-family:$proximaNovaFamily;
+        font-size:$body-font-size;
+        font-weight: bold;
+        color:$white-color;
+        padding:2px 10px;
+        margin:0 0 0 10px;
+    }
+}
+.trend-head-info{
+    ul.trend-nav{
+        li{ display:block; float:left;
+            a{ font-family:$proximaNovaFamily;
+                color:$darkligh-gray-color;
+                font-size:$body-font-size + 1px;
+                font-weight: bold;
+                margin:0 15px 0 0;
+                &:hover, &.active{ color:$body-selected-color;
+                }
+            }
+        }
+    }
+    .trend-head-text{ font-family:$proximaNovaFamily;
+        color:$body-selected-color;
+        font-size:$body-font-size + 2px;
+        font-weight: bold;
+    }
+}
+.amen-show-text-info{ width: $body-width;
+    padding:10px 0;
+    ul{
+        li{ width: $body-width - 50%;
+            float:left;
+        }
+    }
+}
+.amen-cont-info{ width: $body-width - 75%;
+    display:inline-block;
+    padding:0 0 10px 0;
+    &.disabled{ color:$lighter-gray-color !important;}
+    i{ font-size:20px;
+        padding-right:5px;
+    }
+    .amen-text-info{ width: $body-width - 20%;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+        overflow:hidden;
+        padding:0 0 0 5px;
+    }
+}
+.proj-spec-info{ /*min-height:150px !important;*/}
+.proj-neig-info{ padding:10px 0 0 0;
+    .contentBoxContainer{ @include box-shadow(none);}
+    .proj-neig-about-info{
+        .contentBoxContainer{ padding:20px 20px 0 20px !important;}
+    }
+    .proj-rating-info{ background:$White-gray-color;
+        padding: 20px;
+        .proj-rating-left-info{
+            .contentHeader{ display: none;}
+            .content-info{ padding: 0 !important;}
+            .border-Right{ border-right: none;}
+        }
+        .contentBoxContainer{ background:none;
+            padding: 0 !important;
+        }
+    }
+    .proj-review-info{ background:$White-gray-color;
+        .contentBoxContainer{ background:none;
+            margin:0 !important;
+        }
+    }
+}
+.proj-bas-deta-info{
+    font-size:$body-font-size + 1;
+    color:$darkBlack-gray-color;
+    .pro-bas-ico-info{ font-size:$body-font-size + 7;
+        float: left;
+        margin: 0 5px 0 0;
+    }
+}
+.propInsigInfo{ text-transform:capitalize !important;
+    text-decoration: none;
+    i{ font-size: $body-font-size;
+        font-weight: normal;
+        padding: 3px 5px 0 0;
+        vertical-align: top;
+    }
+    &:hover{ text-decoration: none; }
+}
+.proj-prop-det-info{ float:left;
+    .proj-prop-head-info{ font-size:$body-font-size + 1;
+        font-weight: bold;
+        margin: 0 0 13px 0;
+        padding: 0 0 10px 0;
+        border-bottom: 1px solid $darkligh-mid-gray-color;
+        width:$body-width;
+        float: left;
+    }
+    label{ width:$body-width - 60%;
+        font-size:$body-font-size + 1;
+        color:$darkBlack-gray-color;
+        float:left;
+        text-align:left;
+        font-weight: normal;
+        padding:0 10px 0 0;
+        margin-bottom: 12px;
+        @include box-sizing(border-box);
+    }
+    .spanInfo{width:$body-width - 40%;
+        font-size:$body-font-size + 1;
+        font-weight: bold;
+        color:$darkBlack-gray-color;
+        float:left;
+    }
+    .btn-action{ width: 50%;
+        text-transform: none;
+        i{ font-weight: bold;}
+    }
+}
+.proj-floor-plan-info{ font-family:$proximaNovaFamily;
+        font-size:$body-font-size;
+        color:#fff;
+        text-align:center;
+        padding:2px 5px;
+        background:none repeat scroll 0 0 rgba(17, 17, 17, 0.5);
+        bottom:0;
+        left:0;
+        width:$body-width;
+        position:absolute;
+        white-space:nowrap;
+        @include box-sizing(border-box);
+}
+.proj-floor-plan-img-info{ margin:0 auto; display:table;}
+.proj-prpt-img-info{ background:$dark-gray-color;
+    max-width:300px;
+    max-height:220px;
+    height:220px;
+    margin:0 auto;
+    text-align:center;
+    display:table-cell;
+    vertical-align:middle;
+    img{ width:100%;
+        max-width:300px;
+        max-height:220px;
+    }
+}
+.proj-see-more-info{
+    .proj-see-link{ border-top:1px solid $lighter-gray-color;
+        padding:10px 0 0 0;
+        a{ margin:0 0 0 10px;
+            &:hover{ text-decoration:underline !important;}
+        }
+    }
+}
+/*.onlyproject-enquire .formFieldArea .formAutoRow, .onlyproject-enquire .formFieldArea .formRow { height:55px;}*/
+.onlyproject-enquire{ padding-top: 15px;
+    .formListViewInfo{ padding: 0 0 40px 0; }
+}
+.onlyproject-enquire .enq-form-info p { margin:0 0 13px 0;}
+.onlyproject-enquire .formFieldArea .formAutoRow.error .error-info, .onlyproject-enquire .formFieldArea .error.formRow .error-info { color:#FF5C00;}
+.map_container { width: 100%;
+    height: 100%;
+}
+.nearby-palette{ position:absolute;
+    top:15px;
+    left:0;
+}
+.map-fluid{ width:100%; height:100%;}
+
+ul.neigh-Nav{ position:absolute;
+    width: $body-width;
+    left:0;
+    bottom:0;
+    background: rgba(255, 255, 255, 0.6);
+    li{ display:block;
+        padding:5px 10px;
+        margin:0;
+        float:left;
+        span{ display:block;}
+        i{ font-size:$body-font-size + 10px;
+            color:$dark-gray-color;
+        }
+        .neigCount{ font-family:$proximaNovaFamily;
+            font-size:$body-font-size + 2px;
+            color:$dark-gray-color;
+            padding:0 0 0 10px;
+        }
+        .pt-icon-school { color: #3a95c4; }
+        .pt-icon-restaurant { color: #8059a5; }
+        .pt-icon-hospital { color: #ce4f2d; }
+        .pt-icon-petrol-station { color: #333333; }
+        .pt-icon-bank { color: #c74560; }
+        .pt-icon-bus-stop { color:#CC7700;}
+        .pt-icon-train-station { color:#501100;}
+        .pt-icon-airport { color:#006633;}
+    }
+}
+.neig-explo-info{ position: absolute;
+    bottom: 15px;
+    right: 10px;
+    margin: 0;
+}
+.projVideoInfo{ height: 300px;
+    .projVideoContInfo{ width: $body-width;
+        height: $body-width;
+    }
+}
+
+/*** Start Resale style ***/
+.projContBgInfo{ background: #e4e4e3;
+    width: $body-width;
+    padding: 20px 20px 0 20px;
+    margin: 0 0 20px 0;
+    .discla-info{ color: $dark-mid-gray-color;
+        border-bottom: 1px dashed $dark-gray-color;
+    }
+    .grayLink{ color: $dark-mid-gray-color;}
+}
+.resaleHeadInfo{ font-size: $body-font-size*2 - 2;
+    color: $dark-mid-gray-color;
+    span{ text-transform: capitalize;}
+}
+.resaleNavBarInfo{ width: $body-width - 60;
+    margin: 0 auto;
+    padding: 20px 0;
+    ul.resalNavInfo{ width: $body-width;
+        display: table;
+        li{ width: $body-width - 50;
+            text-align: center;
+            display: table-cell;
+            font-size: $body-font-size + 5;
+            color: $darkligh-gray-color;
+            background: $white-color;
+            border: 1px solid $light-darkgray-color;
+            padding: 12px 0;
+            cursor: pointer;
+            &.active{ background: $dark-mid-gray-color;
+                color: $white-color;
+                border: 1px solid $dark-mid-gray-color;
+                cursor: default;
+            }
+        }
+    }
+}
+.availaContInfo{ font-size: $body-font-size + 2;
+    color: $dark-mid-gray-color;
+    border-bottom:1px solid $light-gray-color;
+    padding: 10px 0;
+    margin: 0 0 10px 0;
+}
+
+.filter-radio{
+    >.resale-sort{
+        i{ -moz-transition:all 0.15s ease-in-out;
+            -webkit-transition:all 0.15s ease-in-out;
+            -ms-transition:all 0.15s ease-in-out;
+            -o-transition:all 0.15s ease-in-out;
+            transition: all 0.15s ease-in-out;
+        }
+        &.sortDesc{
+            i{ -moz-transform: rotate(180deg);
+                -webkit-transform: rotate(180deg);
+                -ms-transform: rotate(180deg);
+                -o-transform: rotate(180deg);
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
+.resaleSortOrdInfo{ padding: 10px 10px 10px 20px;
+
+}
+.sortOrderInfo{font-size:$body-font-size;
+    color:$gray-color;
+}
+
+.propResaleDesInfo{ margin: 15px 0 0 0;
+    &.resalGridViewInfo{
+        .resaleContInfo{ background: $White-light-gray-color; }
+    }
+}
+.resale-more-results-info{width: $body-width;
+    height: 30px;
+    background-color: #dcdcdc;
+    text-align: center;
+    line-height: 30px;
+    font-size:$body-font-size + 2;
+    color:$dark-mid-gray-color;
+    cursor: pointer;
+    margin: 20px 0;
+    @include rounded($radius:5px);
+    border:1px solid $light-gray-color;
+    .searchLoad{ display:inline-block;
+        vertical-align: top;
+        i{ font-size:$body-font-size + 7 !important;
+            padding: 5px 0 0 3px;
+        }
+    }
+}
+
+/***** End Resale Grid View *****/
+
+
+.buildSuccInfo{ font-size: $body-font-size;
+    color: $lighter-grey-textColor;
+}
+.projImgContBoxInfo{width: $body-width;
+    margin:0 0 20px 0;
+    background:#ffffff;
+    @include box-shadow(#c7c7c7 1px 1px 2px);
+}
+.projAmenContBoxInfo{ background: $white-color;
+    padding: 10px 20px;
+    margin: 0 -20px;
+}
+.projNContTabInfo{ position: relative;
+    margin: 0 0 15px 0;
+    background: #e4e4e3;
+    &.tabContainer{
+        .nav-tabs{ border-bottom: 1px solid $darkligh-mid-gray-color;
+            li{ color: $darkBlack-gray-color;
+                border-bottom: 5px solid transparent;
+                &:hover, &.active{ background: transparent;
+                    color: $body-selected-color;
+                    border-bottom:5px solid $body-selected-color !important;
+                }
+            }
+        }
+    }
+    .projNSeleDropInfo{ position: absolute;
+        top:5px;
+        right: 0px;
+        .prop-drop-info{ border:1px solid #c2c2c2;
+            padding: 4px 10px;
+            background: $white-color;
+        }
+    }
+}
+.resStickyNav{
+    .projNSeleDropInfo{ right: 20px;}
+}
+
+.projResalBoxInfo{ float: right;
+    margin: 5px 0 0 0;
+    background: #f9f9f9;
+    font-size:$body-font-size + 1;
+    color: $lighter-grey-textColor;
+    border: 1px solid #ebebeb;
+    padding: 2px 8px;
+    @include rounded($radius:5px);
+
+}
+.projAccorHeadInfo{ font-size:$body-font-size*2 - 6;
+    color: $darkBlack-gray-color;
+    padding: 10px;
+    .row-two-column{ padding: 0;}
+    .projAccHeadTextInfo{
+        .projColBtn{
+            margin: 0;
+            padding: 5px 8px 8px 8px;
+        }
+        .projDetaInfo{ padding: 3px 0 0 0; }
+        h2{ font-size:$body-font-size*2 - 6;
+            color: $darkBlack-gray-color;
+            a{ color: $darkBlack-gray-color;
+                font-weight: bold;
+                span{ font-weight: normal !important;}
+                &:hover{ text-decoration: underline;}
+            }
+        }
+        i{ font-size:$body-font-size + 3;
+            margin: 0;
+        }
+        .iconArrow{-moz-transition:all 0.15s ease-in-out;
+            -webkit-transition:all 0.15s ease-in-out;
+            -ms-transition:all 0.15s ease-in-out;
+            -o-transition:all 0.15s ease-in-out;
+            transition: all 0.15s ease-in-out;
+
+        }
+    }
+    &.showBar{
+        .iconArrow{ -moz-transform: rotate(180deg);
+            -webkit-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+            -o-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
+        .projColBtn{ padding: 8px 8px 5px 8px !important;}
+    }
+    .projAccBuilDetaInfo{ text-align: right;
+        .projPricInfo{ font-size:$body-font-size*2 - 6;
+            color: $dark-mid-gray-color;
+            font-weight: bold;
+            i{ vertical-align: top;}
+        }
+        .projBuilPricInfo{ font-size:$body-font-size + 3;
+            color: $darkBlack-gray-color;
+            i{ vertical-align: middle;}
+        }
+        .projBuilPricReqInfo{ font-size:$body-font-size + 3;
+            color: $anchor-link-color;
+        }
+    }
+}
+.projPricDetaInfo{ font-size:$body-font-size + 1;
+    color: $dark-gray-color;
+    text-align: right;
+    i{ vertical-align: middle;
+        font-size: $body-font-size;
+    }
+}
+.projAccorContInfo{ padding: 10px 0;}
+.projAccLinkInfo{ padding: 10px;
+    text-align: center;
+    span:first-child{ border-left:none; }
+    span{ font-size:$body-font-size;
+        color: $anchor-link-color;
+        border-left: 1px solid $light-gray-color;
+        padding: 0 5px 0 7px;
+        cursor: pointer;
+        &.active{ color: $darkBlack-gray-color !important;
+            cursor: default;
+        }
+        &.disable{
+            opacity: 0.5;
+            cursor: default;
+        }
+    }
+}
+.prjoAccGallInfo{ width: $body-width;
+    padding:0 15%;
+    .projAccorImgInfo{ width: $body-width;
+        height: 220px;
+        position: relative;
+    }
+}
+.videoTourInfo{ position: absolute;
+    top: $body-width / 2;
+    left: $body-width / 2;
+    margin: -15px 0 0 -15px;
+    text-align: center;
+    z-index: 1;
+    i{ font-size:$body-font-size*3 - 3;
+        color: rgba(0,0,0,0.8);
+        &:after{ content:'';
+            position:absolute;
+            top: 8px;
+            left: 7px;
+            background: rgba(255,255,255,0.5);
+            width:20px;
+            height:18px;
+            z-index:-1;
+
+        }
+    }
+    &:hover{
+        i{ color: #cc181e;}
+    }
+}
+.projFloorPlanIconInfo{ width: $body-width;
+    height: $body-width;
+    text-align: center;
+    position: relative;
+    i{ font-size: 200px;
+        color: $lighter-mid-light-gray-color;
+    }
+    .projFloorTextInfo{ position: absolute;
+        top:48%;
+        left:30%;
+        text-transform: uppercase;
+        font-size:$body-font-size + 2;
+        color: $lighter-grey-textColor;
+    }
+}
+.projResContDescInfo{ padding: 50px 15px 0 15px;
+    .projResHeadInfo{ font-size:$body-font-size + 3;
+        color: $darkBlack-gray-color;
+        font-weight: bold;
+    }
+}
+
+.projResPhotDImgInfo{ width: $body-width;
+    height: $body-width;
+    text-align: center;
+    border-right: 1px solid $light-gray-color;
+    i{ font-size:$body-font-size*13 + 3;
+        color: $darkligh-midlightgray-color;
+    }
+}
+
+
+
+.resPrjoAllListInfo{ width: $body-width;
+    padding: 20px 0;
+    text-align: center;
+}
+.btn-black-outline{ font-size:$body-font-size + 2;
+    color:$Black-gray-color;
+    border:1px solid $black-color;
+    background:transparent;
+    text-decoration: none;
+    padding:6px 20px;
+    line-height:20px;
+    @include rounded($radius:5px);
+    cursor: pointer;
+    &:hover{ background: $Black-gray-color;
+        color:$white-color;
+        text-decoration: none;
+    }
+}
+.projPropSellInfo{ padding: 15px 10px 10px 10px;
+    .projPropTextDesInfo{ font-size:$body-font-size + 1;
+        color: $darkBlack-gray-color;
+        max-width: 320px;
+        text-align: right;
+        padding: 0 10px 0 0;
+    }
+}
+
+/*** End Resale style ***/
+/*** Start Resale Property Page ***/
+.resalPropHeadInfo{ font-size: $body-font-size + 3;
+    color: $darkBlack-gray-color;
+}
+.resalPropDescInfo{ font-size: $body-font-size + 1;
+    color: $darkBlack-gray-color;
+    line-height: $body-font-size*2 - 2;
+
+}
+.resalPropListHighInfo{ padding: 15px 0 0 0;
+    ul.resalPropListInfo{
+        li{ width: $body-width ;
+            border-top: 1px solid $light-mid-gray-color;
+            float: left;
+            padding: 15px 0;
+            ul.projContDesInfo{
+                li:first-child{ padding: 0 7px 0 0;
+                    &:before{ content: ' ';
+                        font-size: $body-font-size*2 - 4;
+                        padding: 0;
+                    }
+                }
+                li{ width: auto;
+                    font-size:$body-font-size + 2;
+                    color: $darkBlack-gray-color;
+                    float: left;
+                    padding: 0 7px;
+                    line-height: $body-font-size + 3;
+                    border-top: none;
+                    &:before{ content: ' . ';
+                        font-size: $body-font-size*2 - 4;
+                        padding: 0 10px 0 0 ;
+                    }
+                }
+            }
+        }
+    }
+    .resalListLabelInfo{ width: $body-width - 80;
+        float: left;
+        font-size: $body-font-size + 2;
+        color: $darkligh-gray-color;
+    }
+    .resalListContInfo{ width: $body-width - 20;
+        float: left;
+        font-size: $body-font-size + 2;
+        color: $darkBlack-gray-color;
+    }
+}
+.propReslListInfo{ font-size: $body-font-size + 3;
+        color: $darkBlack-gray-color;
+
+}
+/*** End Resale Property Page ***/
+
+/* PropInsight Banner Created in Property Detail Page by Gagan */
+.propinsightBanner { 
+	padding-top: 25px; color: $white-color; min-height: 100px; background: url(../images/propinsightBanner-img.jpg) top left no-repeat #000;
+	.left { padding-left: 130px;
+		p { 
+			font-size: $body-font-size*2 + 4;
+			text-shadow: 0 2px 1px rgba(0, 0, 0, .75);
+			color: $white-color;
+			span { 
+				padding-top: 10px;
+				font-size: $body-font-size + 5; display: inline-block;
+				text-shadow: none;
+			}
+		}
+	 }
+	 .text-right { padding: 16px 20px 0 0; }
+}
+
+@media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1){
+    .over-post-info{
+        &.marginL15{ margin:5px 0 0 0 !important;}
+        &.post-about-it-info{ padding:15px 10px 7px 10px;
+            .posts-icon-cont{ font-size:$body-font-size + 2;
+                padding:5px 0 0 0;
+            }
+            .posts-label{ padding: 0;}
+        }
+        .ameni-icon-info{ padding:0 0 0 15px;
+            .ameni-icon-container{ min-width: 20px;
+                padding:0 7px 5px 0;
+                i{ font-size: $body-font-size + 6; }
+            }
+        }
+
+    }
+    .proj-toplink-info{
+        .sidebarBox{
+            .quickContactLink{
+                li{
+                    a{ font-size:$body-font-size;
+                        padding:10px 6px !important;
+                    }
+                }
+            }
+        }
+    }
+    .amen-cont-info{
+        i{ font-size:$body-font-size + 6;
+            margin:0;
+        }
+        .amen-text-info{ width: $body-width - 27%;}
+    }
+    .onlyproject-enquire .formFieldArea .formAutoRow, .onlyproject-enquire .formFieldArea .formRow {
+        display:inline-block; height:55px;overflow:visible;
+    }
+    .onlyproject-enquire .enq-form-info p { margin:0 0 5px 0;}
+
+
+
+}
+
+@media (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 1){
+    .over-post-info{
+        &.marginL15{ margin:0 0 0 10px;}
+        &.post-about-it-info{ padding:15px 8px 7px 8px;
+            .posts-icon-cont{ font-size:$body-font-size + 4;
+                padding:5px 0 0 0;
+            }
+            .posts-label{ padding: 2px 0 0 0;}
+        }
+        .ameni-icon-info{ padding:0 0 0 15px;
+            .ameni-icon-container{ min-width: 35px;
+                padding:0 10px 0 0;
+                i{ font-size: $body-font-size*2; }
+            }
+        }
+
+    }
+    .proj-toplink-info{
+        .sidebarBox{
+            .quickContactLink{
+                li{
+                    a{  padding:10px 15px;
+                    }
+                }
+            }
+        }
+    }
+    .amen-cont-info{
+        .amen-text-info{ width: $body-width - 23%;}
+    }
+}

@@ -1,0 +1,96 @@
+<div class=builder-listitem>
+    <div class="pt_row parent-row">
+        <div class="pt_col-2-18 ta-left b-name">
+            <span class="name put-ellipsis" tooltip={{info.builderName}}>{{info.builderName}}</span>
+            <div class="b-info-wrap for-search">
+                <a href=javascript:void(0) title="Click here to view a brief information about the builder" class="b-info dropdown-toggle" data-toggle=dropdown data-ng-click=getBuilderDetail()><i class="pt pt-icon-info-circle"></i></a>
+                
+                <div builder-detail="" builder=detail></div>
+
+            </div>
+            <div class=clearfix></div>
+        </div>
+        <div class="pt_col-2-18 ta-center">
+            {{ info.cityName?info.cityName:'All' }}
+        </div>
+        <div class="pt_col-2-18 ta-center">
+            {{info.builderHeadquarterCity?info.builderHeadquarterCity:''}}
+        </div>
+        <div class="pt_col-1-18 ta-center t-deco" data-ng-click=builderProjectsModal()>
+
+            <span data-ng-repeat="option in info.projectCountSet.options">
+                <span data-ng-if=option.selected>
+					<span data-ng-if=info[option.key]><a>{{info[option.key] | number | figureFMT}}</a>
+                        <span data-ng-if="option.key == 'totalArea'"> sq ft</span>
+                    </span>
+					<span data-ng-if=!info[option.key]>NA</span>
+                </span>
+            </span>
+
+        </div>
+        <div class="pt_col-2-18 ta-center">
+			    <span tooltip={{info.minMaxPriceHtmlHover}} once-html=info.minMaxPriceHtml></span>
+            
+        </div>
+        <div class="pt_col-2-18 ta-center">
+            {{info.soldPercentage | round}}<span data-ng-if="info.soldPercentage !== 'NA'">%</span>
+        </div>
+        <div class="pt_col-1-18 ta-center b-p-type">
+            <i class="pt-icon-{{unitType | lowercase}}" tooltip="{{detail.supply}} Units Launched" data-ng-repeat="(unitType,detail) in info.unitTypesDetails"></i>
+        </div>
+        <div class="pt_col-1-18 ta-center b-price">
+            <span class=rise tooltip="{{info.projectCountHavingPriceAppreciation}} projects appreciated" data-ng-if=info.projectCountHavingPriceAppreciation><i class="pt pt-icon-arrow-up"></i>{{info.projectCountHavingPriceAppreciation}}</span> &nbsp;
+            <span class=fall tooltip="{{info.projectCountHavingPriceDepreciation}} projects depreciated" data-ng-if=info.projectCountHavingPriceDepreciation><i class="pt pt-icon-arrow-down"></i>{{info.projectCountHavingPriceDepreciation}}</span>
+        </div>
+        <div class="pt_col-2-18 ta-center b-rate">
+            <span class=rise tooltip="{{info.projectCountHavingPriceMoreThanLocAvg}} projects above avg. locality rate"><i class="pt pt-icon-arrow-up"></i>{{info.projectCountHavingPriceMoreThanLocAvg}}</span> &nbsp;
+            <span class=fall tooltip="{{info.projectCountHavingPriceLessThanLocAvg}} project below avg. locality rate"><i class="pt pt-icon-arrow-down"></i>{{info.projectCountHavingPriceLessThanLocAvg}}</span>
+        </div>
+        <div class="pt_col-3-18 ta-right">
+            <button class="btn small-btn btn-default toggleBtn" analytics-on="" data-analytics-event="Click_Details_Builder Search" data-analytics-category="Builder Analysis" data-analytics-label="{{expanded ? 'View details' : 'Hide details'}}" data-ng-click=toggle() tooltip="{{expanded ? 'Hide details' : 'View details'}}">
+                <i class=fa data-ng-class="{'pt-icon-caret-down':!expanded, 'pt-icon-caret-up':expanded}"></i>
+            </button>
+            <span><a href=/analysis/builder/{{info.builderId}} analytics-on="" data-analytics-event=Click_Analyse data-analytics-category="Builder Analysis" data-analytics-label="Builder Id: {{info.builderId}}" class="btn btn-primary small-btn"> Analyse </a></span>
+            <span pt-alv-download-data="" builder-id=info.builderId></span>
+        </div>
+    </div>
+    <div class=builder-slideDown>
+        <div class=pt_row data-ng-if="trendInfoCalled && !trendInfoFetched">
+            <div class="pt_col-4-18 ta-right">
+                <i class="pt pt-icon-spinner pt-icon-spin"></i>    
+            </div>
+        </div>
+
+    	<div class=pt_row data-ng-repeat="(status, data) in info.trendData" data-ng-if=trendInfoFetched>
+            <div class=pt_col-4-18>&nbsp</div>
+            <div class="pt_col-2-18 ta-center">
+            	{{status}}
+            </div>
+            <div class="pt_col-1-18 ta-center">
+                <span data-ng-repeat="option in data[0].extraAttributes.projectCountSet.options">
+                    <span data-ng-if=option.selected>
+    					<span class=t-deco data-ng-if=data[0].extraAttributes[option.key] data-ng-click="builderProjectsModal({'status' : status})"><a>{{data[0].extraAttributes[option.key] | number | figureFMT}}<span data-ng-if="option.key == 'size'"> sq ft</span></a></span>
+    					<span data-ng-if=!data[0].extraAttributes[option.key]>NA</span>
+                    </span>
+                </span>
+            </div>
+            <div class="pt_col-2-18 ta-center">
+                <span tooltip={{data[0].extraAttributes.minMaxPriceHtmlHover}} once-html=data[0].extraAttributes.minMaxPriceHtml></span>
+                
+            </div>
+            <div class="pt_col-2-18 ta-center">
+            	{{data[0].extraAttributes.soldPercentage | round}}<span data-ng-if="data[0].extraAttributes.soldPercentage !== 'NA'">%</span>
+            </div>
+		</div>
+
+        <div class=pt_row data-ng-if="info.trendData || trendInfoReceived">
+            <div class=pt_col-4-18>&nbsp</div>
+            <div class="pt_col-2-18 ta-center">
+                Delayed
+            </div>
+            <div class="pt_col-1-18 text-center t-deco" data-ng-click="builderProjectsModal({'delayed' : true})">
+                <a>{{info.delayed.selected}}</a>
+            </div>
+        </div>
+    </div>
+</div>

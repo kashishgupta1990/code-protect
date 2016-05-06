@@ -1,0 +1,218 @@
+/*
+Desc: Show properties by Price or Possession date on Map Scss Document
+Author: Nimit Mangal
+Date: 04 Dec 2013
+*/
+
+
+/***************************************************************************************
+**************  Show properties by Price or Possession date on Maps ********************
+****************************************************************************************/
+.legends-dd {
+    width:145px;
+    padding-top:28px;
+    display:inline-block;
+    &.first-dd{
+        padding:15px 0 0;
+    }
+    .date-color-bar {
+        background:#555555;
+        width:20px;
+        height:5px;
+        display:block;
+    }
+    .date-color-text {
+        display:block;
+        font-size:9px;
+        line-height:13px;
+        width:20px;
+    }
+    ul{
+        list-style-type:none;
+        margin:0 !important;
+        padding:0 0 0 10px;
+        border: none !important;
+        li {
+            display:inline-block;
+            float:left;
+            padding:0 4px !important;
+            .pt-icon-apartment {
+                color:#fff;
+            }
+            .pt-icon-villa {
+                color:#fff;
+            }
+            .pt-icon-plot {
+                color:#fff;
+            }
+            .pt-icon-circle {
+                color:#3a95c4;
+                vertical-align:top;
+                margin-top:-1px;
+                font-size:7px;
+            }
+            .pt-icon-clock-o {
+                color:#555;
+                font-size:14px;
+            }
+            .color-gradient {
+                background:url('../images/color-gradient.jpg') top left;
+                background-repeat:repeat-y;
+                width:95px;
+                height:5px;
+                display:block;
+            }
+            .na-text {
+                font-size:10px;
+                display:block;
+                text-align:center;
+                line-height:20px;
+                padding-top: 5px;
+                &:hover{
+                    color:#a7a7a7;
+                }
+            }
+            &.second-dd {
+                padding: 0 0 0 13px !important;
+            }
+        }
+    }
+    .sqm_project:hover {
+        cursor:default;
+        border: 1px solid #f7692c;
+        &:after { border-top-color: #f39c13; }
+        &:before { border-top-color: #f7692c; }
+
+        &.villa {
+            border: 1px solid #126996;
+            &:after { border-top-color: #1478AB; }
+            &:before { border-top-color: #126996; }
+        }
+
+        &.plot {
+            border: 1px solid #527A29;
+            &:after { border-top-color: #669933; }
+            &:before { border-top-color: #527A29; }
+        }
+        .val {
+            display:block;
+        }
+    }
+}
+.showby-wrap {
+    position:absolute;
+    top:5px;
+    right:5px;
+    box-shadow:0 3px 5px #AAAAAA;
+    background:#ffffff;
+    clear:both;
+    width:150px;
+    padding: 6px 8px 0;
+    ul {
+        padding:0px 0 7px;
+        margin:0px !important;
+        list-style:none;
+        clear:both;
+        font-size:13px;
+        border-bottom:1px solid #DEDCDC;
+
+        li {
+            display:block;
+            margin:0px 5px;
+            color:#a7a7a7;
+            padding:0px;
+            cursor:default;
+            &.vertical-space {
+                line-height:10px;
+            }
+            &.active {
+                color:#333;
+                .pt-icon-dot-circle-o {
+                    color:#f6931e;
+                    font-size:18px;
+                }
+                .pt-icon-circle-o {
+                    display:none;
+                }
+            }
+
+            &:hover {
+                &.pro-type { color:#f6931e; }
+                &.price { color:#f6931e; }
+                &.poss-date { color:#f6931e; }
+            }
+            .pt-icon-circle-o {
+                font-size:18px;
+            }
+        }
+    }
+}
+
+.gradient .min-text {
+    float:left;
+    color:#666;
+    font-size:10px;
+}
+.gradient .max-text {
+    float:right;
+    color:#666;
+    font-size:10px;
+}
+.ui-slider-handle.ui-state-default.ui-corner-all.displaySpoke {
+    background-image: none;
+    top: -2.9em;
+    background:#333333;
+    color:#ffffff;
+    border: 1px solid rgb(0, 0, 0) !important;
+    height: auto;
+    width: 50px;
+    margin-left:-30px;
+    font-size:10px;
+    text-align:center;
+    opacity: 0.9;
+    text-decoration:none;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+    filter: alpha(opacity=90);
+    padding: 1px;
+    border-radius:3px;
+    &:after, &:before {
+        top: 100%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+
+    &:after {
+        width: 0;
+        height: 0;
+        border-right: 4px solid transparent;
+        border-left: 4px solid transparent;
+        border-top: 4px solid #333;
+        left: 48%;
+    }
+    &:before {
+        width: 0;
+        height: 0;
+        border-right: 5px solid transparent;
+        border-left: 5px solid transparent;
+        border-top: 5px solid #333;
+        left: 47%;
+    }
+}
+.gradient-bar.ui-slider.ui-slider-horizontal.ui-widget.ui-widget-content.ui-corner-all {
+    width: 91px;
+    height: 5px;
+    background: url('../images/color-gradient.png');
+    background-repeat: repeat-y;
+    display:block;
+}
+
+.gradient-bar.ui-slider.ui-slider-horizontal.ui-widget.ui-widget-content.ui-corner-all.invert {
+    background-position: 0px 5px;
+}
+@media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1){
+    .showby-wrap { right:15px;}
+}

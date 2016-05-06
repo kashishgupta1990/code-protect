@@ -1,0 +1,26 @@
+{
+  "name": "jwplayer-mirror-updated",
+  "main": [
+    "jwplayer.flash.swf",
+    "jwplayer.html5.js",
+    "jwplayer.js",
+    "README.html"
+  ],
+  "description": "Unofficial mirror of JW Player 6+",
+  "license": "",
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt"
+  ],
+  "homepage": "https://github.com/niishtha/jwplayer-mirror",
+  "version": "6.10.0",
+  "_release": "6.10.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v6.10.0",
+    "commit": "7b8b7d18f3e42c4ff79bf09a468f714f7b783538"
+  },
+  "_source": "git://github.com/niishtha/jwplayer-mirror.git",
+  "_target": "~6.10.0",
+  "_originalSource": "jwplayer-mirror-updated"
+}

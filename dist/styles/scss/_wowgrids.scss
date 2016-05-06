@@ -1,0 +1,71 @@
+/* 
+Desc: Special Grid SCSS specifically generated for B2B project complex Tables
+Author: Nimit Mangal
+Date: 27 March 2014
+
+NOTE: The classes have been prefixed with [ pt_ ] so that there would be no css overriding or any other conflicts.
+
+*/
+
+/* Important Variables */
+$min_width: "(max-width: 480px)"; /* Responsive and 100% width for all columns below 480px resolution */
+$n: 32; /* Maximum number of grids */
+
+.pt_row {
+	@include box-sizing(border-box);
+	/*background: white;*/
+	
+	&:after {
+		/* Or @extend clearfix */
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+[class*='pt_col-'] {
+	@include box-sizing(border-box);
+	float: left;
+	padding-right: 10px;
+  
+	.pt_row &:last-of-type, .pt_row &:last-child {
+		padding-right: 0;
+	}
+}
+
+/* Nested FOR Loop to generate the "pt_col-1-1" type of classes for the GRID  */
+@for $i from 1 through $n {
+	@for $j from 1 through $i {
+		$new_width: $j/$i*100%;
+	    .pt_col-#{$j}-#{$i} {
+			width: $new_width;
+			
+			@media #{$min_width} {
+				width: 100%;
+			}
+		}
+    }
+}
+
+/* Opt-in outside padding */
+.pt_row_pad10rt0 {
+	padding: 10px 0 10px 10px;
+	
+	[class*='pt_col-']:last-of-type {
+		padding-right: 10px;
+	}
+}
+
+.pt_row_pad10rt0 {
+	padding: 8px 0 8px 8px;
+	
+	[class*='pt_col-']:last-of-type {
+		padding-right: 8px;
+	}
+}
+
+.in_gray_pad5 {
+  padding: 5px;
+  background: #eee;
+}
+

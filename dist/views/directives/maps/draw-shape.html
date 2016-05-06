@@ -1,0 +1,17 @@
+<div data-ng-show=showOption>
+       <div class=draw-map data-ng-click=toggleDraw()>
+               <div data-ng-hide=drawActiveFlag tooltip="Draw a region on map to see projects in a desired area" tooltip-placement=bottom data-ng-mouseenter=sendGAEvent()>
+                   <i class="pt pt-icon-pencil"></i>
+                   Draw your region
+               </div>
+               <div data-ng-show=drawActiveFlag>
+                       <span>
+                           <i class="pt pt-icon-times"></i>
+                           {{polygonFilter.polygonExist ? 'Erase' : 'Cancel'}}
+                       </span>
+               </div>
+       </div>
+       <div data-ng-if="drawActiveFlag && !polygonFilter.polygonExist" class=hlp-txt>
+               Click on the map and start drawing.
+       </div>
+</div>

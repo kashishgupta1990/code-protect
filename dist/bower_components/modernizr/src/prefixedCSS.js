@@ -1,0 +1,1 @@
+define(["ModernizrProto","prefixed","domToCSS"],function(r,e,n){var o=r.prefixedCSS=function(r){var o=e(r);return o&&n(o)};return o});

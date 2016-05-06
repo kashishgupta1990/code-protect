@@ -1,0 +1,40 @@
+/* 
+Desc: Builder images hover Scss Document 
+Author: Sanjeev Verma
+Date: 24 July 2014
+*/
+
+.buil-prop-local-info{ position:absolute;
+	bottom:0;
+	background:rgba(51,51,51,0.8);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#80333333,endColorstr=#80333333);
+	width:$body-width;
+	padding:2px 5px;
+	@include box-sizing(border-box);	 
+	.prop-name{ font-family:$proximaNovaFamily;
+		font-size:$body-font-size;
+		color:$white-color;
+		line-height:15px;
+		font-weight:normal;
+		display:block;
+		overflow:hidden;
+		text-overflow:ellipsis;
+		white-space:nowrap;
+	}
+	.prop-price-info{font-family:$proximaNovaFamily;
+		font-size:$body-font-size;
+		color:$white-color;
+	}
+	.prop-address{ font-family:$proximaNovaFamily;
+		font-size:$body-font-size - 1px;
+		color:$gray-color;
+		line-height:16px;
+		display:block;
+		overflow:hidden;
+		text-overflow:ellipsis;
+		white-space:nowrap;
+	}
+}
+.buld-img-info{ width:$body-width;
+	height:50px;
+}

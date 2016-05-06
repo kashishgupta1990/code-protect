@@ -1,0 +1,113 @@
+/*
+Desc: CSS Document for B2B Dashboard Sub-Header Modal Boxes and Dropdowns
+Author: Nimit Mangal
+Date: 17 April 2014
+*/
+
+/** EDIT VIEW TYPE FOR DASHBOARD (SINGLE CITY, MULTIPLE CITY OR MULTIPLE LOCALITY) STARTS **/
+.select-box-wrap {
+	padding: 10px;
+	width: auto;
+	margin: 10px auto;
+	max-height: 250px;
+	overflow-y: scroll;
+	position: relative;
+
+	h4 {
+		font-size: 16px;
+		font-weight: bold;
+		margin: 10px 0px;
+	}
+
+	h5 {
+		font-size: 14px;
+		font-weight: bold;
+		margin: 0px;
+
+		&.undline {
+			border-bottom: solid 1px #666;
+			overflow:hidden;
+		}
+	}
+
+	i.pt {
+		display: block;
+		float: left;
+		font-size: 18px;
+		width: 20px;
+		cursor:pointer;
+	}
+	.pt-icon-square-o{
+		font-size: 16px;
+		margin-right: 10px;
+	}
+	.pt-icon-square-o{
+		@extend .pt-icon-square-o;
+	}
+	.name {
+		display: block;
+		cursor: pointer;
+		float: left;
+		width: 80%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.list-level1 {
+		padding: 10px 5px 15px 5px;
+
+		li {
+			padding: 0px 0px 5px 0px;
+		}
+	}
+
+	.list-level2 {
+		padding: 10px 0px 10px 0px;
+
+		li {
+			float: left;
+			width: 32%;
+		}
+
+	}
+}
+/** EDIT VIEW TYPE FOR DASHBOARD (SINGLE CITY, MULTIPLE CITY OR MULTIPLE LOCALITY) ENDS **/
+
+
+
+/******************* Modal Buttons disabled State STARTSS ***********************/
+	.modal {
+		border-radius: 0;
+
+		.modal-footer {
+			.btn.btn-primary.disabled {
+				background: none repeat scroll 0 0 #F9CD89;
+				border-bottom: 4px solid #F9CD89;
+				border-top: 4px solid #F9CD89;
+				cursor: default;
+				opacity: 0.6;
+				margin-left: 10px;
+				color: #fff;
+
+				&:hover {
+					background: none repeat scroll 0 0 #F9CD89;
+					border-bottom: 4px solid #F9CD89;
+					border-top: 4px solid #F9CD89;
+					border-left: none;
+					border-right: none;
+				}
+			}
+		}
+	}
+/******************* Modal Buttons disabled State ENDSSS ***********************/
+/******************* Tooltip Override ***********************/
+/** css for the angular-ui tooltip **/
+.tooltip{
+	.tooltip-inner{
+		white-space: normal;
+		max-width: 300px;
+		line-height: 1.2;
+		overflow: hidden;
+	}
+}

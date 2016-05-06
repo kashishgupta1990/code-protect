@@ -1,0 +1,71 @@
+/* 
+Desc: CSS Document for B2B Save Graph Listing Page
+Author: Nimit Mangal
+Date: 15 May 2014
+*/
+
+/**********************************************************************
+********************* SAVE GRAPHS LISTING STARTS **********************
+**********************************************************************/
+
+small.order-by {
+	color: #999;
+	
+	a.option {
+		margin: 0px 10px;
+		color: #666;
+		
+		&:hover, &:active {
+			color: #333;
+		}
+		
+		&.active {
+			color: #f39c13;
+		}
+	}
+}
+
+.template {
+	font-size: 12px;
+	padding: 0px 10px;
+	
+	.head {
+		text-transform: uppercase;
+		color: #666;
+		font-weight: bold;
+		border-bottom: solid 1px #ccc;
+		padding: 15px 0px 0px;
+	}
+	
+	.body {
+		color: #333;
+		line-height: 45px;
+		border-bottom: solid 1px #ccc;
+		
+		[class*="pt_col-"] {
+			
+			&:first-child {
+				padding-left: 10px;
+			}
+			
+			&:last-child {
+				opacity: 0.2;
+			}
+		}
+		
+		&:hover {
+			[class*="pt_col-"] {
+				&:last-child {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+/**********************************************************************
+********************* SAVE GRAPHS LISTING ENDSSS **********************
+**********************************************************************/

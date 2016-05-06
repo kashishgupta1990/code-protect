@@ -1,0 +1,171 @@
+/* 
+Desc: EMI Calculator Scss Document 
+Author: Sanjeev Verma
+Date: 16 Jan 2014
+*/
+
+.cal-cont-info{
+	label{ font-family:$proximaNovaFamily;
+		font-size:$body-font-size + 2px;
+		font-weight: bold;
+		color:$darkligh-gray-color;
+		cursor:default;
+		width:$body-width - 70%;
+		float:left;
+		padding:5px 0 0 0; 
+	}
+	.cal-cont-input{ width:$body-width - 30%;
+		float:left;
+		.cal-tot-cost-info{ min-width:100px; 
+			max-width:150px;
+			margin-left: 30px;
+		}
+		input{ width:100px;
+			font-family:$proximaNovaFamily;
+			font-size:$body-font-size + 2px;
+			font-weight: bold; 
+			color:$darkBlack-gray-color;
+			text-align:right;
+		}
+		.prop-drop-info{
+			a{
+				&.dropdown-toggle{ color:$darkBlack-gray-color;
+					font-weight:bold;
+				}
+			} 
+		}
+	}
+	.cal-pres-text{ font-family:$proximaNovaFamily;
+		font-size:$body-font-size;
+		font-weight: bold;
+		color:$darkligh-gray-color;
+	}
+	.cal-input-text{ font-family:$proximaNovaFamily;
+		font-size:$body-font-size;
+		font-weight: bold;
+		color:$light-gray-color;
+	}
+}
+.cal-view-info{ 
+	label{ font-family:$proximaNovaFamily;
+		font-size:$body-font-size - 1px;
+		font-weight: bold;
+		color:$darkligh-mid-gray-color;
+		text-transform:uppercase;
+		cursor:default;
+	}
+	.cal-cont-input{ font-family:$proximaNovaFamily;
+		font-size:$body-font-size + 2px;
+		font-weight: bold;
+		color:$darkligh-mid-gray-color;
+	}
+	
+}
+.eligb-check-info{
+	input{ margin:0;}
+	label{ font-family:$proximaNovaFamily;
+		font-size:$body-font-size + 2px;
+		font-weight: bold;
+		color:$darkligh-mid-gray-color;
+		padding:5px 0 0 5px;
+	}
+}
+.emi-cont-info{ font-family:$proximaNovaFamily;
+	font-size:$body-font-size + 2px;
+	font-weight: bold;
+	color:$darkligh-gray-color;
+}
+.income_slide{
+	.income-text-info{ font-family:$proximaNovaFamily;
+		font-size:$body-font-size;
+		font-weight:bold;
+		color:$darkligh-mid-gray-color;
+	}
+	.check-annu-info{ color:$darkBlack-gray-color !important; }
+	.cal-slid-info{ margin: 0 10px; 
+		width:$body-width - 40%;		
+	}
+	.ui-slider-horizontal{
+		.ui-slider-handle{
+			top: 0.8em !important;
+		}
+	}
+}
+.cal-emi-info{
+	padding:5px 10px;
+	margin:0;
+	&.exclamation{ color:$light-gray-color;
+		span{ color:$light-gray-color;
+			&.emi-month-info{ color:$light-gray-color;
+				.emi-amount{ color:$light-gray-color;}
+				.icon{ color:$light-gray-color;}
+			}
+		}
+	}
+	.emi-cal-text-info{ width:$body-width;
+		padding:5px 0px;
+		@include box-sizing(border-box);
+	}
+	.emi-year-info{ font-family:$proximaNovaFamily;
+		font-size:$body-font-size + 2px;
+		color:$dark-gray-color;
+	}
+	.emi-month-info{ 
+		.emi-amount{ font-family:$proximaNovaFamily;
+			font-size:$body-font-size + 6px;
+			font-weight:bold;
+			color:$darkBlack-gray-color;		
+		}
+		.icon{ font-size:$body-font-size + 6px;
+			color:$dark-gray-color;
+			padding:0 0 0 5px;
+		}
+	}	
+}
+
+.hidden {
+	display: none;
+}
+
+@media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1){
+	.cal-cont-info{
+		label{ font-size:$body-font-size + 1;}
+		.cal-cont-input{ 
+			.cal-tot-cost-info{ padding:0 5px 5px 5px;
+				margin-left: 10px;
+			}
+		}
+		
+	}
+	.cal-view-info{ 
+		.cal-cont-input{ font-size:$body-font-size + 1;}
+	}
+	.emi-cont-info{ font-size:$body-font-size + 1;}
+	.eligb-check-info{
+		label{ font-size:$body-font-size + 1; }
+	}
+	.income_slide{
+		.income-text-info{ font-size:$body-font-size - 1;}
+		.cal-slid-info{ margin:5px 5px 0 5px; 
+			width:$body-width - 50%;		
+		}
+	}
+	.cal-emi-info{		
+		.emi-cal-text-info{ width:$body-width;}
+		.emi-year-info{ font-size:$body-font-size;}
+		.emi-month-info{ 
+			.emi-amount{ font-size:$body-font-size + 4; }
+			.icon{ font-size:$body-font-size + 4; }
+		}
+		.get-btn{ margin-top:10px;}
+	}
+
+	
+	
+	
+}
+@media (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 1){
+	.cal-emi-info{		
+		.emi-cal-text-info{ width:$body-width; }
+	}
+}

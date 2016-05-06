@@ -1,0 +1,7 @@
+/**
+ * @license Angulartics
+ * (c) 2013 Luis Farzati http://luisfarzati.github.io/angulartics
+ * License: MIT
+ */
+
+!function(n){"use strict";n.module("angulartics.google.analytics.cordova",["angulartics"]).provider("googleAnalyticsCordova",function(){var t=["$q","$log","ready","debug","trackingId","period",function(n,t,i,e,r,o){function a(){e&&t.info(arguments)}function c(n){e&&t.error(n)}var d=n.defer(),u=!1;window.addEventListener("deviceReady",function(){u=!0,d.resolve()}),setTimeout(function(){u||d.resolve()},3e3),this.init=function(){return d.promise.then(function(){"undefined"!=typeof analytics?(i(analytics,a,c),analytics.startTrackerWithId(r)):e&&t.error("Google Analytics Plugin for Cordova is not available")})}}];return{$get:["$injector",function(i){return i.instantiate(t,{ready:this._ready||n.noop,debug:this.debug,trackingId:this.trackingId,period:this.period})}],ready:function(n){this._ready=n}}}).config(["$analyticsProvider","googleAnalyticsCordovaProvider",function(n,t){t.ready(function(t,i,e){n.registerPageTrack(function(n){t.trackView(n)}),n.registerEventTrack(function(n,i){t.trackEvent(i.category,n,i.label,i.value)})})}]).run(["googleAnalyticsCordova",function(n){n.init()}])}(angular);

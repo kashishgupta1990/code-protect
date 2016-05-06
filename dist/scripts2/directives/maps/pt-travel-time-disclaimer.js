@@ -1,0 +1,1 @@
+define(["app","text!views/directives/maps/pt-travel-time-disclaimer.html"],function(a,b){a.directive("ptTravelTimeDisclaimer",["$rootScope",function(a){return{restrict:"EA",template:b,link:function(a,b){a.disclaimerFlag=!1,a.$on("showDisclaimer",function(b,c){a.disclaimerFlag=c}),a.$on("$destroy",function(){a.disclaimerFlag=!1,b.remove()})}}}])});

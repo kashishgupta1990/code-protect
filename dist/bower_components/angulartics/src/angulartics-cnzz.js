@@ -1,0 +1,1 @@
+!function(c){"use strict";c.module("angulartics.cnzz",["angulartics"]).config(["$analyticsProvider",function(c){window._czc=window._czc||[],_czc.push(["_setAutoPageview",!1]),c.registerPageTrack(function(c){_czc.push(["_trackPageview",c])}),c.registerEventTrack(function(c,e){_czc.push(["_trackEvent",e.category,c,e.label,e.value,e.nodeid])})}])}(angular);

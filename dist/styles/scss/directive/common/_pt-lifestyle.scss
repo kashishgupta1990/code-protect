@@ -1,0 +1,188 @@
+/* 
+Desc: Lifestyle View Scss Document 
+Author: Nitish Saraswat
+Date: 22 July 2014
+*/ 
+
+/********************************************************************************
+*************  Safet and Lifestyle Icons and Text all across website ************
+********************************************************************************/
+.lifestyle-container{ width:$body-width;
+	margin:0 auto;
+	text-align:center;
+	float:left;
+	min-width:75px;
+	@include box-sizing(border-box);
+	.lifestyle-icon-cont{ font-family:$proximaNovaFamily;
+		font-size:$body-font-size*2 - 3;
+		color:$lighter-grey-textColor;
+		text-align:center;
+		cursor:pointer;		
+		i{ color:$lifestyle-color;
+			font-size:$body-font-size*2 - 2; 
+			margin:0 2px 0 0;
+		}
+		span{ display:inline-block;
+			span{ float:left;
+				line-height:$body-font-size + 6;
+			}
+		}		
+	}
+}
+.localityScoreInfo{ font-family:$proximaNovaFamily;
+	font-size:$body-font-size + 6;
+	font-weight: bold;
+	color:$lighter-grey-textColor;
+	span{ font-size:$body-font-size + 1 !important; }
+}
+.scoreAreaInfo{ padding:70px 0 0 0;
+	.scoreBarContainer{ width:382px;
+		position:relative;
+		margin:5px 10px 0 10px;
+		.scoreBarInfo{ background:url('../images/score-bar.jpg') repeat-y;
+			height:10px;
+			width:$body-width;
+			@include rounded($radius:2px);
+		}
+		.scoreDataInfo{ width:32px;
+			top:-65px;
+			margin:0 0 0 -16px;
+			color:$darkligh-mid-gray-color;
+			text-align:center;
+		}
+		.scoreLow{ position:absolute;			
+			z-index:1;
+		}
+		.scoreProj{ position:absolute;
+			z-index:3;
+		}
+        .scoreHig{position:absolute;
+			z-index:2;
+		}
+		.scorePin{ width:31px; 
+			height:31px;
+			@include rounded($radius:100%);
+			display:block;
+			background:$white-color;
+			font-family:$proximaNovaFamily;
+			font-size:$body-font-size + 2;
+			color:$darkligh-mid-gray-color;
+			line-height:$body-font-size*3 - 5;
+			border:1px solid $light-gray-color;
+			.scoreArrow{ position:absolute;
+				bottom: -8px;
+				left: 11px;
+				border-left: 5px solid transparent;
+				border-right: 5px solid transparent;
+				border-top: 12px solid $white-color;
+				&:after{ content:'';
+					position:absolute;
+					bottom:-2px;
+					left: -5px;
+					border-left: 5px solid transparent;
+					border-right: 5px solid transparent;
+					border-top: 12px solid $light-gray-color;
+					z-index:-1;
+				}
+			}
+			
+		}
+	
+	}
+	
+}
+.scoreLabelLine{ padding:5px 0 7px 0;
+	ul.scoreLineInfo{
+		li:first-child{ border-left:1px solid $light-gray-color; padding: 0 !important;}
+		li:last-child{ padding: 0 !important;}
+		li{ width:$body-width - 90 !important;
+			height:4px; 
+			min-height: 4px !important; 
+			float:left !important;
+			padding: 0 !important;
+			border-right:1px solid $light-gray-color;
+			@include box-sizing(border-box);
+		}
+	}
+}
+.scoreBottomLabel{ width:$body-width;
+	position:relative;
+	ul{
+		li{ min-width:$body-width - 80;
+		font-size:$body-font-size - 1;
+		color:$darkligh-mid-gray-color;
+		float:left;
+		text-align:center;
+		text-transform:uppercase;
+		&.lsPoor{ width:$body-width - 60;}
+		&.lsBelow{ width:$body-width - 90; position:absolute;left:125px;}
+		&.lsAverage{ width:$body-width - 80;  position:absolute;left:190px;}
+		&.lsGood{ width:$body-width - 90;  position:absolute;left:248px;}
+		&.lsExellent{ width:$body-width - 80;  position:absolute;left: 306px;}
+		}
+	}
+	span{ width:$body-width - 80;
+		font-size:$body-font-size - 1;
+		color:$darkligh-mid-gray-color;
+		float:left;
+		text-align:center;
+		text-transform:uppercase;
+	}
+}
+.scoreTextInfo{ font-family:$proximaNovaFamily;
+	font-size:$body-font-size;
+	color:$lighter-grey-textColor;
+}
+.score-link-info{ font-family:$proximaNovaFamily;
+	font-size:$body-font-size;
+	color:$lighter-grey-textColor;
+	span{ font-size:$body-font-size + 1; font-weight:bold;}
+}
+.score-content-info{ font-family:$proximaNovaFamily;
+	font-size:$body-font-size;
+	line-height: $body-font-size*2 - 2;
+	color:$lighter-grey-textColor;
+}
+.scoreBarbottomText{ color:$darkligh-mid-gray-color;
+	font-size:$body-font-size;
+	text-align:left;
+	padding:20px 0 0 0;
+	span{ min-height:20px !important;}
+}
+
+.lifestyle-powerby{ font-size:$body-font-size - 1;
+		color:$darkligh-mid-gray-color;
+		text-align:right;
+		background:$White-gray-color;
+		padding:5px 10px;
+		img{ margin:0 0 0 5px; 
+			height:24px;
+		}
+}
+.safetypin-container{ @extend.lifestyle-container;
+	.lifestyle-icon-cont{
+		i{ color:$red-color;}
+	}
+}
+.safetypinInfo{width:$body-width - 50;}
+.over-cont-info{ padding:10px 15px;
+	.over-cont-head-info{ 
+		.over-cont-title{ font-family:$proximaNovaFamily;
+			font-size:$body-font-size + 3;
+			font-weight: bold;
+			color:$lighter-grey-textColor;
+		}
+		.over-cont-head-rate{ font-family:$proximaNovaFamily;
+			font-size:$body-font-size + 6;
+			font-weight: bold;
+		}
+	}
+
+}
+.lifestyle-container {
+	.overlay-Wrapper{ width:470px; z-index:12;}
+}
+
+
+
+

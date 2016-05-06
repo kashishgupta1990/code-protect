@@ -1,0 +1,1 @@
+define(["../var/document","../var/support"],function(e,t){return function(){var a=e.createElement("input"),n=e.createElement("select"),l=n.appendChild(e.createElement("option"));a.type="checkbox",t.checkOn=""!==a.value,t.optSelected=l.selected,n.disabled=!0,t.optDisabled=!l.disabled,a=e.createElement("input"),a.value="t",a.type="radio",t.radioValue="t"===a.value}(),t});

@@ -1,0 +1,20 @@
+<div class=alv-listitem-locality>
+    <div class=loc-name-wrap>
+        <span class=loc-name once-title=data.label once-text=data.label></span>
+        <div class=clearfix></div>
+    </div>
+    <div class=avg-rate once-html=data.unitPriceHtml></div>
+    <div class=clearfix></div>
+    <div class=rise-fall once-html=data.priceRiseHtml></div>
+	<div class=clearfix></div>
+    <div class=count-status-wrap>
+    	<span class=proj-count once-text=data.projectCountText></span> 
+        <span once-html=data.prelaunchHtml></span>
+    </div>
+    <div class=score-wrap data-ng-show=data.livabilityScore>
+        <div title="Quality of life a family will enjoy" class=lifestyle-icon-cont>
+            <i class="pt pt-icon-lifestyle"></i>
+            <span>{{data.livabilityScore | number: 1}}<small>/10</small></span>
+        </div>
+    </div>
+</div>

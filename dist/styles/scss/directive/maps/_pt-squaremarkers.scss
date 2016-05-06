@@ -1,0 +1,881 @@
+/*
+Desc: Map Square Markers Scss Document
+Author: Nimit Mangal
+Date: 29 Nov 2013
+*/
+
+
+/********************************************************
+**************  BASIC SQUARE MARKER ********************
+********************************************************/
+
+@mixin sq_marker {
+    position: relative;
+    left:0px;
+    bottom:0px;
+    background: #f39c13;
+    border: 1px solid #f7692c;
+    @include rounded( $radius:3px);
+    display:inline-block;
+    padding:0px;
+    min-width:12px;
+    margin:0 0 0px 0;
+    box-shadow: 0px 1px 2px #999;
+    color:#fff;
+    cursor: pointer;
+    z-index:5;
+    text-align:center;
+
+    &:after, &:before {
+        top: 100%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+
+    &:after {
+        width: 0;
+        height: 0;
+        border-right: 5px solid transparent;
+        border-left: 0px solid transparent;
+        border-top: 8px solid #f39c13;
+        left: 5px;
+    }
+
+    &:before {
+        width: 0;
+        height: 0;
+        border-right: 6px solid transparent;
+        border-left: 0px solid transparent;
+        border-top: 9px solid #f7692c;
+        left: 5px;
+    }
+}
+
+
+/*  LOCALITY MARKER  */
+.sqm_locality {
+    @include sq_marker;
+    margin-bottom: 0px;
+    bottom: 0px;
+
+    &:before {
+        border-right: 9px solid transparent;
+        border-left: 9px solid transparent;
+        border-top: 9px solid #eb8b17;
+        left: 25%;
+    }
+
+    &:after {
+        border-right: 8px solid transparent;
+        border-left: 8px solid transparent;
+        border-top: 8px solid #f39c13;
+        left: 25%;
+    }
+
+    .val {
+        padding: 6px 9px;
+        font: bold 13px Arial;
+        line-height: normal;
+        display: block;
+    }
+
+    &.sq_1 {
+
+        &:before {
+            left: 16%;
+        }
+
+        &:after {
+            left: 16%;
+        }
+    }
+
+    &.sq_2 {
+
+        &:before {
+            left: 24%;
+        }
+
+        &:after {
+            left: 24%;
+        }
+    }
+
+    &.sq_3 {
+
+        &:before {
+            left: 30%;
+        }
+
+        &:after {
+            left: 30%;
+        }
+    }
+
+    .loc-info-wrap {
+        display: none;
+        padding: 0px;
+        width: 180px;
+        position: absolute;
+        left: 0;
+        bottom: 0px;
+        text-align: left;
+        text-shadow: none;
+
+        .loc-name {
+            display: block;
+            color: #333;
+            float: left;
+            margin: 0px 5px 0px 3px;
+            font-size: 14px;
+            white-space: nowrap;
+            max-width: 99%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .avg-rate {
+            padding: 0px 3px;
+            clear: both;
+        }
+
+        .rise-fall {
+            padding: 0px 3px;
+        }
+
+        .loc-wrap-two {
+            background: #666;
+            border: solid 1px #666;
+            @include rounded( $radius:3px);
+            margin: 3px 0px -1px -1px;
+            padding: 3px 5px 3px 3px;
+            color: #fff;
+
+            .count {
+                font-size: 14px;
+                font-weight: bold;
+                margin-right: 3px;
+                float: left;
+            }
+            .launch {
+                margin-left: 3px;
+                float: left;
+            }
+        }
+    }
+
+    /* Class made for the Hover State */
+    &.st-h, &.st-alv-h {
+        z-index:12;
+        text-align: left;
+        border: #333;
+        box-shadow: 0px 1px 2px #999;
+        position: absolute;
+        bottom: -30px;
+        left: 0;
+        @include rounded( $radius:3px);
+
+        &.sq_1 {
+
+            &:before {
+                border-top: 0px solid #333;
+                left: 6px;
+            }
+
+            &:after {
+                border-top: 8px solid #666;
+                left: 6px;
+            }
+        }
+
+        &.sq_2 {
+
+            &:before {
+                border-top: 0px solid #333;
+                left: 9px;
+            }
+
+            &:after {
+                border-top: 8px solid #666;
+                left: 9px;
+            }
+        }
+
+        &.sq_3 {
+
+            &:before {
+                border-top: 0px solid #333;
+                left: 13px;
+            }
+
+            &:after {
+                border-top: 8px solid #666;
+                left: 13px;
+            }
+        }
+
+        .val {
+            display: none;
+        }
+
+        .loc-info-wrap {
+            display: block;
+            background: #ffffff;
+            color: #666;
+            border: solid 1px #ccc;
+            @include rounded( $radius:3px);
+        }
+    }
+    /* Class made for the Hover State Ends */
+
+    /* Class made for the Clicked State  */
+    &.st-c {
+        border: #333;
+        background:#666;
+        box-shadow: 0px 1px 2px #999;
+        position: absolute;
+        bottom: -30px;
+        left: 0;
+        z-index:11;
+
+        &:before {
+            border-top-color: #666;
+        }
+
+        &:after {
+            border-top: none;
+        }
+
+        .val {
+            padding:7px 10px;
+        }
+    }
+}
+/*  LOCALITY MARKER ENDS  */
+
+
+
+/* PROJECTS MARKER  */
+.sqm_project {
+    @include sq_marker;
+
+    .fav-icon {
+        font-size: 8px;
+        line-height: 8px;
+        position: absolute;
+        right: -10px;
+        top: -10px;
+        color: #e90000;
+        background: #fff;
+        border: solid 1px #555;
+        @include rounded( $radius:10px);
+        padding: 2px;
+        display: none;
+
+        i.pt {
+
+        }
+    }
+
+    .visited-icon {
+        background: #fff;
+        @include rounded( $radius:20px);
+        font-size: 14px;
+        line-height: 13px;
+        position: absolute;
+        right: -8px;
+        top: -8px;
+        color: #555;
+        display: none;
+
+        i.pt {
+
+        }
+    }
+
+    .val-type {
+        padding: 0px;
+        line-height: 12px;
+        font-size: 12px;
+        width: 14px;
+        height: 14px;
+        line-height: 1;
+    }
+    .val-rate, .val-date, .val-score {
+        padding:0px 1px;
+        line-height:16px;
+        min-width:47px;
+    }
+
+    /* Staus Banners on top of Markers */
+    .info-bnrs {
+        top:-15px;
+        position:absolute;
+        left:0px;
+
+        [class*="info-bnr-"] {
+            color: #FFFFFF;
+            font: bold 11px/15px Arial;
+            width: 100%;
+            padding:0px 3px;
+
+            &.hide {display:none;}
+        }
+
+        .info-bnr-red {background-color:#EE1A39;}
+        .info-bnr-orange {background-color:#F7941E;}
+        .info-bnr-green {background-color:#3AC00B;}
+        .info-bnr-blue {background-color:#00AEFF;}
+    }
+    /* Staus Banners on top of Markers Ends */
+
+
+    .proj-info-wrap {
+        display:none;
+        width: 202px;
+        color: #666;
+        position: absolute;
+        left: 0;
+        bottom: 0px;
+        text-align: left;
+
+        .deal-icon {
+            position: absolute;
+            right: 0px;
+            bottom: 40px;
+            background: $active-color;
+            border-bottom-left-radius: 4px;
+            border-top-left-radius: 4px;
+            color: #fff;
+            font-size: 14px;
+            padding: 0px 3px 2px 5px;
+        }
+
+        .fav-icon {
+            top: -5px;
+            right: -5px;
+            display: none;
+        }
+
+        .proj-loc, .proj-bhk, .proj-sizes, .proj-new-price, .proj-re-price, .proj-rate, .proj-date, .proj-score {
+            color: #666;
+            padding: 0px 3px;
+            max-width: 98%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            text-align: left;
+        }
+
+        .proj-new-price, .proj-re-price {
+            max-width: 88%;
+        }
+
+        .proj-bhk {
+            .pt-icon-apartment {
+                color: #f39c13;
+            }
+            .pt-icon-villa {
+                color: #1478ab;
+            }
+            .pt-icon-plot {
+                color: #669933;
+            }
+        }
+
+        .proj-rate, .proj-date, .proj-score {
+            max-width: 88%;
+            display: inline-block;
+            color: #fff;
+            padding: 0px 4px;
+            margin: 1px 0 3px 3px;
+            @include rounded( $radius:3px);
+
+            span {
+                font-weight: bold;
+            }
+        }
+
+        .proj-type-name {
+            padding: 0px 5px 3px;
+            color: #fff;
+            background: #666666;
+            @include rounded( $radius:3px);
+            margin: 3px 0 0 0;
+
+            .pname, .pbuildername {
+                display: block;
+                text-align: left;
+                font-size: 12px;
+                font-weight: bold;
+                line-height: 14px;
+                width: 98%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+    }
+    &.measleMarker_dna { /* 3rd lvl class to decide when it is by date :: if No possession Date (DNA) */
+        background: #f39c13;
+        border: 1px solid #fff !important;
+        @include rounded( $radius:10px);
+        display: inline-block;
+        padding: 0px;
+        margin: 0;
+        box-shadow: 0px 1px 2px #999;
+        min-width: 6px;
+        width: 6px;
+        height:6px;
+        z-index: 4;
+
+        &:after { border-top-color: transparent !important; }
+        &:before { border-top-color: transparent !important; }
+
+        .val {
+            display: none;
+        }/* css for visited and fav class in case of measlemarker start*/
+        &.st-v {
+            .visited-icon {
+                display: none;
+            }
+
+            &.pt-date {
+                &.dna {
+                    .visited-icon {
+                        display: none;
+                    }
+                }
+            }
+
+            &.pt-rate {
+                &.rna {
+                    .visited-icon {
+                        display: none;
+                    }
+                }
+            }
+
+            &:hover {
+                .visited-icon {
+                    display: none;
+                }
+            }
+        }
+        &.st-f {
+            .fav-icon {
+                display: none;
+            }
+            .proj-info-wrap {
+                .fav-icon {
+                }
+            }
+
+            &.st-v {
+                .visited-icon {
+                    display: none;
+                }
+            }
+
+            &.pt-date {
+                &.dna {
+                    .fav-icon {
+                        display: none;
+                    }
+                }
+            }
+
+            &.pt-rate {
+                &.rna {
+                    .fav-icon {
+                        display: none;
+                    }
+                }
+            }
+
+            &:hover {
+                .fav-icon {
+                    display: none;
+                }
+                .proj-info-wrap {
+                    .fav-icon {
+                        display: none;
+                    }
+                }
+            }
+        }/* css for visited and fav class in case of measlemarker end*/
+    }
+
+    &.pt-type { /* 2nd level class to decide if it is by prop-type OR rate OR Poss. date.... */
+
+        &.apartment { /* 3rd lvl class to decide when it is by prop-type :: if apartment OR villa OR plot*/
+            background: #f39c13;
+            border-color: #d3870f;
+            &:after { border-top-color: #f39c13; }
+            &:before { border-top-color: #f39c13; }
+
+        }
+
+        &.villa { /* 3rd lvl class to decide when it is by prop-type :: if apartment OR villa OR plot */
+            background: #1478ab;
+            border-color: #126996;
+            &:after { border-top-color: #1478ab; }
+            &:before { border-top-color: #126996; }
+        }
+
+        &.plot { /* 3rd lvl class to decide when it is by prop-type :: if apartment OR villa OR plot */
+            background: #669933;
+            border-color: #527a29;
+            &:after { border-top-color: #669933; }
+            &:before { border-top-color: #527a29; }
+        }
+    }
+
+
+
+    &.pt-date { /* 2nd level class to decide if it is by prop-type OR rate OR Poss. date....
+        background: #17A086;
+        border-color: #0c7f69;
+        &:after { border-top-color: #17A086; }
+        &:before { border-top-color: #17A086; }
+
+        */
+
+        &.dna { /* 3rd lvl class to decide when it is by date :: if No possession Date (DNA) */
+            background: #1478ab;
+            border: 1px solid #fff;
+            @include rounded( $radius:10px);
+            display: inline-block;
+            padding: 0px;
+            margin: 0;
+            box-shadow: 0px 1px 2px #999;
+            min-width: 6px;
+            width: 6px;
+            height:6px;
+            z-index: 4;
+
+            &:after { border-top-color: transparent; }
+            &:before { border-top-color: transparent; }
+
+            .val {
+                display: none;
+            }
+        }
+
+    }
+
+    &.pt-rate { /* 2nd level class to decide if it is by prop-type OR rate OR Poss. date.... */
+
+        &.rna { /* 3rd lvl class to decide when it is by date :: if No Rate (RNA) */
+            background: #1478ab;
+            border: 1px solid #fff;
+            @include rounded( $radius:10px);
+            display: inline-block;
+            padding: 0px;
+            margin: 0;
+            box-shadow: 0px 1px 2px #999;
+            min-width: 6px;
+            width: 6px;
+            height:6px;
+            z-index: 4;
+
+            &:after { border-top-color: transparent; }
+            &:before { border-top-color: transparent; }
+
+            .val {
+                display: none;
+            }
+        }
+    }
+    &:hover {
+        z-index:12;
+        text-align: left;
+        border:none;
+        @include rounded( $radius:3px);
+
+        &:before {
+            border-right: 6px solid transparent;
+            border-left: 0px solid transparent;
+            border-top: 9px solid #333;
+            left: 5px;
+        }
+
+        &:after {
+            border-right: 5px solid transparent;
+            border-left: 0px solid transparent;
+            border-top: 8px solid #666;
+            left: 5px;
+        }
+
+        &.pt-type {
+            &.apartment {
+                &:before { border-top-color:#333; }
+                &:after { border-top:8px solid #666666; }
+            }
+            &.villa {
+                &:before { border-top-color:#333; }
+                &:after { border-top:8px solid #666666; }
+            }
+            &.plot {
+                &:before { border-top-color:#333; }
+                &:after { border-top:8px solid #666666; }
+            }
+        }
+
+        &.pt-rate {
+            &.rna {
+                border:none;
+                min-width: 3px;
+                width: auto;
+                height: auto;
+                z-index: 11;
+                &:before { border-top-color:#333; }
+                &:after { border-top:8px solid #666666; }
+            }
+
+            &[class^="rate-color-"], &[class*="rate-color-"] {
+                &:before { border-top-color:#333; }
+                &:after { border-top:8px solid #666666; }
+            }
+        }
+
+        &.pt-date {
+            &.dna {
+                border:none;
+                min-width: 3px;
+                width: auto;
+                height: auto;
+                z-index:11;
+                &:before { border-top-color:#333; }
+                &:after { border-top:8px solid #666666; }
+            }
+
+            &[class^="date-color-"], &[class*="date-color-"] {
+                &:before { border-top-color:#333; }
+                &:after { border-top:8px solid #666666; }
+            }
+        }
+
+        .fav-icon {
+            display:none;
+        }
+
+        .visited-icon {
+            display:none;
+        }
+
+        .val {
+            display: none;
+        }
+
+        .proj-info-wrap {
+            display: block;
+            background: #fff;
+            color: #666;
+            border: #333;
+            @include rounded( $radius:3px);
+            box-shadow: 0px 1px 2px #999;
+        }
+    }
+
+    /* Class made for the Visited State  */
+    &.st-v {
+        .visited-icon {
+            display: block;
+        }
+
+        &.pt-date {
+            &.dna {
+                .visited-icon {
+                    display: none;
+                }
+            }
+        }
+
+        &.pt-rate {
+            &.rna {
+                .visited-icon {
+                    display: none;
+                }
+            }
+        }
+
+        &:hover {
+            .visited-icon {
+                display: none;
+            }
+        }
+    }
+    /* Class made for the Visited State Ends  */
+
+    /* Class made for the Clicked State and ALV hover state  */
+    &.st-c, &.st-alv-h {
+        border: none;
+        box-shadow: 0px 1px 2px #999;
+        z-index:11;
+
+        .val {
+            display: none;
+        }
+
+        .visited-icon {
+            display: none;
+        }
+
+        .proj-info-wrap {
+            display: block;
+
+            > div { display: none; }
+
+            .proj-type-name { display:block; text-align:left; }
+        }
+
+        &:before { border-top-color:#333; }
+
+        &:after { border-top:8px solid #666666; }
+
+        &.pt-type {
+            &.apartment {
+                &:before { border-top-color:#333; }
+                &:after { border-top:8px solid #666666; }
+            }
+            &.villa {
+                &:before { border-top-color:#333; }
+                &:after { border-top:8px solid #666666; }
+            }
+            &.plot {
+                &:before { border-top-color:#333; }
+                &:after { border-top:8px solid #666666; }
+            }
+        }
+
+        &.pt-rate {
+            &.rna {
+                border:none;
+                min-width: 3px;
+                width: auto;
+                height: auto;
+                z-index:11;
+                &:before { border-top-color:#333; }
+                &:after { border-top:8px solid #666666; }
+            }
+
+            &[class^="rate-color-"], &[class*="rate-color-"] {
+                &:before { border-top-color:#333; }
+                &:after { border-top:8px solid #666666; }
+            }
+        }
+
+        &.pt-score {
+            &.sna {
+                border:none;
+                min-width: 3px;
+                width: auto;
+                height: auto;
+                z-index:11;
+                &:before { border-top-color:#333; }
+                &:after { border-top:8px solid #666666; }
+            }
+
+            &[class^="rate-color-"], &[class*="rate-color-"] {
+                &:before { border-top-color:#333; }
+                &:after { border-top:8px solid #666666; }
+            }
+        }
+
+        &.pt-date {
+            &.dna {
+                border:none;
+                min-width: 3px;
+                width: auto;
+                height: auto;
+                z-index:11;
+                &:before { border-top-color:#333; }
+                &:after { border-top:8px solid #666666; }
+            }
+
+            &[class^="date-color-"], &[class*="date-color-"] {
+                &:before { border-top-color:#333; }
+                &:after { border-top:8px solid #666666; }
+            }
+        }
+
+        &:hover {
+            .val {
+                display: none;
+            }
+
+            .proj-info-wrap {
+                display: block;
+
+                > div {
+                    display: block;
+
+                    &.proj-rate, &.proj-date, &.proj-score {
+                        display: inline-block;
+                    }
+                }
+
+                .proj-type-name { display:block; text-align:left; }
+            }
+        }
+    }
+    /* Class made for the Clicked and ALV hover State Ends  */
+
+    /* Class made for the Favorite State Ends  */
+    &.st-f {
+        .fav-icon {
+            display: block;
+        }
+        .proj-info-wrap {
+            .fav-icon {
+            }
+        }
+
+        &.st-v {
+            .visited-icon {
+                display: none;
+            }
+        }
+
+        &.pt-date {
+            &.dna {
+                .fav-icon {
+                    display: none;
+                }
+            }
+        }
+
+        &.pt-rate {
+            &.rna {
+                .fav-icon {
+                    display: none;
+                }
+            }
+        }
+
+        &:hover {
+            .fav-icon {
+                display: none;
+            }
+            .proj-info-wrap {
+                .fav-icon {
+                    display: none;
+                }
+            }
+        }
+    }
+    /* Class made for the Favorite State Ends  */
+}
+/* PROJECTS MARKER ENDS */
+
+
+/* Class made for the Recommended (sponsored) Project  */
+.st-r {
+}
+/* Class made for the Recommended (sponsored) Project  ENDS  */
+

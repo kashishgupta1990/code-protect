@@ -1,0 +1,1 @@
+define(["app"],function(a){a.factory("ResetPasswordService",["$http",function(a){var b=function(b,c){return a.post("/app/v1/reset-password?token="+b,c)};return{resetPassword:b}}])});

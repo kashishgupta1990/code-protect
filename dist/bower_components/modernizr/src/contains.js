@@ -1,0 +1,1 @@
+define([],function(){function n(n,e){return!!~(""+n).indexOf(e)}return n});

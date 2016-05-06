@@ -1,0 +1,20 @@
+<div class=tree-view-link data-ng-class="(_collapse)?['active']:[]">
+    <a href=javascript:void(0); class=sub-link data-ng-model=_collapse data-ng-click="_collapse=!_collapse">
+    {{ label }} <i class="pt pt-icon-caret-down"></i></a>
+    <div class=tree-view-wrap>
+        <ul class=list-level1>
+            <li data-ng-repeat="item in list">
+                <h6 data-item-id="{{ item.id }}" data-ng-click=getSubItems(item.id)><i class="pt pt-icon-plus-square"></i> {{ item.name }}</h6>
+                <div class=list-level2>
+                    <span data-ng-hide=subItems[item.id]>Loading...</span>
+                    <ul data-ng-show=subItems[item.id]>
+                        <li data-ng-repeat="sub in subItems[item.id]">
+                            <a class=name data-subitem-id="{{ sub.id }}" href="{{ sub.url }}">{{ sub.name }}</a>
+                        </li>
+                    </ul>
+                    <div class=clearfix></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

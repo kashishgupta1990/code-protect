@@ -1,0 +1,23 @@
+[
+    {
+        "Property": "3C Greenopolis", 
+        "PurchaseDate": "12 August 2013", 
+        "PurchasePrice": "48 L", 
+        "CurrentValue": "51.6 L (12.2%)",
+        "ConstructionStatus" : "view"
+    }, 
+    {
+        "Property": "Vipul Lavanya", 
+        "PurchaseDate": "12 November 2011", 
+        "PurchasePrice": "37 L", 
+        "CurrentValue": "51.6 L (25.2%)",
+        "ConstructionStatus" : "view"
+    }, 
+    {
+        "Property": "Umang Winter Hills", 
+        "PurchaseDate": "12 August 2012", 
+        "PurchasePrice": "40 L", 
+        "CurrentValue": "45.6 L (18.2%)",
+        "ConstructionStatus" : "view"
+    }
+]

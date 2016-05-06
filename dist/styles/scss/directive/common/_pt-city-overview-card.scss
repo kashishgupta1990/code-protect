@@ -1,0 +1,139 @@
+.listing-card-row {
+
+	position: relative;
+	margin-bottom: $vertical-separation;
+	width: 100%;
+	display: inline-block;
+	background-color: white;
+	box-shadow: 0px 0px 3px 3px darken(#EEEEEE, 20);
+
+	.base-info{
+		width: 100%;
+		display: table;
+
+		.photo-cont{
+			float: right;
+			width: 200px;
+			background-color: orange;
+			height: 200px
+		}
+
+		.info-cont{
+			float:left;
+			width: 720px;
+			padding: 20px;
+			padding-top: 0px;
+			padding-bottom: 0px;
+
+			.info-header{
+				height: 40px;
+				width: 100%;
+				line-height: 40px;
+				font-size: 15px;
+				font-weight: bold;
+			}
+
+			.info-desc{
+				height: 145px;
+				width: 700px;
+				padding-top: 15px;
+				padding-left: 20px;
+				@include sleek-border-top(#EEEEEE);
+
+				.text-desc{
+					width: 100%;
+				}
+
+				.numeral-desc{
+					height: 55px;
+					width: 100%;
+					line-height: 55px;
+
+					.num-block{
+						margin-right: 50px;
+					}
+				}
+			}
+		}
+	}
+
+	.block-info{
+		margin-top: 10px;
+		min-height: 80px;
+		padding-left: 30px;
+		padding-right: 20px;
+		margin-bottom: 10px;
+
+		.block-heading{
+			height: 30px;
+			width: 100%;
+			line-height: 30px;
+			@include sleek-border-bottom(#EEEEEE);
+			font-size: 14px;
+			font-weight: bold;
+
+			.view-more{
+				font-weight: normal;
+				font-size: 12px;
+				color: darken(#EEEEEE, 60);
+			}
+		}
+		.block-content{
+			display: inline-block;
+			width: 100%;
+			padding-left: 10px;
+			margin-top: 10px;
+
+			.desc-headline{
+				font-weight: bold;
+				height: 15px;
+			}
+
+			.single-builder{
+				width: 25%;
+				height: 70px;
+				float: left;
+
+				.logo{
+					height: 40px;
+					width: 140px;
+				}
+				.name{
+					margin-top: 5px;
+				}
+			}
+		}
+	}
+
+	.footer-row{
+		height: 20px;
+		width: 100%;
+
+		.state-change-element{
+			float: right;
+			width: 100px;
+			background-color: black;
+			text-align: center;
+			line-height: 20px;
+			height: 100%;
+			color : white;
+			cursor: pointer;
+		}
+	}
+}
+
+
+
+.top-block{
+	width: 80%;
+
+	.single-top-block{
+		float: left;
+		width: 33.3%;
+
+		.name {
+			float: left;
+			margin-right: 10px;
+		}
+	}
+}

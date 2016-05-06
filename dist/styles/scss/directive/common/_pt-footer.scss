@@ -1,0 +1,225 @@
+/* 
+Desc: Footer Scss Document 
+Author: Sanjeev Verma
+Date: 24 Sept 2013
+*/
+.seo-footer{ background: $light-gray-color; 
+	width: $body-width;	
+}
+.footer-cont-info{ width: $body-width;
+	margin:0 auto;
+	@include box-sizing(border-box);
+	padding:10px 10px 10px 10px;
+	font-family:$proximaNovaFamily;
+	.footer-prop-link{ padding:0 0 5px 0;
+		a{ margin:0 5px 0 10px;
+			&:hover{ text-decoration:underline;}
+		}
+	}
+}
+.page-footer{
+	background: $footer-bgcolor;
+	width: $body-width;
+	padding-bottom: 30px;
+	}
+.footer-container{ width: $body-width;
+	margin:0 auto;
+	@include box-sizing(border-box);
+	padding:30px 0 20px 10px;
+	font-family:$proximaNovaFamily;
+	.corporateLink{
+		ul{
+			li{ display:block;
+			&.suHeading{ padding:0 0 8px 0;}
+				&.seoAnchorLink{ font-family:$proximaNovaFamily;
+				  	font-size:$body-font-size;
+					color: $light-gray-color;
+					line-height: $body-font-size*2 - 4;
+					cursor: pointer;
+					&:hover{ color: $light-gray-color; 
+						text-decoration: underline;
+					}
+				}
+				a{ font-family:$proximaNovaFamily;
+				  	font-size:$body-font-size;
+					color: $light-gray-color;
+					line-height: $body-font-size*2 - 4;
+					&:hover{ color: $light-gray-color;}
+				}
+			}
+		}
+		/* ios promotion styling starts */
+		.footerCta{ clear:both; 
+		color:#e8e8e8;
+		padding-top:70px;
+			li{ float:left;
+			padding:0 7px;
+			line-height:50px;
+			font-family:$proximaNovaFamily;
+			font-size:$body-font-size + 3px;
+			font-weight: bold;
+			color:#e8e8e8;
+				a{ padding:9px 11px;
+				@include rounded($radius:7px);
+				border:#707070 solid 1px;
+				display:inline-block;
+					i{font-size:$body-font-size + 20px;
+					float:left;
+					color:#a6a6a6;
+					}
+					&:hover{background:rgba(255, 255, 255, 0.2);
+					text-decoration:none;
+						i{color:rgba(166, 166, 166, 1);
+						}
+					}
+				}
+			}
+			li:first-child{padding-left:0;
+			}
+		}	
+		/* ios promotion styling ends */	
+	}
+	.footerContactDetail{ padding:0 0 15px 0;
+		.footerCallDetail{ width: $body-width;
+			float:left; 
+			padding:0 0 10px 0;
+			.officeDetail{font-size:$body-font-size;
+					font-family:$proximaNovaFamily;
+					font-weight: bold;
+					color:#f39c13;}
+			.dropdown{
+				>.seoAnchorLink{ font-size:$body-font-size + 2px;
+					font-family:$proximaNovaFamily;
+					font-weight: bold;
+					display:block;
+					color:#f39c13; 
+					i{@include rounded($radius:14px);
+						display: inline-block; 
+					}
+						.caret{ border-top: 4px solid #f39c13;
+							margin:8px 0 0 2px;
+						}
+					}
+				&:hover{
+						ul{ display:block !important;}
+						}
+				}
+			ul.dropdownlist{ min-width:180px;
+				border:none !important;
+				display:none;
+				position:absolute;
+				background:#ffffff;
+				@include box-shadow(rgba(0, 0, 0, 0.2) 0px 5px 10px);
+				top:100%;
+				left:0;
+				z-index:1000;
+				padding:5px 0; 
+				>li { height:auto;
+					display:block !important;
+					color:$dropdown-color;
+					padding:8px 15px;
+					background-color:$dropdown-bgcolor;
+					font-size:$body-font-size + 2px;
+					i{ margin:0px 5px 0 0;
+						@include rounded($radius:14px);
+						display: inline-block; 
+					}
+					&:hover{
+						color:$dropdown-active-color;
+						background:$dropdown-active-bgcolor !important;
+					}
+				}
+				 
+			}
+			
+		}
+		.regionalOfficeDetail{ 
+			.regSeoLink{ font-family:$proximaNovaFamily;
+				font-size:$body-font-size;
+				font-weight: bold;
+				color:$footer-text-color;
+				cursor: pointer;
+				&:hover{ text-decoration: underline; }
+			}
+		}		
+	}
+        .footerLeadInfo {
+            &:after { height: 1px; display: block;
+background: -moz-linear-gradient(left,  rgba(0,0,0,0) 0%, rgba(255,255,255,0.5) 50%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(0,0,0,0)), color-stop(50%,rgba(255,255,255,0.5)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(255,255,255,0.5) 50%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(255,255,255,0.5) 50%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  rgba(0,0,0,0) 0%,rgba(255,255,255,0.5) 50%,rgba(0,0,0,0) 100%); /* IE10+ */
+background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(255,255,255,0.5) 50%,rgba(0,0,0,0) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
+            }
+        }
+			
+}
+.propDesAboutInfo{ font-size:$body-font-size + 1;
+	color:$light-gray-color;
+	font-family:$proximaNovaFamily;
+	float: left;
+	padding: 10px 30px 0 0;
+	text-align: justify;
+}
+
+.lt-ie10{
+	.footer-container{padding:30px 15px 20px 15px;	
+	}
+}
+.suHeading{ font-size:$body-font-size + 2px;
+		color:$light-gray-color;
+		font-family:$proximaNovaFamily;
+		font-weight: bold;
+}
+.compSeoFooterText{ font-family:$proximaNovaFamily;
+	font-size:$body-font-size + 1;
+	font-weight: bold;
+	color:$lighter-grey-textColor;
+	padding: 3px 0 0 15px;
+}
+
+.copyright{  width:$body-width;
+	background: $copyright-bgcolor;
+	text-shadow: none;
+	min-height: 20px;
+	color: $light-gray-color;
+	margin: 0;
+	text-align: center;
+	font-size: $body-font-size - 1px;
+	@include box-sizing(border-box);
+	padding:0;
+	.copy-container{
+		padding:0 10px;
+		margin:0 auto;
+		@include box-sizing(border-box);}
+	a{ text-decoration:none; color:$light-gray-color;
+		&:hover{ color: $light-gray-color;}
+	}
+	.col-followUs{ padding:0; position:relative;
+		ul{ list-style-type:none; margin:-5px 0 0 0 !important; 
+			li{ display:table-cell;
+				padding:0 0 0 10px; 
+			a{ margin:0; display:block;}
+			a:hover{ text-decoration:none;}				
+			}
+		}
+	}
+}
+.fb-icon { height: 29px; width: 29px; }
+.gplus-icon { height: 29px; width: 29px; }
+.linkedin-icon { height: 29px; width: 29px; }
+.twitter-icon {  height: 29px; width: 29px; }
+.youtube-icon { height: 29px; width: 29px; }
+
+
+@media (max-width: 768px){
+	.footerCallDetail{ 		
+		.dropdown{
+			a{ font-size:$body-font-size;}
+		}
+		
+	}
+	
+}

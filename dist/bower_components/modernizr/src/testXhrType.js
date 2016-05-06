@@ -1,0 +1,1 @@
+define([],function(){var e=function(e){if("undefined"==typeof XMLHttpRequest)return!1;var n=new XMLHttpRequest;n.open("get","/",!0);try{n.responseType=e}catch(t){return!1}return"response"in n&&n.responseType==e};return e});

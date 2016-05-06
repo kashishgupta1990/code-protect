@@ -1,0 +1,83 @@
+<div class=kd-cntnr id=accordion2>
+
+    <div class="pt_row kd-head">
+    	<div class="kd-title pt_col-1-{{tableColomns}}">Key Data</div>
+        <div data-ng-repeat="mo in data.sortedIntervals" class=pt_col-1-{{tableColomns}}>
+        <div class=time-col-name>{{ data[durationType][mo].toString() }}</div>
+        </div>
+        <div class="pt_col-1-{{tableColomns}} pull-right">
+            <div data-ga-category=Dashboard pt-interval="" data-ga-title="Key Data" duration-changed=periodChanged(data) duration=intervalDefault constant=yearConstant></div>
+        </div>
+    </div>
+    <div class=kd-group data-ng-repeat="opt in options">
+        <div class=hdng once-text=opt.text></div>
+        <div class="pt_row kd-set">
+            <div pt-loading-block="" class="keyloading key-data-grid-keyloading" icon-styling-class=loading-icon-size>loading..</div>
+            <div class=pt_col-{{tableColomns-1}}-{{tableColomns}} data-ng-if=!opt._display>
+                <div class=kd-city-set data-ng-repeat="(id, obj) in data.data">
+                    <div class=pt_row>
+                    	<div class="kd-city-title pt_col-1-{{tableColomns-1}}">
+                        	<span data-ng-if="cityCount>1" once-text=data.city[id]></span>
+                        	<span data-ng-if="cityCount==1" once-text=data.city[id]></span>
+                        </div>
+                        <div class=pt_col-1-{{tableColomns-1}} data-ng-repeat="mo in data.sortedIntervals">
+                            <div class=time-col-data data-ng-click="displayTopProjects(opt, mo, id)">
+                                <a analytics-on="" data-analytics-event=Click_{{opt.title}} data-analytics-category=Dashboard data-analytics-label="" href=javascript:void(0); data-ng-class="opt.key !== 'inventoryOverhang' ? ['link'] : ['no-link']">{{ obj[mo][opt.key] | round | number_in:'0' }}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=pt_col-1-{{tableColomns}}>
+                <div class="btn-accordion-wrap pull-right marginR10 marginB10 toggle-graph">
+                    <button class="btn btn-lg" data-ng-click="toggleGraph(opt); opt._display=!opt._display;"><i data-ng-class="(opt._display)?['pt pt-icon-list-alt']:['pt pt-icon-bar-chart-o']"></i></button>
+                </div>
+            </div>
+            <div class="kd-graph-cntnr margin10" data-ng-if=opt._display>
+                <div pt-widgetchart="" widget-data=trend[opt.key]></div>
+            </div>
+        </div>
+        <div class="pt_row kd-set" data-ng-if="opt._display || opt._dataClicked">
+             <div class="kd-graph-cntnr margin10">
+                <div pt-loading-block="" data-ng-if="!projectData[detail.userType][durationType][opt.key][keyDateState[opt.key].idStr][keyDateState[opt.key].startDate].top && opt.key !== 'inventoryOverhang'"></div>
+                <div class=time-summry-wrap data-ng-if="projectData[detail.userType][durationType][opt.key][keyDateState[opt.key].idStr][keyDateState[opt.key].startDate].top && topProjectCheck(opt.key,projectData[detail.userType][durationType][opt.key][keyDateState[opt.key].idStr][keyDateState[opt.key].startDate].top)">
+                    <h4>
+
+                        <span>Top Projects in {{data.city[specificId]}} by {{ opt.title }} in <span class=highlight>{{ keyDateState[opt.key].toString() }}</span></span>
+                        <a class=sub-link href=javascript:void(0); analytics-on="" data-analytics-event="{{opt.title}}_View all projects_Open" data-analytics-category=Dashboard data-analytics-label="" data-ng-click="viewAllProjectsModal(opt, projectData[detail.userType][durationType][opt.key][keyDateState[opt.key].idStr][keyDateState[opt.key].startDate],keyDateState[opt.key].dateEpoch,specificId,data.city[specificId],keyDateState[opt.key].toString())" title="View all Projects">View all Projects</a>
+
+                    </h4>
+                    <div class="pt_row pt_row_pad10rt0 row-head">
+                        <div class=pt_col-2-10>Project Name</div>
+                        <div class=pt_col-1-10>&nbsp;</div>
+                        <div class=pt_col-1-10>Locality</div>
+                        <div class=pt_col-2-10>Status</div>
+                        <div data-ng-show=enableTypeField class=pt_col-1-10>Type</div>
+                        <div class=pt_col-1-10>Rate(<i class="pt pt-icon-inr"></i>/sq ft)</div>
+                        <div class=pt_col-1-10>Total Sold(%)</div>
+                        <div class=pt_col-1-10>{{ opt.title }}</div>
+                    </div>
+                    <div class="pt_row pt_row_pad10rt0 row-body" data-ng-repeat="project in projectData[detail.userType][durationType][opt.key][keyDateState[opt.key].idStr][keyDateState[opt.key].startDate].top" data-ng-if=project.extraAttributes[opt.key]>
+                        <div class="pt_col-2-10 textWrap" tooltip="{{ project.projectFullName }}">
+                            <a analytics-on="" data-analytics-event="Click_{{opt.title}}_Top 5 Projects" data-analytics-category=Dashboard data-analytics-label="Project Id: {{project.projectId}}, Project Rank: {{($index+1)}}, Project Name: {{project.projectName}}" data-ng-href="/phase-detail?projectId={{project.projectId}}" target=_blank>{{ project.projectFullName}}</a>
+                        </div>
+                        <div class="pt_col-1-10 textWrap">
+                            <i class=pt-icon-info-circle ng-hide=project.clicked data-ng-click="getBuilderInfoFromId(project, opt.title, $index)" tooltip="click for contact info"></i>
+                            <i ng-show=project.clicked tooltip="{{ project.builderAddress }}" class=pt-icon-info-circle></i>
+                        </div>
+                        <div class="pt_col-1-10 textWrap" tooltip="{{ project.localityName || 'NA' }}">{{ project.localityName || 'NA' }}</div>
+                        <div class="pt_col-2-10 textWrap" tooltip="{{ project.constructionStatus || 'NA' }}">{{ project.constructionStatus || 'NA' }}</div>
+                        <div data-ng-show="project.extraAttributes.groupConcatDistinctUnitType && project.extraAttributes.groupConcatDistinctUnitType.length > 0" class=pt_col-1-10>
+                            <i data-ng-repeat="icn in project.extraAttributes.groupConcatDistinctUnitType" class="pt-icon-{{icn | lowercase }}" tooltip={{icn}}></i>
+                        </div>
+                        <div data-ng-show="project.extraAttributes.groupConcatDistinctUnitType &&
+                        project.extraAttributes.groupConcatDistinctUnitType.length === 0" class=pt_col-1-10>&nbsp</div>
+                        <div class=pt_col-1-10 tooltip="{{ project.wavgPricePerUnitAreaOnLtdSupplyHover | round | figureFMT}}">{{ project.extraAttributes.wavgPricePerUnitAreaOnLtdSupply | round | figureFMT}}</div>
+                        <div class=pt_col-1-10 tooltip="{{ project.soldPercentageHover }}">{{ project.soldPercentage }}</div>
+                        <div class=pt_col-1-10>{{ project.extraAttributes[opt.key] | round | number_in:'0' }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

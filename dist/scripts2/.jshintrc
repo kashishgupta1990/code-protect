@@ -1,0 +1,13 @@
+{
+    "globals": {
+        "angular": false,
+		"jquery": false,
+		"$": false,
+		"window":false,
+		"document":false,
+		"_":false,
+		"define":false,
+		"navigator":false,
+		"mixpanel": false
+    }
+}

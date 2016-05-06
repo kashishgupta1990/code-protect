@@ -1,0 +1,32 @@
+/* 
+Desc: Grid Scss Document 
+Author: Sanjeev Verma
+Date: 30 June 2014
+*/
+.pt-sell-text-info{ background: $White-gray-color;
+	padding:10px;
+	ul{ padding:5px 0 0 15px; }
+}
+.pt-sell-head{ font-family:$proximaNovaFamily;
+	font-size:$body-font-size + 2px;
+	font-weight: bold;
+	color:$darkligh-gray-color;
+}
+.pt-sell-content{ font-family:$proximaNovaFamily;
+	font-size:$body-font-size + 2px;
+	font-weight: bold;
+	color:$darkBlack-gray-color;
+	li{ margin: 7px 0 0 0;}
+}
+.sell-form-info{
+	label{ min-width:100px !important;}
+	select, input{ width:200px !important;}
+}
+.sell-Optional-Info{ padding: 0 0 0 115px;
+	@include box-sizing(border-box);
+	a{ font-family:$proximaNovaFamily;
+		font-size:$body-font-size + 2px;
+		color:$darkligh-gray-color;
+		text-decoration:underline !important;
+	}
+}

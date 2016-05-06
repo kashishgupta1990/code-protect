@@ -1,0 +1,1 @@
+define(["app","text!views/directives/maps/pt-alv-listitem-simi-prop.html"],function(a,b){a.directive("ptAlvListitemSimiProp",["$parse",function(a){return{restrict:"EA",scope:{data:"=data",clicked:"&",hover:"&"},template:b}}])});

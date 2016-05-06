@@ -1,0 +1,365 @@
+/*
+Desc: CSS Document for B2B Builder Search Page
+Author: Nimit Mangal
+Date: 01 April 2014
+*/
+
+
+/**********************************************************************
+********************** Builder Search Page : LIST *********************
+**********************************************************************/
+
+.builder-list-cntnr {
+    margin: 0px 0 60px 0;
+    background-color: #fff;
+}
+
+.builder-srch-row {
+    width: 100%;
+    @include box-shadow(#999999 0 0 3px);
+    padding: 0px 10px;
+    .srch-form {
+        padding: 10px 0px 10px 0px;
+        border-bottom: solid 1px #dfdfdf;
+
+        .hdq {
+            font-weight: bold;
+            font-size: 10px;
+        }
+        input[type="text"]{
+            height:34px;
+        }
+        .input-append {
+            margin-bottom: 0px;
+
+            .input-large {
+                padding: 6px;
+                margin-bottom: 0px;
+            }
+            .add-on {
+                padding: 6px;
+                border:1px solid #e3e3e3;
+            }
+
+            .add-on.btn-dd {
+                position: relative;
+                padding: 0px;
+                height: 32px;
+                border:1px solid #e3e3e3;
+
+                a.dd-btn {
+                    padding: 0px 10px;
+                    line-height: 32px;
+                    color: #555;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+
+                &:hover, &:active {
+                    background: #dddddd;
+                }
+
+                &:active {
+                    box-shadow: inset 1px 1px 2px #aaaaaa;
+                }
+            }
+            .spinPos {
+                position: absolute;
+                top:7px;
+                right: 30px;
+                font-size: $body-font-size+3;
+                z-index: 99;
+            }
+        }
+
+        .dd-list {
+            top: 35px;
+
+            li:hover {
+                text-shadow: 0px 0px 2px #333;
+            }
+        }
+    }
+
+    .lbl-wrap {
+        margin: 0px;
+
+        label { margin: 8px 10px 5px 0px; padding:7px; display:inline-block; }
+    }
+}
+
+.builder-list-wrap {
+	padding: 15px 0 0;
+	font-size: 12px;
+	line-height: 35px;
+	color: #666;
+
+	i.pt.close {
+		display: none;
+	}
+
+	.bl-head {
+		border-bottom: solid 1px #bcbcbc;
+		font-size: 10px;
+		line-height: normal;
+		text-transform: none;
+		padding: 5px 0px 10px;
+		font-weight:bold;
+
+		.lft-p5 {
+			text-align: left;
+			padding-left: 5px;
+		}
+
+		.sorter {
+			[class*="pt-icon-sort-"] {
+				display: none;
+				padding-right: 3px;
+				font-size: 14px;
+			}
+		}
+
+		.toggle-cols {
+			display: inline-block;
+			position: relative;
+
+			i.dropdown-toggle {
+				font-size: 14px;
+				cursor: pointer;
+			}
+
+			.dd-list {
+				left: inherit;
+				right: 0;
+
+				li {
+					text-align: right;
+					font-size: 10px;
+					text-transform: uppercase;
+				}
+			}
+		}
+	}
+
+	.builder-listitem {
+		.pt_row {
+
+			[class*="pt_col-"]:first-child {
+				padding-left: 5px;
+			}
+			[class*="pt_col-"]:last-child {
+				padding-right: 2px;
+			}
+		}
+
+		.parent-row {
+			border-bottom: solid 1px #acacac;
+			padding: 4px 0px;
+
+			.b-name {
+				color: #333;
+				font-weight: bold;
+
+				span.name {
+					display: block;
+					float: left;
+					white-space: nowrap;
+					width: 85%;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+			}
+			.b-p-type {
+				[class*="icon-"] {
+					padding: 0px 3px;
+				}
+			}
+			.b-price {
+				.rise .pt {
+					color: $greenish;
+				}
+				.fall .pt {
+					color: $reddish;
+				}
+			}
+			.b-rate {
+
+			}
+			.pt-icon-caret-down {
+				display: inline-block;
+			}
+			.pt-icon-caret-up {
+				display: block;
+			}
+			.analyse-btn {
+				opacity: 0.4;
+
+				.small-btn.btn-primary {
+					padding: 3px 9px !important;
+				}
+			}
+			.pt-icon-arrow-circle-down {
+				font-size: 32px;
+				margin-left: 5px;
+				line-height: 38px;
+			}
+		}
+		.builder-slideDown {
+			display: none;
+			padding: 10px 0px;
+			background-color: #ececec;
+			line-height: 20px;
+
+			.pt_row:last-of-type {
+				color: $reddish;
+			}
+		}
+
+		&:hover {
+			background-color: #f8f8f8;
+
+			.analyse-btn {
+				opacity: 1;
+			}
+		}
+
+		&.active {
+			.pt-icon-caret-down {
+				display: none;
+			}
+			.pt-icon-caret-up {
+				display: inline-block;
+			}
+			.builder-slideDown {
+				display: block;
+			}
+		}
+	}
+
+	.more-btn-wrap {
+		margin: 30px 0px 0px;
+		text-align: center;
+	}
+}
+
+.builder-model{
+    .modal-dialog{
+		width:802px;
+	}
+}
+.t-deco{
+    text-decoration: underline;
+}
+
+/*************************************************************************
+*************** Buider Info Wrapper (For Builder Analysis Page)***********
+*************************************************************************/
+.builder-list-wrap.buldr-analysis {
+	position: relative;
+	margin: 0px 0px 30px;
+	background-color: #fff;
+	@include box-shadow(#999999 0 -1px 3px);
+	padding: 10px;
+
+	i.pt.close {
+		display: inherit;
+	}
+
+	.analyse-btn {
+		display: none;
+	}
+}
+
+/********************************************************************************
+****** Common code for info icon pop-over in both SEARCH & ANALYSIS pages *******
+********************************************************************************/
+.b-info-wrap {
+    position: relative;
+
+    &.for-search {
+        display: block;
+        float: right;
+    }
+
+    .dropdown-menu.dd-list {
+        font-size: 12px;
+        color: #666;
+        font-weight: normal;
+        width: 450px;
+
+        .img-wrap {
+            padding: 5px;
+            margin: 0px;
+            background-color: #666;
+            text-align: center;
+
+            img {
+                max-width: 390px;
+                max-height: 150px;
+            }
+        }
+        .builder-info {
+            padding: 10px;
+            overflow-y: scroll;
+            height: 300px;
+
+            li {
+                background-color: #fff;
+                cursor: default;
+                margin: 0px;
+                padding: 5px 0px;
+
+                h4, h5 {
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    font-size: 12px;
+
+                    &.bldr-name {
+                        color: #333;
+                        font-weight: bold;
+                        font-size: 13px;
+                    }
+                }
+
+                p {
+                    padding: 0px 0px 0px 10px;
+                    margin: 0px;
+                }
+
+                &:hover {
+                    background-color: #fff;
+
+                    h4, h5 {
+                        color: #666;
+
+                        &.bldr-name {
+                            color: #333;
+                            font-size: 13px;
+                        }
+                    }
+                }
+
+                &.xprnc, &.avg-time {
+                    display: inline-block;
+                    width: 48%;
+                    padding: 0px;
+                }
+
+                &.cities {
+                    &:before, &:after {
+                        content: '';
+                        clear: both;
+                    }
+                }
+            }
+        }
+    }
+    }
+
+
+
+.showHand{
+    cursor: pointer;
+}

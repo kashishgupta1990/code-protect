@@ -1,0 +1,61 @@
+/* 
+Desc: Tree View DropDown Scss Document 
+Date: 1st Apr 2014
+*/
+
+	
+	
+.tree-view-link {
+	position: relative;
+			
+	/** VIEW TYPE FOR DASHBOARD (LIST OF LOCALITIES) STARTS **/
+	.tree-view-wrap {
+		border: solid 1px #ccc;
+		background-color: #fff;
+		@include box-shadow(#999999 0 -1px 3px);
+		width: 230px;
+		padding: 10px;
+		display: none;
+		position: absolute;
+		z-index: 2;
+		
+		.name {
+			display: inline-block;
+			width: 95%;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			line-height: 22px;
+		}
+		
+		.list-level1 {
+			h6 {
+				line-height: 24px;
+				cursor: pointer;
+				
+				i.pt {
+					margin-right: 5px;
+				}
+				
+				i.pt-icon-plus-sqaure.pt-icon-minus-sqaure:before {
+					content: "\f146"; /* copied the content code from font-awesome variables.scss file in bower-components.. */
+				}
+			}
+			.list-level2 {
+				display: none;
+				padding: 10px 0 10px 10px; 
+			}
+		}
+		
+		&.move-right {
+			right: 0px;
+		}
+	}
+	/** VIEW TYPE FOR DASHBOARD (LIST OF LOCALITIES) ENDS **/
+	
+	&:active, &.active {
+		.tree-view-wrap {
+			display: block;
+		}
+	}
+}

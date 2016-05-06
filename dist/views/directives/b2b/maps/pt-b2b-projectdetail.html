@@ -1,0 +1,96 @@
+<div data-ng-show=showDetailFlag class=proj-card-wrap>
+    <div data-ng-show=data.authorized>
+        <div data-ng-if=data.projectId class=proj-name-wrap id=projectDetail_{{data.projectId}}>
+            <a class=proj-name tooltip="{{data.builder.name}} {{data.name}}" tooltip-placement=bottom data-ng-href="/phase-detail?projectId={{data.projectId}}" target=_blank>{{data.builder.name}} {{data.name}}</a> 
+            <a class=goto-link data-ng-href="/phase-detail?projectId={{data.projectId}}" target=_blank tooltip="Go to this project" tooltip-placement=right> <i class="pt pt-icon-external-link"></i> </a>
+            <a class=close data-ng-click=close()>&#120;</a>
+            <div class=clearfix></div>
+        </div>
+        <div class=loc-name-wrap>
+            <span class=loc-name tooltip-placement=bottom tooltip="{{ data.locality.label }}, {{ data.locality.suburb.city.label }}">{{ data.locality.label }}, {{ data.locality.suburb.city.label }}</span>
+            <div pt-rating="" ratings=data.locality.ratings data-ng-if=data.locality.ratings></div>
+            <div class=clearfix></div>
+        </div>
+
+        <ul tabset="" class=projectDetailsTabs>
+            <li tab="" heading="Project Details" id=project-details data-ng-click="tabSwitch('project-details')">
+                <div class=key-val-wrap>
+                    <div class=key-col>Rise / Fall: </div>
+                    <div class=val-col>
+                        <span data-ng-if="data.avgPriceRisePercentage < 0" class="rise-fall grey" tooltip="in past {{ data.avgPriceRiseMonths }} months" tooltip-placement=right>
+                            ({{ -data.avgPriceRisePercentage}} % <i class="pt pt-icon-arrow-down"></i>)
+                        </span>
+                        <span data-ng-if="data.avgPriceRisePercentage > 0" class="rise-fall green" tooltip="in past {{ data.avgPriceRiseMonths }} months" tooltip-placement=right>
+                            ({{ data.avgPriceRisePercentage}} % <i class="pt pt-icon-arrow-up"></i>)
+                        </span>
+                    </div>
+                </div>
+                <div class=key-val-wrap>
+                    <div class=key-col>Price/Area: </div>
+                    <div class=val-col>
+                        <span data-ng-bind-html=data.displayPriceunitsHtmlMarker></span>
+                    </div>
+                </div>
+                <div class=key-val-wrap>
+                    <div class=key-col>Total Launched Units: </div>
+                    <div class=val-col>{{ data.totalUnits }} </div>
+                </div>
+                <div class=key-val-wrap>
+                    <div class=key-col>Total Supply: </div>
+                    <div class=val-col>{{ data.supply }} </div>
+                </div>
+                <div data-ng-show=data.builderMarketingShare class=key-val-wrap>
+                    <div class=key-col>Builder Marketing Share: </div>
+                    <div class=val-col>{{ data.builderMarketingShare }} % </div>
+                </div>
+                <div data-ng-show=data.isRedevelopementProject class=key-val-wrap>
+                    <div class=key-col>Redevelopment Project: </div>
+                    <div class=val-col>Yes</div>
+                </div>
+                <div class=key-val-wrap>
+                    <div class=key-col>Sold Percentage: </div>
+                    <div class=val-col>{{ data.totalSold }} </div>
+                </div>
+                <div class=key-val-wrap>
+                    <div class=key-col>Total Area: </div>
+                    <div class=val-col>{{ data.projectSize }}</div>
+                </div>
+                <div class=key-val-wrap>
+                    <div class=key-col>Property Type: </div>
+                    <div class=val-col>{{ data.bhkInfo }}</div>
+                </div>
+                <div class=key-val-wrap>
+                    <div class=key-col>Launch Date: </div>
+                    <div class=val-col>{{ data.launchDate }} </div>
+                </div>
+                <div class=key-val-wrap>
+                    <div class=key-col>Project Status: </div>
+                    <div class=val-col>{{data.projectStatus}}</div>
+                </div>
+            </li>
+            <li tab="" data-ng-hide=data.unMapped heading=Neighbourhood id=neighbourhood data-ng-click="tabSwitch('neighbourhood')">
+                <div pt-nearby-amenities="" shared-obj=data.item></div>
+            </li>
+        </ul>
+        
+        <div class=card-footer>
+            <div class=addRemoveCatchment data-ng-class="{active : projectSelected}" data-ng-click=selectProject()>
+                <div class=remCatch>
+                    <span>Remove from catchment</span>
+                    <a class=addRemLink><i class="pt pt-icon-check-square"></i></a>
+                </div>
+                <div class=addCatch>
+                    <span>Add in catchment</span>
+                    <a class=addRemLink><i class="pt pt-icon-square-o"></i></a>
+                </div>
+            </div>
+            <div class=clear></div>
+        </div>
+    </div>
+    <div data-ng-show=!data.authorized class=buy-wrap>
+        <a class="close spcl" data-ng-click=close()>&#120;</a>
+        <i class="pt pt-icon-shopping-cart"></i>
+        <div class=txt>Oops! you need to upgrade your package to view this data.</div>
+        <a class="btn btn-large btn-primary">Upgrade Plan</a>
+    </div>
+</div>

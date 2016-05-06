@@ -1,0 +1,10 @@
+{
+  "name": "jwplayer-mirror-updated",
+  "main": ["jwplayer.flash.swf", "jwplayer.html5.js", "jwplayer.js", "README.html"],
+  "description": "Unofficial mirror of JW Player 6+",
+  "license": "",
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt"
+  ]
+}

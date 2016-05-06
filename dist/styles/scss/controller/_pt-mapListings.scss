@@ -1,0 +1,175 @@
+/*
+Desc: Map Listing Scss Document
+Author: Nimit Mangal
+Date: 09 oct 2013
+*/
+
+html, body {width:100%; height:100%;}
+
+.body_map {height:100%; color:#333;}
+
+.active-color {color:$active-color;}
+.caps {text-transform:uppercase;}
+.blu-color{color:#00b4ff;}
+
+.show {display:block;}
+.hide {display:none;}
+
+.trotate {
+    display:block;
+    transform: rotate(-90deg);
+    /* Safari & Chrome */
+    -webkit-transform: rotate(-90deg);
+    /* Firefox */
+    -moz-transform: rotate(-90deg);
+    /* IE */
+    -ms-transform: rotate(-90deg);
+    /* Opera */
+    -o-transform: rotate(-90deg);
+
+    /* Internet Explorer
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);*/
+}
+.mapContInfo{ position: absolute;
+    width: $body-width;
+    .map_canvas_wrap{ width: $body-width;
+        top:0;
+    }
+}
+
+
+/* ANIMATIONS */
+@keyframes tiltIt
+{
+0%   {margin-right:3px;}
+25% {margin-right:6px;}
+50% {margin-right:3px;}
+75% {margin-right:0px;}
+100% {margin-right:3px;}
+}
+
+/*--------------------------------------
+ ************** MAP HEADER *************
+---------------------------------------*/
+
+
+/*--------------------------------------
+ ************ MAP HEADER ENDS ********
+---------------------------------------*/
+
+
+/*--------------------------------------
+ ************ MAP BODY **************
+---------------------------------------*/
+
+
+.map-sidebar {
+    .msg-no-result {
+        padding:10px 5px;
+    }
+
+
+    .alv-result-count-prop {
+        text-align: left;
+    }
+
+    .alv-list {
+        /*overflow-x:hidden;
+        overflow-y:auto;
+        height:100%;*/
+        .green {
+            color:#50c82c;
+        }
+        .red {
+            color:#ff0000;
+        }
+        .sorry-noproject {
+            margin:10px;
+            padding:5px;
+            background-color:#fff;
+            border:1px solid #fff;
+            line-height:18px;
+            color:#666;
+            text-align:center;
+            -moz-box-shadow:1px 1px 5px 0px #F6931E;
+            -webkit-box-shadow:1px 1px 5px 0px #F6931E;
+            box-shadow:1px 1px 5px 0px #F6931E;
+            .pt-icon-frown-o:before {
+                color:#F6931E;
+                font-size:32px;
+            }
+        }
+        .sad-smiley {
+            clear:both;
+            font-size:16px;
+            padding-top:10px;
+        }
+        .sad-text {
+            clear:both;
+            padding-top:20px;
+        }
+    }
+
+}
+
+
+
+    /********************************************************
+    **************  Localities RESULT LISTS with CARDS ******
+    ********************************************************/
+
+    /* END of ALV - for Localities search results */
+
+/*--------------------------------------
+ ************ MAP BODY ENDS ************
+---------------------------------------*/
+
+
+/*--------------------------------------
+ ************ MAP FOOTER **************
+---------------------------------------*/
+.map-footer {}
+
+/*--------------------------------------
+ ************ MAP FOOTER ENDS ********
+---------------------------------------*/
+
+
+
+/* Mobile Layout: 480px and below. */
+@media only screen and (max-width: 480px) {
+.zeroMargin_mobile {margin-left:0;}
+.hide_mobile {display:none;}
+}
+
+/* Tablet Layout: 481px to 768px. Inherits styles from: Mobile Layout. */
+@media only screen and (min-width: 481px) {
+.zeroMargin_tablet {margin-left:0;}
+.hide_tablet {display:none;}
+}
+
+/* Desktop Layout: 769px to a max of 1232px.  Inherits styles from: Mobile Layout and Tablet Layout. */
+@media only screen and (min-width: 769px) {
+.zeroMargin_desktop {margin-left:0;}
+.hide_desktop {display:none;}
+}
+
+/* ICONS */
+[class^="icons-"], [class*=" icons-"] {display:inline-block; vertical-align:middle; margin-right:3px;}
+.icons-icon-fav {float:right;}
+
+@media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1){
+    .map_canvas_wrap { right:240px; }
+    .map-sidebar { width:240px;
+        .for-scroll { width: 240px;}
+        .alv-result-count-proj {
+            .proj-count {
+                strong.loc { width: $body-width - 2; }
+            }
+        }
+
+
+    }
+
+}
+

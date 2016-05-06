@@ -1,0 +1,57 @@
+<div class=alv-listitem-projects>
+	
+    <div class=proj-name-wrap>
+        <span data-ng-if="data.avgPriceRisePercentage && data.avgPriceRisePercentage !== 0" class=proj-name href=javascript(0) once-title=data.fullName once-text=data.fullName></span>
+        <span data-ng-if="data.avgPriceRisePercentage === 0 || data.avgPriceRisePercentage === undefined" class="proj-name big" href=javascript(0) once-title=data.fullName once-text=data.fullName></span>
+        <span data-ng-if="data.avgPriceRisePercentage > 0" class="rise-fall green" once-title=data.avgPriceRiseMonthsHtml>
+            (<span once-text=data.avgPriceRisePercentage></span>% <i class="pt pt-icon-arrow-up"></i>)
+        </span>
+        <span data-ng-if="data.avgPriceRisePercentage < 0" class="rise-fall grey" once-title=data.avgPriceRiseMonthsHtml>
+            (<span once-text=-data.avgPriceRisePercentage></span>% <i class="pt pt-icon-arrow-down"></i>)
+        </span>
+        <div class=score-wrap data-ng-show=data.livabilityScore>
+            <div title="Quality of life a family will enjoy" class=lifestyle-icon-cont>
+                <i class="pt pt-icon-lifestyle"></i>
+                <span>{{data.livabilityScore | number: 1}}<small>/10</small></span>
+            </div>
+        </div>
+        <div class=clearfix></div>
+    </div>
+    <div class="col1 img-wrap">
+        <img class=proj-imgs once-alt=data.name data-ng-src="{{ data.imageThumbUrl }}" width=70 height=55>
+        <div data-ng-if="data.projectStatus === 'New Launch'" class=proj-status>
+            <div class="bnr green">New Launch</div>
+        </div>
+        <div data-ng-if="data.projectStatus === 'Launching Soon'" class=proj-status>
+            <div class="bnr blue" tooltip="Launching Soon">Launching...</div>
+        </div> 
+        <div data-ng-if="data.offers && data.offers.length" class=deal-wrap>
+            <div class=deal-bar>
+                <i class="pt pt-icon-bell-o"></i>
+                <strong>DEAL</strong> 
+                <div class=deal-info>
+                    <div data-ng-repeat="offer in data.offers" data-ng-if="offer.offerDesc && offer.offerDesc !== 'none'" once-text=offer.offerDesc></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=col2>
+        <div class=address once-title=data.address once-text=data.address></div>
+        <div class=prop-types once-text=data.bhkInfo></div>
+        <div class=prices>
+            Builder Price: <span data-ng-if="data.newPriceHtml != 'Price On Request'" once-html=data.newPriceHtml></span>
+            <span data-ng-if="data.newPriceHtml == 'Price On Request'"><a href=javascript:void(0) data-ng-click="openLeadForm($event, 'newPrice', 'hidden-pricerequest-listing')">Price On Request</a></span><br>
+            <div data-ng-if=data.isResale>
+                Resale Price:
+                <span data-ng-if="data.resalePriceHtml != 'Price On Request'" once-html=data.resalePriceHtml></span>
+                <span data-ng-if="data.resalePriceHtml == 'Price On Request'"><a href=javascript:void(0) data-ng-click="openLeadForm($event, 'resalePrice', 'hidden-pricerequest-listing')">Price On Request</a></span><br>
+            </div>
+        </div>
+    </div>
+    <div class=btn-area>
+        
+        
+        <div class=wrap><button class="gray-icon-btn-action enquire" tooltip=Enquire data-ng-click="openLeadForm($event, undefined, 'hidden-enquiry-listing')"><i class="pt pt-icon-envelope"></i></button></div>
+    </div>
+    <div class=clearfix></div>
+</div>

@@ -1,0 +1,71 @@
+<div class=sub-header>
+    <div class=container>
+        <div class="pt_row b-analysis">
+            <div class=pt_col-7-20> 
+                <span class=b-logo><img alt="" data-ng-src={{builder.data.imageURL}}></span>
+                <strong class=lh35>{{builder.data.name}} </strong>
+                <span class=b-info-wrap>
+                    <a href=javascript:void(0) analytics-on="" data-analytics-event=Hover_BuilderSearch data-analytics-category="Builder Analysis" data-analytics-label={{builder.data.name}} title="Click here to view a brief information about the builder" class="b-info dropdown-toggle" data-toggle=dropdown>
+                        <i class="pt pt-icon-info-circle"></i>
+                    </a>
+                    
+                    <div builder-detail="" builder=builder></div>
+                </span>
+            </div>
+            <div class="pt_col-6-20 ta-right">
+                <span class=lh35>{{builder.data.cities.length}} Cities</span>,
+                <span class=lh35>{{builder.data.builderLocalityCount}} Localities</span>,
+                <span class=lh35>{{builder.data.projectCount}} Projects</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="b2b-main-container transparent-wrap">
+
+<div class=filter-cntnr data-ng-controller=filterCtrl>
+    <div class="pt_row head">
+        <div class=pt_col-1-2>
+            <div class=filter-txt-wrap>
+                <i class="pt pt-icon-filter"></i> <span class=filter-txt>Apply Filters</span> 
+                
+            </div>
+        </div>
+        <div class="pt_col-1-2 ta-right">
+            <span class=show-filtered-count href=javascript:void(0)><span class=nmbr>{{matchingProjects}}</span> Matching Projects </span>
+        </div>
+    </div>
+
+    
+    <div class="pt_row body unlink-parent">
+        <div class="searchFilterBar col-sm-6 col-md-12 col-lg-12">
+            <div class="flitClickInfo filListInfo pull-left" show-dropdown=true data-ga-event="Select_AnalyseBuilderSearch_Project Type" data-ga-category="Builder Analysis" equal-type="" filter=filters.propertyType></div>
+            <div class="flitClickInfo filBedInfo pull-left" show-dropdown=true data-ga-event=Select_AnalyseBuilderSearch_Beds data-ga-category="Builder Analysis" equal-type="" filter=filters.bed></div>
+            <div class="flitClickInfo filBudgetInfo pull-left" show-dropdown=true data-ga-category="Builder Analysis" data-ga-event=Select_Budget budget="" filter=filters.budget></div>
+            <div class="flitClickInfo filProjectInfo pull-left" show-dropdown=true data-ga-event=Select_AnalyseBuilderSearch_Status data-ga-category="Builder Analysis" equal-type="" filter=filters.projectStatus></div>
+            <div class="add-on btn-dd pull-right">
+                <button data-ng-if=!cityToShow class="btn filtr-btn dropdown-toggle" data-toggle=dropdown>
+                    Select city
+                    <span class="pt pt-icon-angle-down iconArrow"></span>
+                </button>
+                <button data-ng-if=cityToShow class="btn filtr-btn dropdown-toggle" data-toggle=dropdown>
+                    {{cityToShow | uppercase}}
+                    <span class="pt pt-icon-angle-down iconArrow"></span>
+                </button> 
+                <ul class="dropdown-menu dd-list ta-left">
+                    <li data-ng-repeat="city in builderCities" data-ng-click=cityChanged(city)>
+                        <a>{{city | uppercase}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+<div graph="" builder-id=builderId></div>
+</div>

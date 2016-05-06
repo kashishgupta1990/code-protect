@@ -1,0 +1,46 @@
+<div class=sub-header>
+	<div class=container>
+        <div class=pt_row>
+            <div class=pt_col-1-10 data-ng-show="currentCatchment.status !== 'Inactive'">
+	            <button class="btn btn-default" data-ng-click=backToCatchment();><i class="pt pt-icon-arrow-left"></i></button>
+            </div>
+            <div class=pt_col-6-10>
+                <span data-ng-if="currentCatchment.status !== 'Inactive'"><strong class=lh35>Catchment Analysis of </strong>{{currentCatchment.name}}</span>
+                <span data-ng-if="currentCatchment.status === 'Inactive'"><strong class=lh35>New Catchment</strong></span>
+            </div>
+            <div class=pt_col-2-10>
+                <span class=lh35>{{currentCatchment.projIds.length}}</span> Projects
+            </div>
+            <div class="pt_col-1-10 ta-right" data-ng-show="currentCatchment.status === 'Inactive'">
+             	<button title="Save Catchment" class="btn btn-default" data-ng-click=saveCatchment();><i class="pt pt-icon-save"></i></button>
+            </div>
+		</div>
+	</div>
+</div>
+ 
+<div class="b2b-main-container transparent-wrap">
+
+<div class=filter-cntnr>
+    <div class="pt_row head">
+        <div class=pt_col-1-2>
+            <div class=filter-txt-wrap>
+                <i class="pt pt-icon-filter"></i> <span class=filter-txt>Apply Filters</span> 
+            </div>
+        </div>
+        <div class="pt_col-1-2 ta-right">
+            <span class=show-filtered-count href=javascript:void(0)><span class=nmbr>{{matchingProjects}}</span> Matching Projects </span>
+        </div>
+    </div>
+    <div class="pt_row body unlink-parent" data-ng-controller=filterCtrl>
+        <div class="searchFilterBar col-sm-6 col-md-12 col-lg-12">
+            <div class="flitClickInfo filListInfo pull-left" show-dropdown=true equal-type="" filter=filters.propertyType></div>
+            <div class="flitClickInfo filBedInfo pull-left" show-dropdown=true equal-type="" filter=filters.bed></div>
+            <div class="flitClickInfo filBudgetInfo pull-left" show-dropdown=true show-dropdown=true budget="" filter=filters.budget></div>
+            <div class="flitClickInfo filProjectInfo pull-left" show-dropdown=true equal-type="" filter=filters.projectStatus></div>
+        </div>
+
+    </div>
+</div>
+
+<div graph="" catchment-id=catchmentId></div>
+</div>

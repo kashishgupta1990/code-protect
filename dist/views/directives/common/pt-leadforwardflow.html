@@ -1,0 +1,41 @@
+<div>
+<div class=formTopLinkVerInfo ng-if=displaythanks>
+     <div><i class="pt pt-icon-check-circle"></i><span>Thank you. Your requirements are saved with us!</span></div>
+ </div>
+<div class="row-full marginT20">
+      <div class=morePropHeadInfo>DON'T MISS ON THESE</div>
+      <div class=morePropContInfo>
+         <ul class=moreListDescInfo>
+            <li ng-repeat="value in subPageUpperContent">
+               <div class=listContInfo data-ng-click=GAeventOnMore(displayDataArr[value].name)>
+                   <a data-ng-href={{displayDataArr[value].url}} target="{{displayDataArr[value].target ? displayDataArr[value].target : ''}}">
+                        <img alt={{displayDataArr[value].name}} data-ng-src=/styles/images/{{displayDataArr[value].image}}.jpg>
+                        <div class=listProjContInfo>
+                           <span class=listprojdesc>{{displayDataArr[value].text}}</span>
+                        </div>
+                   </a>
+               </div>
+            </li>
+          </ul>
+      </div>
+   </div>
+   <div class="row-full marginT20 slickSlider hide" ng-if=displayProjects>
+      <div class=morePropHeadInfo>Properties You May Also Like</div>
+      <div class=likePropContInfo>
+         <div class=row-full id=outerCarouselLead>
+            <div class=likePropProjInfo data-ng-repeat="project in displayProjects">
+               <div class=listContInfo data-ng-click="GAeventOnMore('similarproperties')">
+                   <a data-ng-href={{project.landingUrl}}>
+                        <img alt={{project.projectName}} data-ng-src={{project.imageUrl}}>
+                        <div class=likeProjHeadInfo>{{project.projectName}}</div>
+                        <div class=likelistProjContInfo>
+                           <span class=listprojdesc ng-if=project.locality>{{project.locality}}</span>
+                           <span class=listprojdesc ng-if=project.possession>Possession : {{project.possession}}</span>
+                        </div>
+                   </a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

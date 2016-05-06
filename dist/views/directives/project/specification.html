@@ -1,0 +1,24 @@
+<div class="contentHeader cursorPointer" data-ng-click=specToggle()>
+	<div class=stat-subComm-head-info>Specifications
+        <div class="pull-right paddingR10"><i class="cursorPointer pt pt-icon-chevron-{{arrowSpecState}}"></i></div>
+    </div>
+</div>
+<div class="content-info row-full marginL20" id=specs>
+    <div>
+        <div data-ng-repeat="(key, value) in specifications" class="prop-speci-info pull-left paddingB10">
+            <div class="col-lg-10 col-md-10 col-sm-10 proj-spec-info">
+                <div data-ng-if=checkObject(value)>
+        	        <div class="stat-subComm-head-info sub-Header">{{key}}</div>
+                    <div data-ng-repeat="(item, val) in value" class=paddingL15>
+                        <b>{{item}}</b> : {{val}}
+                    </div>
+                </div>
+                <div data-ng-if=!checkObject(value)>
+                    <div class="stat-subComm-head-info sub-Header">{{key}}</div>
+                    {{value}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=clearfix></div>
+</div>

@@ -1,0 +1,83 @@
+<div class=sub-header>
+	<div class=container>
+        <div class=pt_row>
+         <div class=pt_col-2-10>
+             <span class=big_text>Builder Search</span>
+            </div>
+            <div class=pt_col-8-10>
+             	
+                <div class=clearfix></div>
+            </div>
+		</div>
+	</div>
+</div>
+
+<div class="b2b-main-container transparent-wrap">
+    <div class=builder-list-cntnr>
+    
+    	<div class="pt_row builder-srch-row">
+            <div class="srch-form clearfix">
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <span class=hdq>Headquarter City</span>
+                    <form name="" method=post>
+                        <div class="input-prepend input-append input-group relativePostion">
+                            <div class="add-on btn-dd input-group-addon">
+                                <a class="dd-btn dropdown-toggle" data-toggle=dropdown>
+                                    
+                                    <span data-ng-if=bsSelectedCity> {{bsSelectedCity}} </span>
+                                    <span data-ng-if=!bsSelectedCity>
+                                        All Cities
+                                    </span>
+                                    <i class="pt pt-icon-caret-down"></i>
+                                </a>
+                                <ul class="dropdown-menu dd-list ta-left">
+                                    <li analytics-on="" data-analytics-event="All Cities" data-analytics-category="Builder Analysis" data-analytics-label="" data-ng-click="bsSelectedCity = null"> All Cities</li>
+
+                                    <li analytics-on="" data-analytics-event={{city.label}} data-analytics-category="Builder Analysis" data-analytics-label="" data-ng-repeat="city in cities" data-ng-if=city.authorized data-ng-click=selectCity(city.label)>
+                                        {{city.label}}
+                                    </li>
+                                </ul>
+                            </div>
+                            <i data-ng-show=loadingBuilders></i>
+                            <input type=text data-ng-model=searchedBuilder placeholder="Search for Builders" typeahead="builder.displayText for builder in getBuilders($viewValue, bsSelectedCity)" typeahead-loading=loadingBuilders class="form-control input-large" typeahead-on-select=addBuilder($item)>
+                            <span data-ng-show=loadingBuilders class=spinPos>
+                                <i class="pt-icon-cog pt-spin"></i>
+                            </span>
+                            
+                            <span class="add-on input-group-addon"><i class="pt pt-icon-search"></i></span>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+            <div class=lbl-wrap>
+                <label data-ng-repeat="Builder in Builders" class="label label-default marginTL5" analytics-on="" data-analytics-event=Unselect_Builder data-analytics-category="Builder Analysis" data-analytics-label="{{Builder.builderName || Builder.displayText}}{{Builder.info.cityName?','+Builder.info.cityName:''}}" data-ng-click=removeBuilder(Builder)>
+                    {{Builder.builderName || Builder.displayText}}{{Builder.info.cityName?','+Builder.info.cityName:''}}<i class="pt pt-icon-times-circle"></i>
+                </label>
+                <a href=javascript:void(0) data-ng-click=clearAll() analytics-on="" data-analytics-event=Click_UnselectAll data-analytics-category="Builder Analysis" data-analytics-label="" data-ng-if=Builders.length>Clear All</a>
+            </div>
+    	</div>
+    
+        <div class=builder-list-wrap>
+        	<i class="close pt pt-icon-times-circle"></i>
+            <span grid-head="" units=headerUnits update-table=updateTable sort=sort></span>
+             <div class="text-center paddingTB20 an-text-info" data-ng-show=builderLoad>
+                 <span class="pt-icon-cog pt-spin"></span>
+             </div>
+             <div class="text-center paddingTB20 an-text-info" data-ng-if="!builderLoad && !Builders.length && !BuildersError">
+                    Search for a Builder
+             </div>
+             <div class="text-center paddingTB20 an-text-info" data-ng-if="!builderLoad && !Builders.length && BuildersError">
+                    {{BuildersError}}
+             </div>
+            <div data-ng-repeat="Builder in Builders">
+                <span data-ng-if=!Builder.info> 
+                    <div pt-loading-block="" class=modal-open></div>
+                </span>
+                <span builder-base-info="" data-ng-if=Builder.info info=Builder.info> </span>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>

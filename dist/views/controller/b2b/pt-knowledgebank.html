@@ -1,0 +1,38 @@
+<div class="b2b-main-container transparent-wrap">
+    <div class=pt_row>
+    	<div class=pt_col-1-4>
+            <div class=sidebarBox>
+                <div class=sidebarHeader>
+                    <span>Knowledge Bank</span>
+                </div>
+                <ul class="quickContactLink sidebarContContainer">
+                    <li><a href=javascript:void(0)>Saved Catchments</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class=pt_col-3-4>
+            <div class="pt_row contentBoxContainer marginB15 paddingTB20LR25 tabContainer">
+                <div class=contentHeader>
+                    <h4>Saved Catchments</h4>
+                </div>
+            
+                <div class="pt_row head" data-ng-show="savedCatchment &&  savedCatchment.length">
+                    <div class=pt_col-3-8><strong>Catchment Name</strong></div>
+                    <div class=pt_col-3-8><strong>Creation Date</strong></div>
+                    <div class=pt_col-2-8>&nbsp;</div>
+                </div>
+                <div class=text-center data-ng-hide="savedCatchment &&  savedCatchment.length">
+                    <span>No saved catchment available.</span>
+                </div>
+                <div class="pt_row body row-alt-color" data-ng-repeat="catchment in savedCatchment">
+                    <div class=pt_col-3-8><a class=put-ellipsis once-text=catchment.name data-ng-click=fetchCatchment(catchment);></a></div>
+                    <div class=pt_col-3-8><span once-text="catchment.createdAt | dateFormat:'dd MMM, yyyy'"></span></div>
+                    <div class=pt_col-2-8><a href=/analysis/catchment/{{catchment.id}} class="pt_col-1-2 ta-right"><i class="pt pt-icon-bar-chart-o"></i> Analyse</a></div>
+                </div>
+            </div>
+        	
+
+        </div>
+    </div>
+</div>

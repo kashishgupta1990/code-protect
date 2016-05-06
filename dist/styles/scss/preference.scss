@@ -1,0 +1,38 @@
+@import "variables";
+@import "mixin";
+@import "compass/css3";
+@import "icons/*.png";
+@include all-icons-sprites(true);
+@import "directive/b2b/b2b-backbone";
+@import "directive/common/pt-range-slider";
+@import "directive/common/pt-filterBar";
+@import "directive/b2b/b2b-knowldgebank";
+
+.v-middle{
+	vertical-align:middle;
+}
+.budget-range-data {
+    width: 40%;
+    text-align: center;
+}
+.middle-range {
+    background: #FCBF23;
+    padding: 5px 6px 5px;
+    margin-top: -8px;
+}
+.showRange {
+    min-width: 600px;
+    padding:10px 5px 20px;
+    .low {
+        color: #555;
+        font-weight: bold;
+    }
+    .medium {
+        color: #f39c13;
+        padding:0 27%;
+        font-weight:bold;
+    }
+    .high {
+        @extend .low;
+    }
+}

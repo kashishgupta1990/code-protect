@@ -1,0 +1,1 @@
+angular.module("angular-jwplayer",[]).directive("jwplayer",["$compile",function(r){return{restrict:"EC",scope:{playerId:"@",setupVars:"=setup"},link:function(e,a,t){var n=e.playerId||"random_player_"+Math.floor(999999999*Math.random()+1),l=function(r){return'<div id="'+r+'"></div>'};a.html(l(n)),r(a.contents())(e),jwplayer(n).setup(e.setupVars)}}}]);

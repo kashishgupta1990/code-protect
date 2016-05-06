@@ -1,0 +1,73 @@
+/* 
+Desc: CSS Document for B2B Dashboard News box
+Author: Nimit Mangal
+Date: 01 April 2014
+*/
+
+
+/************ NEWS BOX STARTS *******************/
+.news-box {
+	width: 100%;
+	@include box-shadow(#999999 0 0 3px);
+	
+	/** News box Header **/
+	.n-title {
+		font-size: 18px;
+		font-family: $latoFamily;
+		font-weight: bold;
+		padding: 5px 10px;
+		background-color: #fff;
+		
+		i.pt-icon-bullhorn { padding: 0 10px 0 0; }
+		
+		a {
+			font-size: 12px;
+			font-weight: normal;
+			color: $theme_color;
+			text-decoration: underline;
+			padding: 0 0 0 10px;
+		}
+	}
+	
+	.news-row {
+		background-color: #f3f3f3;
+		
+		.n-li-item {
+			padding: 5px;
+			background: #f3f3f3;
+			border-right: 1px solid #c4c4c4;
+			
+			/** News Headline **/
+			.hdline {
+				font-size: 13px;
+				font-family: $latoFamily;
+				font-weight: normal;
+				color: #23913c;
+				min-height: 22px;
+				a {
+					color:#2980B9;
+					display:block;
+					min-width:282px;
+					overflow:hidden;
+					text-overflow:ellipsis;
+					white-space:nowrap;
+				}
+			}
+			
+			
+			/** News Date **/
+			.n-date {
+				font-size: 11px;
+				color: #a7a7a7;
+			}
+		}
+		
+		[class*='pt_col-']:last-of-type {
+			.n-li-item {
+				border-right: none;
+			}
+		}
+	}
+}
+/************ NEWS BOX ENDS *******************/
+

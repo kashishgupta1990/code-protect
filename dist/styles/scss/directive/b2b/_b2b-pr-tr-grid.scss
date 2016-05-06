@@ -1,0 +1,258 @@
+/*
+Desc: CSS Document for B2B Dashboard Price Trends Grid
+Author: Nimit Mangal
+Date: 01 April 2014
+*/
+
+/**********************************************************************
+********************** PRICE TRENDS GRID STARTS ***********************
+**********************************************************************/
+.pr-tr-cntnr {
+	margin: 30px 0 0 0;
+	background-color: #fff;
+
+	.pr-tr-head {
+		width: 100%;
+		@include box-shadow(#999999 0 0 3px);
+		padding: 0;
+
+		.hdng {
+			background-color: #f5f5f5;
+			font-size: 18px;
+			font-family: $latoFamily;
+			font-weight: bold;
+			line-height: 45px;
+			color: $theme_color;
+			padding: 0px 10px;
+
+			.btn-dd {
+				position: relative;
+
+				button {
+
+					&:focus {
+						outline: none;
+						border: solid 1px #ADADAD;
+					}
+				}
+			}
+		}
+
+		.top-line1 {
+			padding: 10px 0px 0px 10px;
+			font-size: 10px;
+			font-family: $latoFamily;
+			font-weight: normal;
+			text-transform: uppercase;
+			line-height: normal;
+		}
+
+		.top-line2 {
+			padding: 0px 0px 5px 10px;
+			font-size: 14px;
+			font-family: $latoFamily;
+			font-weight: normal;
+			text-transform: capitalize;
+			line-height: normal;
+			border-bottom: solid 1px #ccc;
+
+			[class*='pt_col-'] {
+				a {
+					padding: 0px 0px 8px 0px;
+					line-height: 20px;
+
+					&.active {
+						padding: 0px 0px 4px 0px;
+						border-bottom: solid 4px #ccc;
+						font-weight: normal;
+						color: #FE8F17;
+						outline: none;
+						text-decoration: none;
+					}
+				}
+			}
+
+			input[type=checkbox] {
+				margin: 0px;
+			}
+		}
+
+		.head {
+			padding: 0 0 0 10px;
+			border-bottom: solid 1px #ccc;
+			min-height: 45px;
+
+			[class*='pt_col-'] {
+				font-weight: normal;
+				line-height: 45px;
+				text-align: center;
+				color: #666;
+			}
+		}
+	}
+
+	.pr-tr-group {
+		padding: 2px 0px 0px;
+		border: solid 1px #e4e4e4;
+		border-top: none;
+		min-height:375px;
+
+		.sub-link {
+			padding: 10px 10px 5px 0px;
+			text-align: right;
+			color: $theme_color;
+			font-size: 12px;
+			font-weight: normal;
+			position:relative;
+
+			input[type=checkbox] {
+				margin: 0px;
+			}
+
+			.show-resale {
+				label {
+					color: $theme_color;
+					font-size: 12px;
+					display: inline-block;
+				}
+			}
+
+			a.view-all {
+				margin:7px 68px 0 20px;
+				display:inline-block;
+				text-decoration: underline;
+				vertical-align:middle;
+
+			}
+		}
+
+		.loc-set {
+			border-bottom: solid 1px #ccc;
+
+			.loc-color {
+				font-size: 14px;
+				line-height: 30px;
+				font-family: $latoFamily;
+				font-weight: bold;
+				display: inline-block;
+				padding:0px 10px;
+			}
+
+			.pt_row {
+				[class*='pt_col-'] {
+					text-align: center;
+					color: #898989;
+
+					.pt {
+						font-size: 14px;
+
+						&.pt-icon-arrow-up {
+							color: $greenish;
+						}
+
+						&.pt-icon-arrow-down {
+							color: $reddish;
+						}
+					}
+
+					&:last-of-type, &:last-child {
+						font-size: 12px;
+						font-style: italic;
+					}
+				}
+
+				&.row-sale {
+
+				}
+
+				&.row-resale {
+					background-color: #f9f9f9;
+				}
+			}
+		}
+
+		.loc-set:nth-child(2) .loc-color { color: $purplish; }
+		.loc-set:nth-child(3) .loc-color { color: $greenish; }
+		.loc-set:nth-child(4) .loc-color { color: $royal-blue; }
+		.loc-set:nth-child(5) .loc-color { color: $yellowish; }
+		.loc-set:nth-child(6) .loc-color { color: $grayish; }
+
+		.pr-tr-graph-wrap {
+			padding: 0px 0px 15px;
+		}
+	}
+	&.tabgraph-max {
+		min-height: 785px;
+
+		.btn-accordion-wrap {
+			button.active {
+				i.pt-icon-bar-chart-o:before {
+					content: "\f022";
+				}
+			}
+		}
+	}
+}
+
+
+
+/**************************************************************************
+************** ALL Localities Modal Box Design STARTS *********************
+***********(Overriden from Price-Trend above written css)******************
+**************************************************************************/
+.all-localities-pop-up {
+	/* width: 960px; */
+	/* max-height: 80%; */
+	margin: 0 auto;
+	right:0;
+	left:0;
+
+	&.popwrap {
+		width:80%;
+	}
+
+	.pr-tr-cntnr {
+		margin: 0px;
+		border-top-left-radius: 6px;
+		border-top-right-radius: 6px;
+	}
+
+	.hdng.pt_row {
+		display: none;
+	}
+
+	.pt_row.top-line1, .pt_row.top-line2 {
+		.pt_col-2-7:last-of-type {
+			display: none;
+		}
+	}
+
+	.pr-tr-group {
+		overflow-y: scroll;
+		max-height: 300px;
+
+		.view-all {
+			display: none;
+		}
+
+		.loc-set:nth-child(2n) {
+			background-color: #f3f3f3;
+		}
+
+		.pr-tr-graph-wrap {
+			display: none;
+		}
+	}
+	.modal-dialog{
+		width: 960px;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
+.pt_top-margin-10{
+    margin-top: 10px;
+}
+/**************************************************************************
+************** ALL Localities Modal Box Design ENDSSSSSS ******************
+***********(Overriden from Price-Trend above written css)******************
+**************************************************************************/

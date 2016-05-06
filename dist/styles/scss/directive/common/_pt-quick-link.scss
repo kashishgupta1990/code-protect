@@ -1,0 +1,53 @@
+/* 
+Desc: Quick link Scss Document 
+Author: Sanjeev Verma
+Date: 24 Oct 2013
+*/
+.quickContactLink{
+	li{ padding:0 0 0 20px;
+		margin:5px 0 0 0;
+		&:last-child{ 
+			a{ border-bottom: none;}
+		}
+		a{ font-family:$proximaNovaFamily;
+			font-size:$body-font-size + 2px;
+			padding:5px 0 9px 0;
+			display:block;
+			color:#444444;
+			border-bottom:1px solid #e5e5e5;
+			cursor:pointer;
+			span{ color: $anchor-link-color;
+				font-family:$proximaNovaFamily;
+				font-weight: bold;
+				padding:0 15px 0 0;
+				float:right;
+				i{ font-size:20px; 
+					float:left; 
+					padding:0 4px 0 0;
+					}
+				}			
+			&:hover, &.selected{ color:$body-selected-color;
+				border-right:5px solid $body-selected-color; 
+				text-decoration:none;
+				span{ color: $anchor-link-color;
+					padding:0 10px 0 0;
+					}
+				}
+			}
+		}
+	}
+	.com-link-info{
+		.sidebarBox{ padding:15px;}
+		.sidebarHeader{ display:none;}
+		.quickContactLink{
+			li{ padding:0; }
+		}	
+	}
+	
+@media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1){
+	.quickContactLink{
+		li{ padding:0 0 0 10px;
+			a{ padding:3px 0 7px 0;}
+		}
+	}
+}

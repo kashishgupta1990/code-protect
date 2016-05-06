@@ -1,0 +1,39 @@
+<div data-ng-show=showNeighbourhood class=neighbourhood-dd-wrap data-ng-mouseenter=tracking() data-ng-mouseleave="dropDownOpenStatus = false;"> 
+    <div class=neighbourMain>
+    	<span class=neighbour data-ng-mouseenter=neighbourhoodItems()>Neighbourhood  <i class="pt pt-icon-caret-down"></i> <span class=exit-btn data-ng-click=exit()>&nbsp;&nbsp;<i class="pt pt-icon-times"></i>&nbsp;&nbsp;</span></span>
+		
+        <div class=neighbourhood-dd>
+			<div id=neighbourhoodLoader class=neighbr_load>
+			<div pt-loading-block="" class=spinLoader></div>    
+			</div>
+            <ul>
+				<li>
+                    <a data-ng-click="itemClicked($event, 'school')" data-type=school name=school>
+                        <i class="fs0 pt pt-icon-school"></i> Schools<span data-ng-if="neighbourhoodValue.school !== '' && neighbourhoodValue.school !== 'undefined'">({{neighbourhoodValue.school}})</span>
+                    </a>
+                </li>
+                <li>
+                    <a data-ng-click="itemClicked($event, 'restaurant')" data-type=restaurant name=restaurant>
+                        <i class="fs0 pt pt-icon-restaurant"></i> Restaurants<span data-ng-if="neighbourhoodValue.restaurant !== ''">({{neighbourhoodValue.restaurant}})</span>
+                    </a>
+                </li>
+                <li>
+                    <a data-ng-click="itemClicked($event, 'hospital')" data-type=hospital name=hospital>
+                        <i class="fs0 pt pt-icon-hospital"></i> Hospitals<span data-ng-if="neighbourhoodValue.hospital !== ''">({{neighbourhoodValue.hospital}})</span>
+                    </a>
+                </li>
+                <li>
+                    <a data-ng-click="itemClicked($event, 'gas_station')" data-type=gas_station name=gas_station>
+                        <i class="fs0 pt pt-icon-petrol-station"></i> Petrol Pumps<span data-ng-if="neighbourhoodValue.gas_station !== ''">({{neighbourhoodValue.gas_station}})</span>
+                    </a>
+                </li>
+                <li>
+                    <a data-ng-click="itemClicked($event, 'bank')" data-type=bank name=bank>
+                        <i class="fs0 pt pt-icon-bank"></i> ATM/Banks<span data-ng-if="neighbourhoodValue.bank !== ''">({{neighbourhoodValue.bank}})</span>
+                    </a>
+                </li>
+			</ul>
+
+        </div>
+    </div>
+</div>
