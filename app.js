@@ -66,23 +66,24 @@ var init = function (paramObj, callback) {
                             } else {
                                 var ast = esprima.parse(data);
                                 var obfuscated = confusion.transformAst(ast, confusion.createVariableName);
-                                if(!fs.existsSync(destinationPath)){
+                                if (!fs.existsSync(destinationPath)) {
                                     mkpath.sync(path.dirname(destinationPath));
                                 }
                                 fs.writeFile(destinationPath, toString(obfuscated), function (err) {
+                                    var status = filePath + ' -> ' + destinationPath;
                                     if (err) {
                                         done(err);
                                     } else {
-                                        console.log('File: ', filePath, ' CONVERSION DONE');
-                                        done(null, 'done');
+                                        if (paramObj.debug) {
+                                            console.log(status);
+                                        }
+                                        done(null, status);
                                     }
                                 });
                             }
                         });
                     }
                 );
-
-
             });
 
             async.series(tasks, callback);
