@@ -12,6 +12,7 @@
     "async": "^1.5.2",
     "confusion": "^0.1.1",
     "escodegen": "^1.8.0",
-    "esprima": "^2.7.2"
+    "esprima": "^2.7.2",
+    "mkpath": "^1.0.0"
   }
 }

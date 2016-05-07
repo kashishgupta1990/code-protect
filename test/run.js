@@ -1,5 +1,9 @@
 var secureCode = require('../');
+var option = {
+    sourceDir:'./sample-codebase',
+    destinationDir:'./new-sample-codebase'
+};
 
-secureCode('./sample-codebase',function(err,data){
+secureCode(option,function(err,data){
     console.log(arguments);
 });

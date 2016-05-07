@@ -4,6 +4,7 @@ var toString = require('escodegen').generate;
 var confusion = require('confusion');
 var path = require('path');
 var async = require('async');
+var mkpath = require('mkpath');
 
 var walk = function (dir, done) {
     var results = [];
@@ -46,8 +47,8 @@ var onlyJsFile = function (dirPath, callback) {
     });
 };
 
-var init = function(directoryPath, callback){
-    onlyJsFile(directoryPath, function (err, dataList) {
+var init = function (paramObj, callback) {
+    onlyJsFile(paramObj.sourceDir, function (err, dataList) {
         var tasks = [];
 
         if (err) {
@@ -55,18 +56,24 @@ var init = function(directoryPath, callback){
         } else {
             dataList.forEach(function (filePath) {
                 tasks.push(function (done) {
+                        var destinationPath = filePath;
+                        if (paramObj.destinationDir) {
+                            destinationPath = path.join(paramObj.destinationDir, filePath);
+                        }
                         fs.readFile(filePath, function (err, data) {
                             if (err) {
                                 done(err);
                             } else {
                                 var ast = esprima.parse(data);
                                 var obfuscated = confusion.transformAst(ast, confusion.createVariableName);
-
-                                fs.writeFile(filePath, toString(obfuscated), function (err) {
+                                if(!fs.existsSync(destinationPath)){
+                                    mkpath.sync(path.dirname(destinationPath));
+                                }
+                                fs.writeFile(destinationPath, toString(obfuscated), function (err) {
                                     if (err) {
                                         done(err);
                                     } else {
-                                        console.log('File: ', filePath, ' DONE');
+                                        console.log('File: ', filePath, ' CONVERSION DONE');
                                         done(null, 'done');
                                     }
                                 });
