@@ -5,6 +5,7 @@ var confusion = require('confusion');
 var path = require('path');
 var async = require('async');
 var mkpath = require('mkpath');
+var uglifyJS = require("uglify-js");
 
 var walk = function (dir, done) {
     var results = [];
@@ -61,15 +62,20 @@ var init = function (paramObj, callback) {
                             destinationPath = path.join(paramObj.destinationDir, filePath);
                         }
                         fs.readFile(filePath, function (err, data) {
+                            var ast = esprima.parse(data);
+                            var obfuscated = confusion.transformAst(ast, confusion.createVariableName);
+                            var unreadCode = '';
                             if (err) {
                                 done(err);
                             } else {
-                                var ast = esprima.parse(data);
-                                var obfuscated = confusion.transformAst(ast, confusion.createVariableName);
                                 if (!fs.existsSync(destinationPath)) {
                                     mkpath.sync(path.dirname(destinationPath));
                                 }
-                                fs.writeFile(destinationPath, toString(obfuscated), function (err) {
+                                unreadCode = toString(obfuscated);
+                                if(paramObj.uglify){
+                                    unreadCode = uglifyJS.minify(unreadCode,{fromString: true}).code;
+                                }
+                                fs.writeFile(destinationPath, unreadCode, function (err) {
                                     var status = filePath + ' -> ' + destinationPath;
                                     if (err) {
                                         done(err);

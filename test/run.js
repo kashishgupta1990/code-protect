@@ -2,6 +2,7 @@ var secureCode = require('../');
 var option = {
     sourceDir: './sample-codebase',
     destinationDir: './new-sample-codebase',
+    uglify:true,
     debug: true
 };
 
