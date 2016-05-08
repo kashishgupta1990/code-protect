@@ -3,6 +3,12 @@
 var program = require('commander');
 var secureCode = require('.');
 var package = require('./package.json');
+var option = {
+    sourceDir: '',
+    destinationDir: '',
+    uglify:false,
+    debug: false
+};
 
 program
     .version(package.version)
@@ -13,10 +19,19 @@ program
     .option('-x, --debug <true/false>', 'debug mode')
     .parse(process.argv);
 
-console.log(program.source,program.destination,program.uglify,program.debug);
+option.sourceDir = program.source;
+option.destinationDir = program.destination;
+option.uglify = program.uglify;
+option.debug = program.debug;
 
 if(program.source){
-    
+    secureCode(option,function(err,result){
+        if(err){
+            throw err;
+        }else{
+            console.log(result);
+        }
+    })
 }else{
     console.log('\nArgument missing, Try command: `code-protect -h` to get more help\n');
 }
