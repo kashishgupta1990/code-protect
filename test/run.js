@@ -1,4 +1,4 @@
-var secureCode = require('../');
+var codeProtect = require('../');
 var option = {
     sourceDir: './sample-codebase',
     destinationDir: './new-sample-codebase',
@@ -6,7 +6,7 @@ var option = {
     debug: true
 };
 
-secureCode(option, function (err, data) {
+codeProtect(option, function (err, data) {
     if (err) {
         throw err;
     } else {

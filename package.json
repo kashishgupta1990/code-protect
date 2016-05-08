@@ -1,5 +1,5 @@
 {
-  "name": "code-secure",
+  "name": "code-protect",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -8,8 +8,12 @@
   },
   "author": "",
   "license": "ISC",
+  "bin": {
+    "code-protect": "./command-tool.js"
+  },
   "dependencies": {
     "async": "^1.5.2",
+    "commander": "^2.9.0",
     "confusion": "^0.1.1",
     "escodegen": "^1.8.0",
     "esprima": "^2.7.2",
