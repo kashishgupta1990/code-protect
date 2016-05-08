@@ -1,13 +1,28 @@
 {
   "name": "code-protect",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "It's a module which convert your JavaScript code into some not understandable format and still it's executable.This module can be used to protect the code base which run's on browser's client side or we can protect the nodejs code base as well.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Kashish Gupta",
   "license": "ISC",
+  "keywords": [
+    "protect",
+    "secure",
+    "uglify",
+    "obfuscation",
+    "code-secure",
+    "confuse"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kashishgupta1990/code-protect"
+  },
+  "bugs": {
+    "url": "https://github.com/kashishgupta1990/code-protect/issues"
+  },
   "bin": {
     "code-protect": "./command-tool.js"
   },
