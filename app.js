@@ -49,6 +49,10 @@ var onlyJsFile = function (dirPath, callback) {
 };
 
 var init = function (paramObj, callback) {
+    if (!paramObj.sourceDir) {
+        callback({errorMessage: 'sourceDir field is a mandatory option, can not be blank.'}, null);
+        return;
+    }
     onlyJsFile(paramObj.sourceDir, function (err, dataList) {
         var tasks = [];
 
@@ -72,8 +76,8 @@ var init = function (paramObj, callback) {
                                     mkpath.sync(path.dirname(destinationPath));
                                 }
                                 unreadCode = toString(obfuscated);
-                                if(paramObj.uglify){
-                                    unreadCode = uglifyJS.minify(unreadCode,{fromString: true}).code;
+                                if (paramObj.uglify) {
+                                    unreadCode = uglifyJS.minify(unreadCode, {fromString: true}).code;
                                 }
                                 fs.writeFile(destinationPath, unreadCode, function (err) {
                                     var status = filePath + ' -> ' + destinationPath;

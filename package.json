@@ -1,6 +1,6 @@
 {
   "name": "code-protect",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "It's a module which convert your JavaScript code into some not understandable format and still it's executable.This module can be used to protect the code base which run's on browser's client side or we can protect the nodejs code base as well.",
   "main": "app.js",
   "scripts": {
